@@ -1,0 +1,21 @@
+div.loginMenu.modalMenu
+    div.box
+        div(class="header")
+            h2(class="title") 會員帳號登入
+            span.close
+                img(src="./images/close.svg", alt="", srcset="")
+        div.scrollBox
+            div.login
+                div.form-group.vertical 
+                    input.form-control(placeholder="您的信箱(帳號)")
+                    input.form-control(placeholder="請輸入密碼")
+                    input.form-control(placeholder="輸入驗證碼")
+                    img(src="./images/code.png", alt="", srcset="")
+            div.btns
+                a.btn.sub.outline.fg_btn 忘記密碼
+                a.btn.sub.outline.reg_btn 註冊密碼
+                a.btn.red.fill 登入
+            hr
+        h2(class="title") 快速登入
+        div.social
+            include social_sso.pug

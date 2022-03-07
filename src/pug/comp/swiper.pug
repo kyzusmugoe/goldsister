@@ -1,0 +1,8 @@
+div.swiper.sub
+    div.swiper-wrapper
+        - var n = 0;            
+        while n < 10
+            div.swiper-slide(data-loop=n++)
+                div.swiper-zoom-container
+                    -var imgName = "shop"+ (n%5 +1)+".jpg"
+                    img.preload(src=imgPath+imgName loading="lazy" rel="preload" style="width:100%")

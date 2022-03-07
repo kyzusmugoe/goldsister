@@ -1,0 +1,267 @@
+/*global config*/
+$maxWidth: 1200px
+$mobile: 414px
+$blockerRadiusL: 100px
+$blockerRadiusS: 100px
+
+$fontColor: #fff
+$fontHoverColor: #e49856
+$fontDarkColor: #464646 
+$mainColor: #D0A392 
+$subColor: #573313 
+$sub1Color: #F9F6ED 
+$sub2Color: #5C6A68 
+$mainColorBtnActive: #eb437b 
+$bgColor1: #ECE7DB  
+$hoverColor: #020201
+
+$iconColor: #666
+$menuFontColor:#666
+/*global config end*/
+
+//@import './config.sass'
+@import './nav.sass'
+@import './mobileMenu.sass'
+@import './modalMenu.sass'
+//@import './userMenu.sass'
+@import './mainMenu.sass'
+@import './banner.sass'
+@import './blocker.sass'
+@import './sideBanner.sass'
+@import './components.sass'
+@import './contentSwiper.sass'
+@import './footer.sass'
+@import './cards.sass'
+@import './views.sass'
+@import './gallery.sass'
+@import './purchase.sass'
+@import './text.sass'
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;600&family=Noto+Serif+TC:wght@300;400;600&display=swap')
+
+/*init*/
+@mixin flexbox($direction, $justifyContent, $alignItems)
+    display: flex
+    flex-direction: $direction
+    justify-content: $justifyContent
+    align-items: $alignItems
+
+@mixin imgCover()
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+@mixin xxl()
+    @media( max-width:1800px )
+        @content
+@mixin xl()
+    @media( max-width:1200px )
+        @content
+
+@mixin lg()
+    @media( max-width:960px )
+        @content
+
+@mixin md()
+    @media( max-width:768px )
+        @content
+
+@mixin xs()
+    @media( max-width:414px )
+        @content
+
+@mixin xxs()
+    @media( max-width:375px )
+        @content
+
+//主要
+body::-webkit-scrollbar, .scrollBox::-webkit-scrollbar
+    width: 8px
+    height: 8px
+
+/* Track */
+body::-webkit-scrollbar-track, .scrollBox::-webkit-scrollbar-track 
+  //border-radius: 3px
+
+/* Handle */
+body::-webkit-scrollbar-thumb
+    background: $mainColor
+
+.scrollBox::-webkit-scrollbar-thumb 
+    //background: $subColor
+  
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover
+    background: $subColor
+/*
+    .scrollBox::-webkit-scrollbar-thumb:hover 
+        background: $mainColor
+
+html, body
+    height: 100%
+    //overflow-y: visible !important
+body
+    a
+        text-decoration: none
+    font-family: Arial, sans-serif, Quicksand
+    
+    background-color: white
+    @include components
+
+    margin: 0
+    //font: 100% $font-stack
+    
+    blockquote 
+        margin-left: 0
+        padding-left: 50px
+        border-left:3px solid $mainColor
+
+    div.tools
+        width: 100%
+        position: fixed
+        z-index: 1000
+
+    @include nav($maxWidth)
+    @include mobileMenu()
+    //@include userMenu()
+    @include modalMenu()
+    @include blocker()
+    @include cards()
+    @include views()
+    @include mainMenu
+    @include banner
+    @include sideBanner
+    @include gallery()
+    @include purchase()
+    @include text()
+    
+    div.pageTitle
+        h1,h4
+            margin: 0
+        h4
+            color:#999    
+    
+    //微調區
+
+
+    .bg1
+        background:$mainColor url('../images/bg1.jpg') center center no-repeat
+        background-size: cover
+        position: relative        
+        h2, p, span, div
+            color:#fff !important
+        
+        .leftSpace
+            margin-left: 150px
+            @include xl()
+                margin-left: 0
+        .txtBox
+            width: 100%
+            @include xl()
+                @include flexbox(row, center , center )            
+                section
+                    width: 600px
+        
+        &::before
+            content:" "
+            position: absolute
+            top: 0
+            left: 0
+            width:100%
+            height:100%
+            background-color: $mainColor
+            opacity: .8
+
+        &.bottomSpace::after
+            width: 100%
+            height: 500px
+            @include md()
+                height: 200px
+            
+            background-color:#fff
+            content: " "
+            position: absolute
+            bottom: 0
+
+    .bg2
+        background:$mainColor url('../images/bg1.jpg') center center no-repeat
+        background-size: cover
+        position: relative        
+        
+        &::before
+            content:" "
+            position: absolute
+            top: 0
+            left: 0
+            width:100%
+            height:100%
+            background-color: #F9F6ED
+            opacity: .8
+
+    .imgBox
+        overflow: hidden
+        position: relative
+        width: 100%
+        padding-bottom: 60%
+        max-height: 180px
+        margin-bottom: 15px
+        img
+            @include imgCover()        
+
+    div.blocker                
+        &.block-1-1
+        &.block-1-2
+            .txtSub
+                max-width: 400px
+        &.block-1-3
+            background-color: $sub1Color
+            position: relative
+            .content
+                z-index: 2
+            &::before
+                content:" "
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                opacity: .1
+                z-index: 1
+                background-image: url('../images/bg1-3.jpg')
+                background-size: 1500px auto
+                background-position: center 180%
+                background-repeat: no-repeat
+                               
+        &.block-1-5   
+
+        &.block-2-2
+            .content
+                align-items: flex-start
+            
+    .panorava
+        width: 100%
+        height: 100%
+        img
+            @include imgCover()              
+                
+        
+    .gallery.main .swiperProdThumb
+        
+        .swiper-slide 
+            @include md()
+                width: 330px
+                height: 170px
+
+    .gallery.sub .swiperProdThumb
+        margin: 0
+        .swiper-slide 
+            width: 33.33%
+            @include md()
+                height: 170px
+
+        
+
+    @include footer()
+//conponents
+.btn1

@@ -1,0 +1,54 @@
+@mixin mainMenu()
+    .mainMenu 
+        font-family: Noto Serif TC
+        background-color: #fff
+        width: 100%
+        height: 45px
+        @include flexbox(row, center, center)
+        .menuContainer
+            display: flex
+            justify-content: space-between
+            max-width: $maxWidth
+
+            ul
+                padding: 0
+                margin: 0
+                width: 100%
+                max-width:$maxWidth
+                display: flex
+                justify-content: space-between
+                align-items: center
+                li
+                    list-style: none
+                    text-align: center                
+                    flex:0 1 100%
+
+           
+        ul
+            li
+                margin-right: 40px
+
+                a
+                    color: $menuFontColor
+                    text-decoration: none
+                    transition: .3s
+                    font-weight: 100
+                    position: relative  
+                    white-space: nowrap
+
+                    &::after
+                        transition: .3s
+                        position: absolute
+                        background-color: #6a5f5f
+                        content: " "
+                        left: 0
+                        bottom: -5px
+                        width: 0%
+                        height: 3px  
+                    
+                a:hover, a.on                            
+                    color: $fontHoverColor
+                    position: relative
+                        
+        @include lg 
+            display: none

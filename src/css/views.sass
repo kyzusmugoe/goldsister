@@ -1,0 +1,44 @@
+//內文文章，editor為定義HTML編輯器基本標籤用的
+@import './editor.sass'
+
+    
+@mixin views()
+    .blocker
+        .views
+            @include flexbox(row, flex-start, flex-start)
+            flex-wrap: wrap
+
+            .article              
+                
+                figure
+                    width: 100%
+                    margin: 0
+                    &.left
+                        margin: 10px
+                        width: 50%
+                        float: left
+                    &.right    
+                        margin: 10px
+                        width: 50%
+                        float: right                    
+                    img
+                        @include imgCover()
+            
+            .article.editor
+                /*---EDITOR---*1
+                @include editor()
+                
+            .left 
+                flex: 0 1 calc(100% - 300px)
+                @include xl()
+                    flex: 0 0 100%
+                
+            .right 
+                flex: 0 0 calc(300px - 10px * 2)
+                padding:0 10px
+                @include xl()
+                    flex: 0 0 100%
+                    padding:0
+
+            
+            

@@ -1,0 +1,13 @@
+div.swiper.event
+  div.swiper-wrapper
+    - var n = 0;            
+    while n < 8
+      div.swiper-slide
+        div.signUp 10/50
+        figure(data-loop=n++)  
+          div.f-box      
+            -var imgName = "event-"+ (n%4 +1)+".jpg"
+            img.preload(src=imgPath+imgName loading="lazy" rel="preload")     
+          figcaption 
+            span.main 2021 苗栗陶藝術節!{n}
+            span 一月行程

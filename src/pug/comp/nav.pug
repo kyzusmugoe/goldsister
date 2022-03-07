@@ -1,0 +1,35 @@
+div.tools
+	nav.navBar
+		div.navContainer
+			div.leftBox 
+			
+			div.centerBox
+				img(loading="lazy" src=imgPath+"logo.svg" class="preload" rel="preload" )   
+				//-include menu.pug
+				
+			div.rightBox
+				div.m_toggle.kart.k_btn.m_toggle 
+					i.fa.fa-shopping-cart(aria-hidden="true")
+					span.counter 99
+
+				if page == "index"
+					div.m_toggle.login_btn
+						i.fa.fa-user(aria-hidden="true")
+				else
+					div.m_toggle.u_btn
+						i.fa.fa-user(aria-hidden="true")
+
+				div.m_menu
+					div 
+					div 
+					div  
+	div.mainMenu
+		div.menuContainer
+			include menu.pug
+						   
+	include mobileMenu.pug
+	include kartMenu.pug
+	include userMenu.pug
+	include loginMenu.pug
+	include registMenu.pug
+	include forgetMenu.pug

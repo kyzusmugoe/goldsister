@@ -1,0 +1,19 @@
+div.forgetMenu.modalMenu
+    div(class="box")
+        div(class="header")
+            h2(class="title") 忘記密碼
+            span.close
+                img(src="./images/close.svg", alt="", srcset="")
+        
+        div.scrollBox            
+            p 輸入註冊時的帳號與email，重新設定密碼
+            div.login
+                div.form-group.vertical 
+                    input.form-control(placeholder="請輸入帳號")
+                    input.form-control(placeholder="請輸入電子信箱")
+                    input.form-control(placeholder="請輸入驗證碼")
+                    img(src="./images/code.png", alt="", srcset="")
+                    
+            div.btns
+                a.btn.sub.login_btn 回到登入
+                a.close.btn.red.fill 送出

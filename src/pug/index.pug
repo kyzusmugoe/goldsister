@@ -1,0 +1,102 @@
+﻿include ./comp/config.pug
+
+doctype html
+html
+  include ./comp/header.pug
+  body
+    +nav("index")
+    
+    div(class="mainBanner")
+      include ./comp/banner.pug
+
+    div.bg1
+      div.blocker.block-1-1.underLine
+        div.content.LR 
+          div
+            div(class="photo left ")
+              img.zoomImg.pswp-btn( loading="lazy", src=imgPath+"p1-1.jpg", data-pswpsrc=`${imgPath+"p1-1.jpg"}`) 
+              
+          div.txtBox
+            section.leftSpace
+              div.txtSub 一方生態盈溢、蟲鳴鳥叫的莊園，
+                br
+                | 還有一缸缸天然釀造的手工醋
+              div.txtMain 美，就在日常生活的
+                br
+                | 點點滴滴裡
+              a.btn.white More
+              
+      div.blocker.block-1-2
+          div.content.LR.reverse
+            div
+              div(class="photo right ")
+                img.zoomImg.pswp-btn( loading="lazy", src=imgPath+"p1-2.jpg", data-pswpsrc=`${imgPath+"p1-2.jpg"}`) 
+            div.txtBox
+              section
+                div.txtSub 只要邊角料就夠用了，人生沒有想賺大錢，肉幼仔就可以過得很好
+                div.txtMain 喜酌人生的
+                  br
+                  | 酸甘蜜甜
+                a.btn.white More
+
+
+
+    div.blocker.fitBorder.block-1-3
+      div.content
+        div(class="title")
+          span.main 商品
+          span 一缸缸的「唐婆醋」，是藝術、人文、科技的結晶.
+        div.horiBox
+          div.horiBn
+            div.pic.zoomBgImg.pswp-btn(data-pswpsrc=`${imgPath+"prod-1.jpg"}`, style=`background-image:url(${imgPath+"prod-1.jpg"})`) 
+            div.pic.zoomBgImg.pswp-btn(data-pswpsrc=`${imgPath+"prod-2.jpg"}`, style=`background-image:url(${imgPath+"prod-2.jpg"})`) 
+          div.horiList
+            - var n = 0;            
+            while n < 3
+              -var imgName = "prod-"+ (n%3 +3)+".jpg"
+              div.box(data-loop=n++) 
+                div.icon
+                  i.fa.fa-shopping-cart(aria-hidden="true")     
+                div.pic(style=`background-image:url(${imgPath+imgName})`) 
+                div.txt
+                  span.main 唐婆醋/愛吃醋禮盒!{n}
+                  span.money NT$ 1,180
+        div.footer
+            a.btn.main.fill More
+
+    div.bg1.bottomSpace
+      div.blocker.fitBorder.block-1-4
+        div.content
+          div(class="title")
+            span.main.event 導覽 / 預約
+            span 生活藝術化 藝術生活化
+          div.eventBox
+            div.eventBn
+              div.pic.zoomBgImg.pswp-btn(data-pswpsrc=`${imgPath+"event-1.jpg"}`, style=`background-image:url(${imgPath+"event-1.jpg"})`) 
+            div.eventList
+              - var n = 0;            
+              while n < 3
+                -var imgName = "event-"+ (n%3 +1)+".jpg"
+                div.box(data-loop=n++)                 
+                  div.pic(style=`background-image:url(${imgPath+imgName})`) 
+                  if n == 1
+                    div.signUp.full 額滿
+                  else
+                    div.signUp 10/50
+                  div.txt
+                    span.main 木刻作品導覽!{n}
+                    span 2022/01/30
+                    span PM0200 ~ PM0600
+          div.footer
+            a.btn.main.fill More
+    
+    include ./comp/pswp.pug
+    include ./comp/footer.pug
+    
+
+
+
+
+    
+    
+    

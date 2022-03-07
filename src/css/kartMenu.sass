@@ -1,0 +1,148 @@
+@mixin kartMenu()
+    div.kartMenu, div.formMenu    
+        width: 100%
+        height: 100%   
+        @include flexbox(column, flex-start, center)
+        position: fixed
+        background-color: rgba(0, 0, 0, .8)
+        opacity: 0        
+        transform: translate3d(0, -120%, 0)        
+        z-index: -1
+
+        
+            
+        div.header
+            font-family: Noto Serif TC
+            width: 100%
+            @include flexbox(row, center, center)
+            position: relative
+            .close
+                position: absolute
+                //top:5px
+                //right:5px
+                top: -20px
+                right: 0
+                color:#aaa
+                font-size: 2em
+            .close:hover
+                color: $mainColor 
+
+        div.box
+            transform: scaleY(0)
+            > div
+                padding:5px 0  
+            width: 100%
+            max-width: 640px
+            box-shadow: 0 3px 3px rgba(0, 0, 0, .3)
+            background-color:#fff 
+            padding: 25px 25px 50px 25px
+            border-top: 3px solid $mainColor 
+            @include flexbox(column, center, center)
+            .header
+                margin-bottom: 20px
+            .row
+                width: 100%
+                border-bottom:1px solid #ccc 
+                padding-bottom: 10px
+                h2.title
+                    color:#333  
+                @include flexbox(row, center, center)
+                @include md()
+                    flex-wrap: wrap
+                .left, .right
+                    
+                    @include flexbox(row, center, center)
+                    @include md()
+                        flex:0 0 100% 
+                .left
+                    flex:0 0 70%
+                    @include md()
+                        flex:0 0 100%
+                    .thumb
+                        width: 100px
+                        height: 100px
+                        border:1px solid #eee 
+                        img
+                            @include imgCover()
+                    .name
+                        width: 100%
+                        max-width: 180px
+                        text-align: center
+                    .money
+                        width: 100%
+                        max-width: 110px
+                        text-align: center
+                a
+                    text-decoration: none
+                    color:#999
+                .right
+                    flex:0 0 30% 
+                    @include md()
+                        flex:0 0 100%
+                    .counter
+                        @include flexbox(row, center, center)
+                        border: 1px solid #ccc
+                        border-radius: 5px
+                        input[type="number"]
+                            border: none
+                            width: 40px
+                            font-size: 1.2em
+                            text-align: center
+                            padding-left: 9px
+                        .minus, .plus
+                            @include flexbox(row, center, center)
+                            height: 40px
+                            padding: 0 10px
+                            border: 1px solid $mainColor
+                            background-color: $mainColor
+                            color: #fff
+                        .minus:hover,.minus:active, .plus:hover, .plus:active
+                            color: $mainColor
+                            background-color: #fff
+                    .trash
+                        width: 31px
+                        text-align: center
+                        font-size: 1.5em
+                        color: $mainColor
+                    .trash:hover 
+                        color: #fff
+                        svg
+                            filter: drop-shadow(0 0 1px $mainColor)
+                        
+            button
+                font-size: 1em
+                width: 100px
+            
+        form
+            @include flexbox(column, flex-start, center)
+            input, img
+                margin: 10px 0
+                padding: 5px
+                border-radius: 5px
+
+            img
+                width: 150px
+
+        div.footer
+            margin: 20px
+
+    div.formMenu
+        z-index: 1
+        padding-top: 60px
+        
+
+    div.kartMenu.on,  div.formMenu.on
+        overflow-y: scroll
+        transition: 500ms ease
+        transform: translate3d(0, 0, 0)
+        opacity: 1        
+        div.box
+            transform: scaleY(1)
+
+    div.kartMenu.off,  div.formMenu.off
+        transition: 300ms ease
+         transform: translate3d(0, -120%, 0)
+        opacity: 0
+        div.box
+            transform: scaleY(0)
+    

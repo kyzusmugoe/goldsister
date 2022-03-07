@@ -1,0 +1,15 @@
+div.swiper.shop
+  div.swiper-wrapper
+    - var n = 0;            
+    while n < 8
+      div.swiper-slide
+        figure(data-loop=n++)  
+          div.f-box      
+            -var imgName = "shop"+ (n%4 +1)+".jpg"
+            img.preload(src=imgPath+imgName loading="lazy" rel="preload")     
+          figcaption 
+            div.icon 
+              i.fa.fa-shopping-cart(aria-hidden="true")
+            span.main 柴燒小茶杯!{n}
+            p 以手拉坯成型，上釉後燒製瓦斯窯燒至1200度以上。 因釉色變化大，使每個杯子顏色呈現不同風貌 
+            div.money NT$ 5,999

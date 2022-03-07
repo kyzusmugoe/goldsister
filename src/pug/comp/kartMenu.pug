@@ -1,0 +1,29 @@
+div(class="kartMenu")
+    div(class="box")
+        div(class="header")
+            h2 購物車
+            span.close
+                img(src="./images/close.svg", alt="", srcset="")
+        div.scrollBox
+            - var i =1
+            while i <= 14
+                div(class="row" data-loop=i++)
+                    div(class="left")
+                        div.thumbBox
+                            - var img = `background-image:url(./images/shop${(i % 4)+1}.jpg)`
+                            div.thumb(style=img)
+                        div.txt
+                            div.name 唐婆醋/愛吃醋禮盒
+                            div.money $1,180               
+                    div(class="right")
+                        div.quantity-row
+                            div.minus
+                                i.fa.fa-minus(aria-hidden="true")
+                            input.quantity_item(value="3")
+                            div.plus
+                                i.fa.fa-plus(aria-hidden="true")
+                        div.del
+                            a.trash
+                                i(class="fa fa-trash" aria-hidden="true")
+        div.footerBox.w-100
+            a.btn.main.fill(href="./cart_list.html", class="btn orange") 結帳

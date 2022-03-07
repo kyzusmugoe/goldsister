@@ -1,0 +1,61 @@
+@mixin userMenu()
+    div.userMenu 
+        font-family: Noto Serif TC  
+        display: none     
+        position: absolute
+        top: 40px
+        right: -100px
+        padding: 25px 10px
+        @include xxl()
+            right: -5px
+        @include xl()
+            right: 5px
+        @include lg()
+            top: 45px
+            right: -50px
+        @include xs()
+            right: -50px
+        transform-origin: top center
+        transform: scaleY(0)
+        background-color: #fff
+        width: 160px
+        box-shadow: 0 3px 3px rgba(0, 0, 0, .3)
+        border-top: 3px solid $mainColor        
+        @include flexbox(column, center , center)
+        opacity: 0
+        h2.title
+            color:#333                
+            margin-bottom: 15px 
+        ul, li
+            margin:0
+            padding:0
+        li
+            list-style: none
+            padding-bottom: 5px
+            margin-bottom: 10px
+            border-bottom: 1px solid #eee            
+        a
+            display: block
+            width: 100%
+            text-decoration: none
+            color:#999
+        a:hover
+            color:$mainColor
+            transition: .4s
+        .signout
+            button
+                font-size: 1em
+                width: 100px
+                
+    div.userMenu.on
+        transition: 200ms ease  
+        display: flex
+        opacity: 1        
+        transform: scaleY(1)
+    
+    div.userMenu.off
+        transition: 200ms ease  
+        display: flex
+        opacity: 0        
+        transform: scaleY(0)
+    

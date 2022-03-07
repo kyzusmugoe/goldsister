@@ -1,0 +1,170 @@
+@mixin stepLineStyle()
+    position: absolute
+    content: " "
+    width: 100%
+    height: 5px
+    top: 30px
+    background-color: #aaa
+
+@mixin stepper()
+    .step_bar
+        width: 100%
+
+        .step-col
+            @include flexbox(column, flex-start, center)
+            
+        .step-number
+            @include flexbox(row, center, center)
+            color:#fff
+            font-size: 2em
+            width:60px
+            height:60px
+            border-radius:30px
+            z-index: 1
+
+        .step-number.bg-done
+            background-color: $mainColor
+
+        .step-number.bg-gray
+            background-color: #aaa
+
+        .step-line
+            //線段相關
+            .step-col
+                position: relative
+                &.active
+                    &::before
+                        left: -50%
+                        @include stepLineStyle()
+
+                &.last 
+                    &::before
+                        left: -50%
+                        @include stepLineStyle()
+
+                &.done + .step-col
+                    &::before
+                        background-color: $mainColor
+            //文字
+            
+            .step-number + .step-title
+                color:#aaa
+                margin: 15px 0 
+
+            .step-number.bg-done  + .step-title
+                color:#000
+
+@mixin kart()
+    .cart_item, .cart_title
+        width: 100%
+   
+    .cart_title
+        background: #FFF
+        border-bottom: solid 2px #CCC
+        margin: 0
+
+    .cart_item
+        position: relative
+        background: #FFF
+        border-bottom: solid 1px #CCC
+        display: flex
+        justify-content: right
+        align-items: center
+        margin: 0
+
+        
+        >div
+            padding:0
+        .price
+            margin-right: 10px
+            @include md()
+                padding: 10px 0
+        .trash svg 
+            font-size: 1.5em
+            color: $mainColor
+
+
+        a.cart_list.name 
+            display: block
+            color: #333
+            padding: 20px
+            font-size: 16px
+
+    
+
+    .thumbBox
+        min-width: 80px
+        min-height: 80px
+        max-width: 400px
+        max-height: 400px
+        //width: 100%
+        //height:100%
+
+    .thumb
+        background-size: cover
+        background-position: center
+        position: relative
+        width: 100%
+        padding-top: 100%
+
+    .shopping_total
+        .total_1.row, .total_2.row
+            padding: 10px
+            border-top: solid 1px #f2f2f2
+            margin: 0
+        .amount
+            color: $mainColor
+        .freight
+            color: #658837
+        .discount
+            color: $mainColor
+        .final_amount
+            color: $mainColor
+            font-weight: 700
+
+    .more_bar
+        @include flexbox(row, center, center)
+        a.btn
+            max-width: 170px
+            margin:10px
+            svg
+                margin:0 5px
+    .title_bar 
+        .sub_title 
+            position: relative
+            color: $mainColor
+            font: 500 24px/1.4em 'Noto Serif TC', serif
+            margin-bottom: 1rem
+            svg
+                margin-right: 10px
+                
+    .blocker .content .shopping_recipient
+        padding: 20px 0
+        p
+            margin: 15px 0
+            font-size: 15px
+            line-height: 1.4em
+            color: #666
+        
+    .tag_list .item 
+        font-size: 14px
+        line-height: 1.6em
+        background: $mainColor
+        padding: 5px 10px
+        color: #FFF
+        border-radius: 4px
+        margin: 2px
+    
+
+    input.is-error, textarea.is-error, select.is-error 
+        background-color: rgba(238, 36, 85, 0.05)
+        border: 1px solid rgba(238, 36, 85, 0.5)
+    
+
+
+@mixin purchase()
+    @include stepper()
+    @include kart()
+    
+    
+    

@@ -1,0 +1,224 @@
+
+
+include ./comp/config.pug
+doctype html
+html
+  include ./comp/header.pug
+  body    
+    +nav()
+   
+    div.blocker.top.white       
+      div.content.autoHight
+        div.pageTitle 
+          h1 預約管理 
+        
+        div.w-100
+          div
+            div.step_bar
+              div.step-line.row
+                div.col-4.step-col.first.done
+                  div.step-number.bg-done 1
+                  div.step-title 確認訂購明細
+                div.col-4.step-col.active
+                  div.step-number.bg-done 2
+                  div.step-title 填寫訂購資料
+                div.col-4.step-col.last
+                  div.step-number.bg-gray 3
+                  div.step-title 完成訂購
+            
+            div.row.cart_title
+              div.col-xl-6.d-none.d-xl-block.text-center 商品
+              div.col-xl-2.d-none.d-xl-block.text-end 小計
+
+            div.row.cart_item
+              div.col-xl-2.col-sm-2
+                a.cart_list.pop_btn(href="#", data-pagename="shop_view")
+                    - var img = `background-image:url(./images/shop1.jpg)`
+                    div.thumb(style=img)
+              
+              div.col-xl-6.col-sm-6
+                a.cart_list.name 唐婆醋/愛吃醋禮盒
+                  div NT$ 
+                    b.price 1,180
+                  span 數量:2
+
+              div.col-xl-3.col-sm-3.text-end.total_list
+                span.total(data-name="小計")
+                  div NT$ 
+                    b.price 2,360
+              div.col-xl-1.col-sm-1.text-center
+
+         
+            div.shopping_total
+              div.total_1.row
+                div.col-sm-9.col-9.text-end 共 
+                  span 2 
+                  | 件 &nbsp; 商品金額
+              
+                div.col-sm-2.col-3.text-end NT$ 
+                  span.amount 2,360
+            
+              div.total_1.row
+                div.col-sm-9.col-9.text-end 運費
+                div.col-sm-2.col-3.text-end NT$ 
+                  span.discount 120
+
+              div.total_1.row
+                div.col-sm-9.col-9.text-end XX折扣
+                div.col-sm-2.col-3.text-end - NT$ 
+                  span.discount 20
+
+              div.total_2.row
+                div.col-sm-9.col-9.text-end 總計
+                div.col-sm-2.col-3.text-end NT$ 
+                  span.final_amount 2.460
+
+            
+            div.shopping_recipient
+              div.title_bar.m-0.mb-3
+                div.sub_title
+                  i.fa.fa-credit-card 
+                  | 付款方式
+
+              div.form-check.mb-2.border-bottom
+                label.form-check-label
+                  input.form-check-input(name="r1",type="radio", value="")
+                  h4 線上刷卡
+
+                p 本交易須通過Visa/MasterCard/JCB信用卡3D驗證 The transaction has to pass 3D verification by Visa, MasterCard, and JCB card.
+
+              div.form-check.mb-2
+                label.form-check-label
+                  input.form-check-input(name="r1" type="radio" value="")
+                  h4 網路ATM
+                    
+                p 持以上銀行發行之金融卡並選擇該銀行，當使用相同網路銀行繳費即免跨行手續費；若選擇其他網路銀行須支付跨行手續費 15 元
+                  br
+                  | i 例：使用台灣銀行金融卡時，選擇台灣銀行WebATM轉帳享 0 元手續費；選擇非台灣銀行WebATM轉帳，需支付收取 15 元手續費 / 筆。
+
+            div.shopping_recipient
+              div.title_bar.m-0.mb-3
+                div.sub_title
+                  i.fa.fa-user(aria-hidden="true")
+                  | 收件人資料
+
+              div.row
+                div.col-lg-6.mb-3
+                  div.form-group
+                    label 姓名
+                      span.text-danger *
+                    input.form-control(type="text", value="王大明")
+                  
+                div.col-lg-6.mb-3
+                  div.form-group
+                    label 電話
+                      span.text-danger *
+                    input.form-control(type="tel", value="0910090090")
+                  
+                div.col-lg-12.mb-3
+                  div.form-group
+                    label 信箱
+                      span.text-danger *
+                    input.form-control.is-error(type="tel", value="XXX@XXX.com")
+                    span.form-text.err ERROR TIPS 
+
+                div.col-lg-12.mb-3
+                  div.form-group
+                    label 地址
+                    span.text-danger *
+
+                  div.row
+                    div.col-4.mb-3
+                      input.form-control(type="text" name="name" placeholder="郵遞區號")
+                  
+                    div.col-4.mb-3
+                      select#City.form-select(name="City" data-cityid="0")
+                        option(value="3") 臺北市
+                        option(value="4") 臺中市
+                        option(value="5") 基隆市
+                        option(value="6") 臺南市
+                        option(value="7") 高雄市
+                        option(value="8") 新北市
+                        option(value="9") 宜蘭縣
+                        option(value="10") 桃園市
+                        option(value="11") 嘉義市
+                        option(value="12") 新竹縣
+                        option(value="13") 苗栗縣
+                        option(value="14") 南投縣
+                        option(value="15") 彰化縣
+                        option(value="16") 新竹市
+                        option(value="17") 雲林縣
+                        option(value="18") 嘉義縣
+                        option(value="19") 屏東縣
+                        option(value="20") 花蓮縣
+                        option(value="21") 臺東縣
+                        option(value="22") 金門縣
+                        option(value="23") 澎湖縣
+                        option(value="24") 連江縣
+                        
+                    div.col-4.mb-3
+                      select#City.form-select(name="Region" data-cityid="0")
+                        option(value="1") 松山區
+                        option(value="2") 大安區
+                        option(value="3") 中正區
+                        option(value="4") 中正區
+                        option(value="5") 萬華區
+                        option(value="6") 大同區
+                        option(value="7") 中山區
+                        option(value="8") 文山區
+                        option(value="9") 南港區
+                        option(value="10") 內湖區
+                        option(value="11") 士林區
+                        option(value="12") 北投區
+                        option(value="13") 信義區
+
+                    div.col-12.mb-3
+                      input.form-control(name="Address" placeholder="請輸入地址" type="text" value="敦化南路一段187巷23號")
+                    
+                    div.col-lg-4.mb-3
+                      div.form-group
+                        label 載具編碼
+                        input.form-control(type="text" placeholder="請輸入載具編碼(非必填)")
+                      
+                    
+                    div.col-lg-4.mb-3
+                      div.form-group
+                        label 收貨日期
+                          span.text-danger * 
+                        input.form-control(type="date" class="")
+                      
+                    
+                    div.col-lg-4.mb-3
+                      div.form-group
+                        label 收貨時間
+                          span.text-danger *
+                        select#body_UI_ddlReceiptTime.form-select(name="ctl00$body$UI_ddlReceiptTime"  data-cityid="0")
+                          option(value="1") 上午( 10-13 )
+                          option(value="2") 下午( 13-18 )
+                          option(value="3") 晚上( 18-21 )                      
+                    
+                    div.col-12
+                      div.form-group
+                        label 備註
+                        textarea.form-control(rows="3" placeholder="留言...")
+
+          div.more_bar.center.py-2.py-xl-4
+            a.btn_send.btn.main.leftIcon( href="./cart_list.html") 
+              i.fa.fa-chevron-left(aria-hidden="true")
+              | 上一步 
+            a.btn_send.btn.main.rightIcon.fill( href="./cart_done.html") 付款
+              i.fa.fa-chevron-right(aria-hidden="true")
+
+    include ./comp/footer.pug
+    
+
+
+
+
+    
+    
+    
+
+    
+    
+    
