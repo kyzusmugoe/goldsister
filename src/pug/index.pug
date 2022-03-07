@@ -9,22 +9,15 @@ html
     div(class="mainBanner")
       include ./comp/banner.pug
 
-    div.bg1
-      div.blocker.block-1-1.underLine
-        div.content.LR 
-          div
-            div(class="photo left ")
-              img.zoomImg.pswp-btn( loading="lazy", src=imgPath+"p1-1.jpg", data-pswpsrc=`${imgPath+"p1-1.jpg"}`) 
-              
-          div.txtBox
-            section.leftSpace
-              div.txtSub 一方生態盈溢、蟲鳴鳥叫的莊園，
-                br
-                | 還有一缸缸天然釀造的手工醋
-              div.txtMain 美，就在日常生活的
-                br
-                | 點點滴滴裡
-              a.btn.white More
+    div.blocker.block-1-1.underLine
+      div.content
+        div.gridBox
+          div.b1(style="background-image:url(./images/index-1.png)")
+          div.b2(style="background-image:url(./images/index-2.png)")
+          div.b3(style="background-image:url(./images/index-3.png)")
+          div.b4(style="background-image:url(./images/index-4.png)")
+
+          
               
       div.blocker.block-1-2
           div.content.LR.reverse
