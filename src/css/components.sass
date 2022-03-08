@@ -147,7 +147,8 @@
         transform: translate3d(0, -100%, 0)
 
     .money
-        color: $mainColor
+        //color: $mainColor
+        color: $moneyColor
         font-family: Open Sans
         font-size: 18px
         font-style: normal
@@ -201,8 +202,8 @@
     
 @mixin icon()
     div.icon
-        width: 40px
-        height: 40px
+        width: 26px
+        height: 26px
         position: absolute
         top: 10px
         right: 10px
@@ -211,10 +212,11 @@
         @include flexbox(row, center, center)
         transition: .2s        
         border:1px solid  $mainColor
+        border-radius: 15px
         
         svg
             color: white
-            font-size: 1.2em
+            font-size: 15px
         &:hover
             background-color: #fff
             svg

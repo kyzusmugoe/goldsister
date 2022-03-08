@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal } from 'bootstrap';
-import fontawsome from './fontawsome';
-import photoSwiper from './photoSwiper';
+import fontawsome from './app/fontawsome';
+import photoSwiper from './app/photoSwiper';
 
 import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/light.css");
@@ -16,14 +16,13 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/thumbs';
 import 'swiper/css/zoom';
 
-import "../css/main.sass"
+import "./css/main.sass"
 
 
-import { init as initParallaxScrolling } from "./ParallaxScrolling"
-import Pager from "./Pager"
+import { init as initParallaxScrolling } from "./app/ParallaxScrolling"
+import Pager from "./app/Pager"
 
 fontawsome();
-
 photoSwiper()
 
 
@@ -54,15 +53,25 @@ const swiperBanner = new Swiper('.mainBanner .swiper', {
 
 //對應contentSwiper.sass
 const swiperShop = new Swiper('.swiper.shop, .swiper.event', {
-    modules: [Lazy],
+    modules: [Lazy, Pagination],
     slidesPerView: 'auto',
+   
     pagination: {
         el: '.swiper-pagination',
     },
     scrollbar: {
         el: ".swiper-scrollbar"
     },
+    spaceBetween: 0,
+    breakpoints: {
+        // when window width is >= 320px
+        414: {
+          spaceBetween: 20
+        }
+    },
+    
 });
+
 
 type gallaryObj = {
     name: string

@@ -1,0 +1,74 @@
+/*
+    parent use: 
+        blocker.sass
+    
+@mixin horiBox()
+    .horiBox            
+        width: 100%
+        //margin-bottom: 25px
+        @include md()
+            overflow-x: scroll
+        .horiList
+            display: inline-flex
+            flex-wrap: wrap
+            gap: 20px
+            width: calc(100% + 20px)
+            @include md()
+                width: fit-content
+                flex-wrap: nowrap
+            .box
+                @include flexbox(column, center, flex-end) 
+                flex-basis: calc(20% - 20px)
+                &.num4                      
+                    flex-basis: calc(25% - 20px)
+                &.num3                      
+                    flex-basis: calc(33.33% - 20px)
+                position: relative
+                overflow: hidden
+
+                .icon
+                    @include flexbox(row, center, center)   
+                    z-index: 10
+                    top:5px
+                    right:5px
+                    position: absolute
+                    background-color: $mainColor 
+                    width: 30px
+                    height: 30px
+                    transition: .4s
+                    border-radius: 15px
+                    svg
+                        color:#fff
+                    &:hover, &:active
+                        background-color: $subColor
+                        color:#fff
+                .pic
+                    width: 100%
+                    padding-bottom: 100%
+                    position: relative
+                    background-position: center
+                    background-size: cover   
+
+                    transform: scale(1)
+                    transition: transform 0.8s linear
+                    -o-transition: transform 0.8s linear
+                    -ms-transition: transform 0.8s linear
+                    -moz-transition: transform 0.8s linear
+                    -webkit-transition: transform 0.8s linear
+                    &:hover
+                        transform: scale(1.1)
+
+                .txt
+                    z-index: 10
+                    color: $fontDarkColor
+                    @include flexbox(column, center, center)
+                    width: 100%
+                    background-color: #fff
+                    padding:10px
+                
+
+                @include md()
+                    flex-basis: auto
+                    width: 250px
+                    height: 320px
+        

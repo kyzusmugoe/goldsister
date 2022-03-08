@@ -1,8 +1,36 @@
-div.swiper.sub
-    div.swiper-wrapper
-        - var n = 0;            
-        while n < 10
-            div.swiper-slide(data-loop=n++)
-                div.swiper-zoom-container
-                    -var imgName = "shop"+ (n%5 +1)+".jpg"
-                    img.preload(src=imgPath+imgName loading="lazy" rel="preload" style="width:100%")
+//-首頁內容的兩個Swiper
+if name == 'event'
+    div.swiper.event
+        div.swiper-wrapper
+            - var n = 0;            
+            while n < 6
+                div.swiper-slide
+                    figure(data-loop=n++)  
+                        div.f-box      
+                            -var imgName = "index-event-"+ (n%3 +1)+".png"
+                            img.preload(src=imgPath+imgName loading="lazy" rel="preload") 
+                        figcaption 
+                            div.icon 
+                                i.fa.fa-shopping-cart(aria-hidden="true")
+                            span.date 2022.01.23
+                            span.main 111年度竹東親子健行賞櫻趣
+                            span.info 🕗 活動時間：2/26(六)07:00~14:00
+                            span.info 📍 活動地點：竹東頭前溪河濱生態公園
+                             
+else
+    div.swiper.shop
+        div.swiper-wrapper
+            - var n = 0;            
+            while n < 8
+                div.swiper-slide
+                    figure(data-loop=n++)  
+                        div.f-box      
+                            -var imgName = "index-shop-"+ (n%4 +1)+".png"
+                            img.preload(src=imgPath+imgName loading="lazy" rel="preload") 
+                        
+                        figcaption 
+                            div.icon 
+                                i.fa.fa-shopping-cart(aria-hidden="true")
+                            span.main 【天然果乾】洛神花乾-好好曬日子
+                            div.money NT$ 5,999            
+        div.swiper-pagination

@@ -17,10 +17,12 @@ $hoverColor: #020201
 
 $iconColor: #666
 $menuFontColor:#666
+$moneyColor:#000
 /*global config end*/
 
 //@import './config.sass'
 @import './nav.sass'
+@import './swiper.sass'
 @import './mobileMenu.sass'
 @import './modalMenu.sass'
 //@import './userMenu.sass'
@@ -31,7 +33,7 @@ $menuFontColor:#666
 @import './components.sass'
 @import './contentSwiper.sass'
 @import './footer.sass'
-@import './cards.sass'
+//@import './cards.sass'
 @import './views.sass'
 @import './gallery.sass'
 @import './purchase.sass'
@@ -127,7 +129,8 @@ body
     //@include userMenu()
     @include modalMenu()
     @include blocker()
-    @include cards()
+    @include swiper()
+    //@include cards()
     @include views()
     @include mainMenu
     @include banner

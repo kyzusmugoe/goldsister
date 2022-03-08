@@ -1,0 +1,84 @@
+
+@mixin swiper()
+    .content
+        
+        .swiper
+            width: 100%
+            max-width: 1200px
+
+            .swiper-slide
+                color: #000
+                display: flex
+                justify-content: center
+                align-items: center
+                position: relative
+                figure
+                    @include icon() // from component.sass
+                    @include flexbox(column, flex-start , center)
+                    margin: 0
+                    overflow: hidden                    
+                    width: 100%
+                    position: relative
+                    .f-box
+                        position: relative
+                        width: 100%
+                        padding-bottom: 100%
+                        overflow: hidden
+                        img
+                            position: absolute
+                            @include imgCover()
+                            transform: scale(1)
+                            transition: .8s
+                            &:hover
+                                transform: scale(1.1)
+                    figcaption
+                        @include flexbox(column, center, center)
+                        background-color: white
+                        width: 100%
+                        box-sizing: content-box 
+                        //color: #ffbcbc
+                        color: #000
+                            
+            .swiper-pagination
+                position: initial
+                @include flexbox(row, center, center)
+                margin-top:20px
+                .swiper-pagination-bullet
+                    opacity: 1
+                    background-color: $mainColor
+                    border: 2px solid $mainColor
+                    --swiper-theme-color: #fff
+                    box-sizing: content-box
+                .swiper-pagination-bullet-active
+                    --swiper-theme-color: none
+                    background: none
+
+
+        .swiper.shop
+            .swiper-slide
+                width: 100%
+                max-width: 280px
+                @include xs()
+                    width: 100%
+                    max-width: 414px        
+        .swiper.event
+            .swiper-slide
+                width: 100%
+                max-width: 380px
+                @include xs()
+                    width: 100%
+                    max-width: 414px                
+                figure
+                    .f-box
+                        padding-bottom: 60%
+                    /*
+                        .signUp
+                            @include flexbox(row, center, center)
+                            position: absolute
+                            top: 0
+                            left: 0
+                            background-color: $mainColor
+                            width: 100px
+                            height: 40px
+                        
+                        
