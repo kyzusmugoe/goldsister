@@ -1,0 +1,64 @@
+include ./comp/config.pug
+
+doctype html
+html
+  include ./comp/header.pug
+  
+
+  body
+    +nav("prod") 
+    +sideBanner('最新消息', '' ,'./images/prodBanner.png')
+    
+    div.blocker.block-2-1.underLine
+      div.content
+        div.txtBox
+          section
+            div.txtAMain Product
+            //-
+                div.txtA2Main 視覺與味覺的交錯，讓水果的鮮美滋味在你我口中蔓延.... 一包滿滿台灣風味的禮物! 隨時、隨地享用!
+                div.txtASub 阿金姐為善不落人後，不僅以實際行動支持在地酸桔農民，與信任的農友長達十餘年的配合契種，另外還有與新竹世光教養院合作，讓院生幫忙剝酸桔果皮，讓裡頭的身心障礙院生能夠有自己賺取收入的機會，也從中獲取成就感，一舉多得！「一路上，我們遇到太多貴人了！我們不是一定要成為多大的企業，而僅想以單純的小力量，回饋社會。」一席話道出品牌成立的初衷。阿金姐以善為出發點，盼能夠拋磚引玉，集結小愛化為大愛，讓台灣處處充滿溫情。
+    
+    div.blocker.bgColor
+      div.content.LR.prod.alginTop
+        div.left
+          ul.prodList
+            li 
+              a(href="prod_view.html") 柑橘系列
+            li 
+              a(href="prod_view.html") 梅子系列
+            li 
+              a(href="prod_view.html") 漬物系列
+            li 
+              a(href="prod_view.html") 果乾系列
+            li 
+              a(href="prod_view.html") 其他系列
+            li 
+              a(href="prod_view.html") 分享優惠組合
+            li 
+              a(href="prod_view.html") 客製化禮盒
+        div.right
+          div.cards.prod
+            - var n = 0;            
+            while n < 12
+              div
+                a(href="./prod_view.html")
+                  figure.shop(data-loop=n++)  
+                    -var imgName = "news-"+ (n%4+1)+".jpg"
+                    div.f-box(style={'background-image':'url('+imgPath+imgName+')'})         
+                    figcaption
+                      div.cardCat 天然果乾
+                      div.cardTitle 洛神花乾-好好曬日子
+                      div.money NT$ 1,680
+        
+          div.footContainer
+            include ./comp/pager.pug
+                
+    include ./comp/footer.pug
+  
+
+
+
+
+    
+    
+    

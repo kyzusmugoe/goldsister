@@ -10,12 +10,27 @@ div.mainMenu.mainMenuTxt
                 a(href="./news.html" class="on") 最新消息
             else  
                 a(href="./news.html") 最新消息    
-        li 
+        li.subList
             if page=="prod"
-                a(href="./prod.html" class="on") 精選商品
+                a.on 精選商品                   
             else  
-                a(href="./prod.html") 精選商品
-            
+                a 精選商品
+            div.list
+                ul.prodList
+                    li 
+                        a(href="prod.html") 柑橘系列
+                    li 
+                        a(href="prod.html") 梅子系列
+                    li 
+                        a(href="prod.html") 漬物系列
+                    li 
+                        a(href="prod.html") 果乾系列
+                    li 
+                        a(href="prod.html") 其他系列
+                    li 
+                        a(href="prod.html") 分享優惠組合
+                    li 
+                        a(href="prod.html") 客製化禮盒
             //-
                 div
                     ul
@@ -36,7 +51,7 @@ div.mainMenu.mainMenuTxt
             else  
                 a(href="./kitchen.html") 創意廚房
         li 
-            if page=="contactUs"
-                a(href="./contactUs.html" class="on") 聯絡我們
+            if page=="contact"
+                a(href="./contact.html" class="on") 聯絡我們
             else  
-                a(href="./contactUs.html") 聯絡我們
+                a(href="./contact.html") 聯絡我們

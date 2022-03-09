@@ -15,12 +15,10 @@ import 'swiper/scss/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/thumbs';
 import 'swiper/css/zoom';
-
 import "./css/main.sass"
-
-
 import { init as initParallaxScrolling } from "./app/ParallaxScrolling"
 import Pager from "./app/Pager"
+
 
 fontawsome();
 photoSwiper()
@@ -174,3 +172,11 @@ const menus: menuObj[] = [
     { btn: ".user_btn", menu: ".userMenu", group: [".login_btn", ".user_btn"] },
 ]
 Pager(menus)
+//mobile_sub_menu
+
+document.querySelectorAll(".mobile .sub").forEach(item => {
+    item.addEventListener("click", (event: Event) => {
+        let _t: HTMLElement = event.currentTarget as HTMLElement;
+        _t.classList.toggle('on')
+    })
+})

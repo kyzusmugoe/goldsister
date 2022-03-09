@@ -9,7 +9,7 @@
         height: 100%        
         justify-content: flex-end
         transform: translate( calc( 100% + 300px ),0)
-        margin-top: -60px
+        margin-top: -85px
         
         @include lg()
             display: flex
@@ -36,7 +36,7 @@
 
                     width: 80%
 
-            .main
+            ul.main
                 a
                     @include flexbox(row, flex-start, flex-end)
                     font-size: 1.2em
@@ -46,6 +46,22 @@
                     text-decoration: none
             
             
+            .sub
+                // width: 260px
+                              
+                margin: 0 
+                ul.list
+                    display: none
+                    width: 260px
+                    border-top: 1px solid #fff
+                    margin-top: 16px
+
+            .sub.on
+                width: 182px 
+                border-bottom: none
+                ul.list
+                    display: block
+
             .scrollBox
                 width: 100%
                 height: calc(100vh - 80px)
@@ -57,7 +73,13 @@
             justify-content: space-around
             margin: 20px 20px
             svg
+                color: $mainColor
+                background-color: #fff
                 font-size: 1.5em
+                padding:15px
+                width: 20px
+                height: 20px
+                border-radius: 50%
             img
                 width: 30px
 

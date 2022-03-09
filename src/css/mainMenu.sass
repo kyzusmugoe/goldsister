@@ -7,46 +7,71 @@
         .menuContainer
             display: flex
             justify-content: space-between
-            max-width: $maxWidth
-
-            ul
-                padding: 0
-                margin: 0
-                width: 100%
-                max-width:$maxWidth
-                display: flex
-                justify-content: space-between
-                align-items: center
-                li
-                    list-style: none
-                    text-align: center                
-                    flex:0 1 100%
-
-           
-        ul
-            li
+            max-width: $maxWidth           
+        > ul
+            padding: 0
+            margin: 0
+            width: 100%
+            max-width:$maxWidth
+            display: flex
+            justify-content: space-between
+            align-items: center
+            > li
                 margin-right: 40px
-
-                a
-                    color: $menuFontColor
+                list-style: none
+                text-align: center                
+                flex:0 1 100%
+                > a
+                    color: #8E8E8E
                     text-decoration: none
-                    transition: .3s
+                    transition: color .3s ease,                    
                     position: relative  
                     white-space: nowrap
+                    &:hover, &.on                 
+                        color: #fff
+                        position: relative
+                        z-index: 2                
 
-                    &::after
-                        transition: .3s
+                    &::before, &::before
+                        transform-origin: left
+                        transition: transform .2s ease
+                        width: 100px
+                        height: 44px
+                        left: -20px
+                        top: -14px
+                        content: " "                       
                         position: absolute
-                        background-color: #6a5f5f
-                        content: " "
-                        left: 0
-                        bottom: -5px
-                        width: 0%
-                        height: 3px  
-                    
-                a:hover, a.on                            
-                    color: $fontHoverColor
-                    position: relative
+                        z-index: -1
+                        transform: scaleX(0) 
+                        background-color: $mainColor
+                
+                    &:hover::before, &.on::before
+                        transform: scaleX(1) 
+                
+        .subList 
+            color: #8E8E8E
+            position: relative 
+            .list
+                
+                transform: scaleY(0)
+                transform-origin: top
+                position: absolute
+                top: 32px 
+                z-index: 10
+                display: none
+                width: 200px
+                background-color: #fff
+                border: 1px solid #eee
+        
+        .subList:hover
+            .list
+                display: block
+                transition: transform .4s ease
+                transform: scaleY(1)
+                        
+            
+          
+                
                         
         @include lg 
             display: none

@@ -1,0 +1,110 @@
+include ./comp/config.pug
+
+doctype html
+html
+  include ./comp/header.pug
+  body    
+    +nav("")
+    +sideBanner('個人資料維護', '' ,'./images/index-3.png')
+
+    div.blocker.top.white            
+      div.content.autoHight
+        div.pageTitle 
+          h1 個人資料維護 
+        
+        div.box.personal
+          div.forms
+            div
+              form.basic(action="") 
+                h3 基本資料
+                div.form-group
+                  div
+                    label 姓名
+                    input.form-control(placeholder="王大明") 
+
+                  div
+                    label 信箱
+                    input.form-control(placeholder="ming.wang@gmail.com")
+
+                  div
+                    label 電話
+                    input.form-control(placeholder="0912345678")
+
+                  div.address
+
+                    label 地址
+                    div.line1
+                      input.form-control(placeholder="郵遞區號") 
+                      select#City.form-select(name="City" data-cityid="0")
+                        option(value="3") 臺北市
+                        option(value="4") 臺中市
+                        option(value="5") 基隆市
+                        option(value="6") 臺南市
+                        option(value="7") 高雄市
+                        option(value="8") 新北市
+                        option(value="9") 宜蘭縣
+                        option(value="10") 桃園市
+                        option(value="11") 嘉義市
+                        option(value="12") 新竹縣
+                        option(value="13") 苗栗縣
+                        option(value="14") 南投縣
+                        option(value="15") 彰化縣
+                        option(value="16") 新竹市
+                        option(value="17") 雲林縣
+                        option(value="18") 嘉義縣
+                        option(value="19") 屏東縣
+                        option(value="20") 花蓮縣
+                        option(value="21") 臺東縣
+                        option(value="22") 金門縣
+                        option(value="23") 澎湖縣
+                        option(value="24") 連江縣
+
+                      select#City.form-select(name="Region" data-cityid="0")
+                        option(value="1") 松山區
+                        option(value="2") 大安區
+                        option(value="3") 中正區
+                        option(value="4") 中正區
+                        option(value="5") 萬華區
+                        option(value="6") 大同區
+                        option(value="7") 中山區
+                        option(value="8") 文山區
+                        option(value="9") 南港區
+                        option(value="10") 內湖區
+                        option(value="11") 士林區
+                        option(value="12") 北投區
+                        option(value="13") 信義區
+
+                    div.iine2
+                      input.form-control(placeholder="敦化南路一段187巷23號") 
+
+                  div.footerBox
+                    a.btn.main.fill 確認修改
+              div
+                form.basic(action="")             
+                  h3 修改密碼
+                  div.form-group
+                    div
+                      input.form-control(type="password", placeholder="舊密碼")                
+                    div
+                      input.form-control(type="password", placeholder="新密碼")                
+                    div
+                      input.form-control(type="password", placeholder="新密碼-再次確認")          
+                  div.footerBox
+                    a.btn.main.fill 密碼修改
+        
+          div.menus
+             ul
+                li
+                    a(href="personal.html") 個人資料維護
+                li
+                    a(href="reserve.html") 預約管理
+           
+    include ./comp/footer.pug
+    
+
+
+
+
+    
+    
+    

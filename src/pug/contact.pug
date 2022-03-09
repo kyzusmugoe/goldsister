@@ -1,0 +1,55 @@
+include ./comp/config.pug
+
+doctype html
+html
+  include ./comp/header.pug
+  body    
+    +nav("contact")
+    +sideBanner('聯絡我們', '' ,'./images/contactBanner.jpg')
+    div.blocker.block-2-1.underLine
+      div.content
+        div.txtBox
+          section
+            div.txtAMain Contact Us
+            
+    div.blocker.block-5
+      div.content.LR
+        div
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.6341670678053!2d121.08867321535719!3d24.73943675618939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346847ef61ee9c91%3A0xc486faaf25511b6a!2z6Zi_6YeR5aeQ5bel5L2c5Z2K772c5omL5L2c6YaD6KO944CB5paw56u556u55p2x5Ly05omL56au!5e0!3m2!1szh-TW!2stw!4v1646843632923!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        div.contactForm
+          div
+            <div class="txt">
+            <div class="form-group mb-2">
+            <div class="txtA2Main">感謝您對阿金姐的支持，如果您有任何疑問或意見，歡迎填寫表單，我們將會儘速與您聯絡!</div>
+            <label>您的姓名 <span class="text-danger">*</span></label>
+            <input type="text" class="form-control is-error" placeholder="Name">
+            <span class="form-text err">ERROR TIPS 必填</span>
+            </div>
+            <div class="form-group mb-2">
+            <label>您的信箱 <span class="text-danger">*</span></label>
+            <input type="email" class="form-control is-success" placeholder="Email" value="123@123.com">
+            </div>
+            <div class="form-group mb-2">
+            <label>詢問內容  <span class="text-danger">*</span></label>
+            <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group mb-2">
+            <label>驗證碼 <span class="text-danger">*</span></label>
+            <label><img src="images/demo/code.png" alt=""></label>
+            <input type="text" class="form-control" placeholder="英文不分大小寫">
+            </div>
+            <div class="form-group">
+            <a href="#" class="btn main fill">送出</a>
+            </div>
+            </div>
+
+    include ./comp/pswp.pug
+    include ./comp/footer.pug
+    
+
+
+
+
+    
+    
+    

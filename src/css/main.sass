@@ -5,7 +5,7 @@ $blockerRadiusL: 100px
 $blockerRadiusS: 100px
 
 $fontColor: #fff
-$fontHoverColor: #e49856
+$fontHoverColor: #666
 $fontDarkColor: #464646 
 $mainColor: #D0A392 
 $subColor: #573313 
@@ -18,6 +18,7 @@ $hoverColor: #020201
 $iconColor: #666
 $menuFontColor:#666
 $moneyColor:#000
+$txtA2MainColor:#A56D57
 /*global config end*/
 
 //@import './config.sass'
@@ -33,13 +34,13 @@ $moneyColor:#000
 @import './components.sass'
 @import './contentSwiper.sass'
 @import './footer.sass'
-//@import './cards.sass'
+@import './cards.sass'
 @import './views.sass'
 @import './gallery.sass'
 @import './purchase.sass'
 @import './text.sass'
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;300;400;600&family=Noto+Serif+TC:wght@300;400;500;600&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@100;300;400;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Quicksand:wght@500&display=swap&display=swap')
 
 /*init*/
 @mixin flexbox($direction, $justifyContent, $alignItems)
@@ -130,7 +131,7 @@ body
     @include modalMenu()
     @include blocker()
     @include swiper()
-    //@include cards()
+    @include cards()
     @include views()
     @include mainMenu
     @include banner
@@ -138,13 +139,14 @@ body
     @include gallery()
     @include purchase()
     @include text()
-    
-    div.pageTitle
-        h1,h4
-            margin: 0
-        h4
-            color:#999    
-    
+    @include footer()
+    /*
+        div.pageTitle
+            h1,h4
+                margin: 0
+            h4
+                color:#999    
+        
     //微調區
 
 
@@ -154,13 +156,19 @@ body
         width: 100%
         padding-bottom: 60%
         max-height: 180px
-        margin-bottom: 15px
+        //margin-bottom: 15px
         img
             @include imgCover()        
 
+    
+    .mainBanner
+        margin-bottom: 80px
+        @include md()
+            margin-bottom: 40px
     div.blocker                
         &.block-1-1
             .content
+                //margin-bottom: 60px            
                 .gridBox
                     display: grid
                     width: 100%
@@ -206,30 +214,61 @@ body
                         grid-column-end: 10
                         grid-row-start: 7
                         grid-row-end: 10
-
-        &.block-1-2            
-        &.block-1-3                               
-        &.block-1-5  
-        &.block-2-2
+        &.block-1-2 
             .content
-                        
+                //margin-bottom: 60px           
+        &.block-1-3  
+            .content                             
+                //margin-bottom: 40px           
+        &.block-1-4
+            .content
+                //margin-bottom: 100px  
+                .certification
+                    width:100%
+                    max-width: 500px 
+                    @include flexbox(row,  space-between, center)
+                    .emblem
+                        height:150px
+                        @include md()
+                            height:100px
+                        @include flexbox(column, space-between, center)
+                        img
+                            width: 110px
+                            height: 110px
+                            @include md()
+                                width: 60px
+                                height: 60px
+                                
+        
+        &.block-2-1       
+        &.block-2-2       
+        &.block-2-3
+            img.about2
+                width: 100%
+                margin-bottom:30px
+                       
+        &.block-5
+            .content
+                .contactForm
+                    width: 100%
+                    @include flexbox(row, center, center)
+                    > div
+                        width: 100%
+                        max-width:  600px    
                 
-        
-    .gallery.main .swiperProdThumb        
-        .swiper-slide 
-            @include md()
-                width: 330px
-                height: 170px
+                                               
 
-    .gallery.sub .swiperProdThumb
-        margin: 0
-        .swiper-slide 
-            width: 33.33%
-            @include md()
-                height: 170px
+    /*
+        .gallery.main .swiperProdThumb        
+            .swiper-slide 
+                @include md()
+                    width: 330px
+                    height: 170px
 
-        
-
-    @include footer()
-//conponents
-.btn1
+    /*
+        .gallery.sub .swiperProdThumb
+            margin: 0
+            .swiper-slide 
+                width: 33.33%
+                @include md()
+                    height: 170px

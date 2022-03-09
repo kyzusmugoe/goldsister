@@ -1,0 +1,72 @@
+include ./comp/config.pug
+
+doctype html
+html
+  include ./comp/header.pug
+  body    
+    +nav("story")
+    +sideBanner('預約管理', '' ,'./images/index-event-3.png')
+
+    div.blocker.top.white          
+      div.content.autoHight
+        div.pageTitle 
+          h1 預約管理 
+        
+        div.box.personal
+          div.forms
+            form(action="") 
+              div.form-group
+                div.table-responsive
+                  div#main_block.left
+                    div.inner_box
+                      div.tab_scroll
+                        table.table
+                          thead
+                            tr 
+                            th 序號
+                            th 購買時間	
+                            th 預約狀態	
+                            th 取消預約
+                          tbody
+                            -var i=0
+                            while i < 4
+                              tr(data-loop=i++)
+                                td
+                                  span.high 
+                                    a(href="./order_tracking.html") ABS20220102P10010	
+                                td 2021/08/02	
+                                td 
+                                  if i==1
+                                      label.cancel 取消
+                                  if i==2
+                                      label.mute 已收貨
+                                  if i==3
+                                      label.checkin 待領取
+                                  if i==4
+                                      label.booked 準備中
+                                td
+                                  if i==1
+                                      a.btn.cancel.sm 取消
+                                  if i==2
+                                      a.btn.mute.sm 已收貨
+                                  if i==3
+                                      a.btn.checkin.sm 待領取
+                                  if i==4
+                                      a.btn.booked.sm 準備中
+                        p 沒有購買紀錄
+          div.menus
+             ul
+                li
+                    a(href="personal.html") 個人資料維護
+                li
+                    a(href="reserve.html") 預約管理
+           
+    include ./comp/footer.pug
+    
+
+
+
+
+    
+    
+    

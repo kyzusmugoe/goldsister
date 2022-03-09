@@ -1,7 +1,6 @@
 import { library, dom, IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { faUser, faShoppingCart, faPhoneAlt, faPlus, faMinus, faTrash, faTimes, faHeart, faPlayCircle, faExpand, faChevronLeft, faChevronRight, faCreditCard } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faFacebookSquare, faInstagram, faYoutube, faLine, faTwitter, faApple, faGoogle } from '@fortawesome/free-brands-svg-icons'
-
+import { faUser, faShoppingCart, faPhoneAlt, faPlus, faMinus, faTrash, faTimes, faHeart, faPlayCircle, faExpand, faChevronLeft, faChevronRight, faCreditCard, faStar } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faFacebookSquare, faFacebookF, faInstagram, faYoutube, faLine, faTwitter, faApple, faGoogle } from '@fortawesome/free-brands-svg-icons'
 
 export default () => {
     //font awsome
@@ -15,10 +14,12 @@ export default () => {
         faTimes as IconDefinition,
         faHeart as IconDefinition,
         faFacebook as IconDefinition,
+        faFacebookF as IconDefinition,
         faFacebookSquare as IconDefinition,
         faInstagram as IconDefinition,
         faYoutube as IconDefinition,
         faLine as IconDefinition,
+        faStar as IconDefinition,
         faPlayCircle as IconDefinition,
         faExpand as IconDefinition,
         faTwitter as IconDefinition,

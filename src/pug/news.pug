@@ -1,0 +1,47 @@
+include ./comp/config.pug
+
+doctype html
+html
+  include ./comp/header.pug
+  
+
+  body
+    +nav("news") 
+    +sideBanner('最新消息', '' ,'./images/newsBanner.jpg')
+    
+    div.blocker.block-2-1.underLine
+      div.content
+        div.txtBox
+          section
+            div.txtAMain News
+            //-
+                div.txtA2Main 視覺與味覺的交錯，讓水果的鮮美滋味在你我口中蔓延.... 一包滿滿台灣風味的禮物! 隨時、隨地享用!
+                div.txtASub 阿金姐為善不落人後，不僅以實際行動支持在地酸桔農民，與信任的農友長達十餘年的配合契種，另外還有與新竹世光教養院合作，讓院生幫忙剝酸桔果皮，讓裡頭的身心障礙院生能夠有自己賺取收入的機會，也從中獲取成就感，一舉多得！「一路上，我們遇到太多貴人了！我們不是一定要成為多大的企業，而僅想以單純的小力量，回饋社會。」一席話道出品牌成立的初衷。阿金姐以善為出發點，盼能夠拋磚引玉，集結小愛化為大愛，讓台灣處處充滿溫情。
+     
+    div.blocker.bgColor
+      div.content
+        div.cards.news
+          - var n = 0;            
+          while n < 12
+            -var imgName = "index-event-"+ (n%3+1)+".png"
+            div
+              a(href="./news_view.html")
+                figure.shop(data-loop=n++)  
+                  div.f-box(style={'background-image':'url('+imgPath+imgName+')'})         
+                  figcaption                    
+                    div.cardDate 2022.06.06
+                    div.cardTitle 111年度竹東親子健行賞櫻趣、春櫻飛舞遊竹東、櫻花步道浪漫秘境悠遊客庄
+                    div.cardTxt 111年度竹東鎮「親子健行賞櫻趣．春櫻飛舞遊竹東」活動今(2/26)浪漫登場！新竹縣竹東鎮公所於105年推廣櫻花認養活動，這幾年在櫻花奶爸奶媽的悉心照顧下，打造頭前溪河濱生態公園成為臺三線上最浪漫的賞花秘境景點之一；沿著台68線橋下兩公里長的的竹東河濱公園櫻花步道，種滿兩千多株粉嫩櫻花，近來正值盛開季節，吸引民眾朝聖拍美照，新竹縣長楊文科和竹東鎮長張順朋歡迎全國各地民眾抓緊時間來竹東賞櫻拍照打卡、吃美食，悠遊竹縣客庄小鎮。
+        
+        div.footContainer
+          include ./comp/pager.pug
+                
+    include ./comp/footer.pug
+  
+
+
+
+
+    
+    
+    

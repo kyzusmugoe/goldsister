@@ -1,0 +1,65 @@
+include ./comp/config.pug
+
+doctype html
+html
+  include ./comp/header.pug
+  
+
+  body
+    +nav("kitchen") 
+    +sideBanner('最新消息', '' ,'./images/kitchenBanner.jpg')
+    
+    div.blocker.block-2-1.underLine
+      div.content
+        div.txtBox
+          section
+            div.txtAMain Kitchen
+            //-
+                div.txtA2Main 視覺與味覺的交錯，讓水果的鮮美滋味在你我口中蔓延.... 一包滿滿台灣風味的禮物! 隨時、隨地享用!
+                div.txtASub 阿金姐為善不落人後，不僅以實際行動支持在地酸桔農民，與信任的農友長達十餘年的配合契種，另外還有與新竹世光教養院合作，讓院生幫忙剝酸桔果皮，讓裡頭的身心障礙院生能夠有自己賺取收入的機會，也從中獲取成就感，一舉多得！「一路上，我們遇到太多貴人了！我們不是一定要成為多大的企業，而僅想以單純的小力量，回饋社會。」一席話道出品牌成立的初衷。阿金姐以善為出發點，盼能夠拋磚引玉，集結小愛化為大愛，讓台灣處處充滿溫情。
+     
+    div.blocker.bgColor
+      div.content
+        div.cate              
+          a.on(href="#") 全部食譜      
+          a(href="#") 家常料理      
+          a(href="#") 養生食譜      
+          a(href="#") 歐式麵包類      
+          a(href="#") 甜麵包類      
+          a(href="#") 西點蛋糕類      
+          a(href="#") 中式麵點類      
+          a(href="#") 餅乾類      
+          a(href="#") 披薩類      
+          a(href="#") 義大利麵食譜
+                        
+                
+    div.blocker.bgColor
+      div.content
+        div.cards.kitchen
+          - var n = 0;            
+          while n < 12
+            div
+              a(href="./kitchen_view.html")
+                figure.shop(data-loop=n++)  
+                  -var imgName = "kitchen-"+ (n%4+1)+".jpg"
+                  div.f-box(style={'background-image':'url('+imgPath+imgName+')'})         
+                  figcaption                    
+                    div.cardCat 客家料理 
+                    div.cardTitle 客家鹹湯圓
+                    div.starBox
+                      i.fa-solid.fa-star
+                      i.fa-solid.fa-star
+                      i.fa-solid.fa-star
+        
+        div.footContainer
+          include ./comp/pager.pug
+                
+    include ./comp/footer.pug
+  
+
+
+
+
+    
+    
+    

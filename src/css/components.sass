@@ -156,6 +156,11 @@
         line-height: 28px
         letter-spacing: 0em
         text-align: left
+    
+    .newsImg, .foodImg
+        width: 100%
+        img
+            @include imgCover()
 
     .forms     
         width: 100%   
@@ -198,7 +203,73 @@
         -webkit-transition: background-size 0.8s ease !important
         &:hover
             background-size: 110% !important
-        
+    
+    .titleUnderline
+        position: relative
+        &::after
+            content: " "
+            margin-top:15px
+            width: 70px
+            height: 2px
+            position: relative
+            background-color: $mainColor
+
+    .pager_bar
+        margin: 40px 0            
+        a
+            color:#666
+            margin: 0 5px
+            padding: 5px 10px
+            border-radius: 10px 
+        a.cur, a:hover
+            transition: .4s
+            color:#fff
+            background-color: $mainColor
+
+    ul.prodList
+        width: 100%
+        background-color: #fff
+        border: 1px solid #eee
+        padding:15px
+        li
+            list-style: none
+            padding: 15px
+            border-bottom: 1px solid #eee
+            &:last-child
+                border-bottom: none
+            a
+                color:#999
+                transition: color .4s ease
+                a.on, &:hover
+                    color:$mainColor
+                    
+                
+
+    
+    .circleLogo
+        @include flexbox(row, center, center)
+        border: 1px solid #ccc
+        position: relative
+        width: 100%
+        padding-bottom: 100%
+        max-height: 120px
+        border-radius: 50%
+        background-position: center
+        background-size: 60%
+        background-repeat: no-repeat
+
+    .txtAMain
+        width: fit-content
+        position: relative
+        &::after
+            position: absolute
+            content: " "
+            left: 0
+            bottom:-10px
+            background-color: $mainColor
+            width: 50%
+            height: 3px
+            
     
 @mixin icon()
     div.icon

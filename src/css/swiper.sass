@@ -1,11 +1,14 @@
 
 @mixin swiper()
-    .content
-        
+    .content        
         .swiper
             width: 100%
             max-width: 1200px
 
+            a
+                display: block
+                width: 100%
+            
             .swiper-slide
                 color: #000
                 display: flex
@@ -32,12 +35,15 @@
                             &:hover
                                 transform: scale(1.1)
                     figcaption
+                        width: calc(100% - 20px)
+                        padding: 18px 10px
                         @include flexbox(column, center, center)
                         background-color: white
-                        width: 100%
                         box-sizing: content-box 
                         //color: #ffbcbc
                         color: #000
+                        .main
+                            margin-bottom: 20px
                             
             .swiper-pagination
                 position: initial
@@ -67,10 +73,16 @@
                 max-width: 380px
                 @include xs()
                     width: 100%
-                    max-width: 414px                
+                    max-width: 414px
                 figure
                     .f-box
                         padding-bottom: 60%
+                    figcaption
+                        @include flexbox(column, center, flex-start)
+                        .date, .main
+                            margin-bottom: 15px
+                        span
+                            display: block
                     /*
                         .signUp
                             @include flexbox(row, center, center)
