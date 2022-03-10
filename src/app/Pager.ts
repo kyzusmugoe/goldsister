@@ -31,7 +31,7 @@ export default (menus: menuObj[]) => {
                     if (document.querySelector(btnName)) {
                         gbtn = document.querySelector(btnName) as HTMLElement
                     } else {
-                        console.log("group:open 找不到" + btnName)
+                        //console.log("group:open 找不到" + btnName)
                     }
                 })
 
@@ -97,7 +97,7 @@ export default (menus: menuObj[]) => {
             
             //item.menu == ".mobile" &&
                 menu.addEventListener("click", (event: Event) => {
-                    console.log(event.target == menu)
+                    //console.log(event.target == menu)
                     if (event.target == menu) {
                         //menu.classList.contains("on") &&
                             menu.classList.remove('on')

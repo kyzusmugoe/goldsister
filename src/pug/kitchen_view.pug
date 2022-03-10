@@ -13,49 +13,88 @@ html
         div.left
           div.foodImg
             img(src="./images/kitchen-1.jpg")
-        div.right
-          h2 家常料理
-          p 鹹湯圓料理
-          p 難易度
-          p 製作時間2小時
-          p 食物份量3-4人份
-          include ./comp/social.pug
+        div.right.foodInfo
+          div
+            h2 家常料理
+            p 鹹湯圓料理
+            p 難易度 
+              span.starBox
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+                i.fa-solid.fa-star
+
+            p 製作時間
+              span.time
+                span 
+                  i.fa-solid.fa-clock
+                span 2小時
+
+            p 食物份量
+              span.people 
+                span 
+                  i.fa-solid.fa-users
+                span 3-4人份
+
+            div.socialBtns
+              include ./comp/social.pug
   
     
     div.blocker.bgShop
       div.content.LR.alginTop
-        div.left
-          div
-            h6 食材
-            ul
-              li 紅白湯圓或包肉餡的湯圓300g
-              li 豬肉片或肉絲150g
-              li 紅蔥頭10g
-              li 蝦皮20g
-              li 香菇20g
-              li 茼蒿250g
-              li 芹菜1-2
-              li 根韭菜30g
 
-        div.right
-          div
-            h6 調味料
+        div.left
+          div.foodList
+            div.heading.txtAMainSm 食材            
             ul
-              li 油蔥酥適量
-              li 高湯1300cc
-              li 醬油少許
-              li 香油少許
-              li 白胡椒粉少許
+              li 紅白湯圓或包肉餡的湯圓
+                span 300g
+              li 豬肉片或肉絲
+                span 150g
+              li 紅蔥頭
+                span 10g
+              li 蝦皮
+                span 20g
+              li 香菇
+                span 20g
+              li 茼蒿
+                span 250g
+              li 芹菜
+                span 1-2根
+              li 韭菜
+                span 30g
+
+        div.right.d-flex.justify-content-center
+          div.foodList
+            div.heading.txtAMainSm 調味料
+            ul
+              li 油蔥酥
+                span 適量
+              li 高湯
+                span 1300cc
+              li 醬油
+                span 少許
+              li 香油
+                span 少許
+              li 白胡椒粉
+                span 少許
 
     div.blocker.bgShop
       div.content
-        div
-          h6 鹹湯圓料理步驟：
+        div.foodStep.w-100
+          div.heading.txtAMainSm  鹹湯圓料理步驟
           ol
             li 鍋內倒入油將豬肉炒香，接著加入紅蔥頭、蝦米、香菇絲一起拌炒出有香味。
             li 再加韭菜、倒入高湯煮成湯底備用。
             li 將湯圓另外煮熟後撈至煮好的湯底，再加入醬油調味。
             li 最後再加入茼蒿、芹菜末、油蔥酥拌勻，起鍋前灑上白胡椒粉及香油即完成。
+    
+    div.blocker.underLine.bgShop
+      div.content
+        div.title.titleUnderline
+          span 其他商品
+        +swiper("shop")
 
     include ./comp/footer.pug
   

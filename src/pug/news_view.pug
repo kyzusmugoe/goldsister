@@ -6,25 +6,71 @@ html
   body
     +nav("news")
     
-    div.blocker.top.block-2-2
-      div.content.alginTop.underLine
-        div.newsImg
-          img(src="./images/index-event-1.png")
-        div 
-          section 
-            span.date 2019-04-09           
+    div.blocker.top.bgColor
+      div.content.LR.news_view.alginTop.underLine
+        div.left
+          div.w-100
+            div.newsImg
+              img(src="./images/index-event-1.png")           
+            span.date 2019.04.09           
             h3 春櫻飛舞遊竹東、親子健行賞櫻趣 2公里櫻花步道浪漫秘境悠遊客庄
+            p 111年度竹東鎮「親子健行賞櫻趣．春櫻飛舞遊竹東」活動今(2/26)浪漫登場！新竹縣竹東鎮公所於105年推廣櫻花認養活動，這幾年在櫻花奶爸奶媽的悉心照顧下，打造頭前溪河濱生態公園成為臺三線上最浪漫的賞花秘境景點之一；沿著台68線橋下兩公里長的的竹東河濱公園櫻花步道，種滿兩千多株粉嫩櫻花，近來正值盛開季節，吸引民眾朝聖拍美照，新竹縣長楊文科和竹東鎮長張順朋歡迎全國各地民眾抓緊時間來竹東賞櫻拍照打卡、吃美食，悠遊竹縣客庄小鎮。
+            p 由竹縣府補助、竹東鎮公所主辦的「111年度竹東親子健行賞櫻趣—春櫻飛舞遊竹東」今日粉紅登場，吸引逾1500人朝聖這個絕美秘境。活動現場除了春櫻市集集結許多在地美食攤販、手作玩藝體驗製作出屬於自己的獨特面具和美麗櫻花筆記本，而櫻花躲貓貓實境解謎透過闖關讓親子感情更升溫，加上精彩的親子舞台表演，像是兩場震撼聽覺的盛宴表演-白頭翁與金絲雀、Party Boy創意打擊樂團。
+            p 活動現場還有Emma姊姊的折氣球帶動跳讓大家High到最高點、魔術大洋魔術表演也讓人目不轉睛驚嘆連連，而大頭泡泡哥哥巨大泡泡表演更讓現場大人小孩為之瘋狂，最後特別邀請了全台目前唯一以無語言的肢體喜劇作為主要創作風格的魔梯形體劇場與大家一起同樂，這些精采的表演為活動畫下完美的句點。
+            div.newsImg
+              img(src="./images/news-view-1.jpg")
+            p 111年度竹東親子健行賞櫻趣將於2月26日浪漫登場，此次活動宣傳期就受到廣大民眾的關注，也非常感謝各位民眾的熱烈支持及參與，在短短五分鐘三梯次的名額全數額滿。此次活動內容除櫻花大道齊步走外，還有春櫻市集、手作玩藝體驗、按讚打卡玩泡泡，以及小朋友們最喜歡的小火車，歡迎大手牽小手一同來玩樂！
+        div.right
+          div.newsCate
+            div.cateBody
+              div.heading.txtAMainSm 所有文章主題
+              ul                
+                li
+                  a(href="/news.html")
+                    span 最新動態                
+                li
+                  a(href="/news.html")
+                    span 客製合作                
+                li
+                  a(href="/news.html")
+                    span 品牌活動                
+                li
+                  a(href="/news.html")
+                    span 海外參展  
+                                  
+          div.newsCate
+            div.heading.txtAMainSm 文章分類
+              - var i =0
+            div.tagBody
+                while i < 4
+                  span.tag(data-loop=i++)
+                    a(href="news.html") 創意廚房客家料理
+                  span.tag
+                    a(href="news.html") 最新動態
+                  span.tag
+                    a(href="news.html") 客製合作
+                  span.tag
+                    a(href="news.html") 賞櫻去
+                  span.tag
+                    a(href="news.html") 品牌活動
+                  span.tag
+                    a(href="news.html") 海外參展
+                  span.tag
+                    a(href="news.html") 好好曬日子
 
-    div.blocker.bgShop
-      div.content
-        div
-          p 111年度竹東鎮「親子健行賞櫻趣．春櫻飛舞遊竹東」活動今(2/26)浪漫登場！新竹縣竹東鎮公所於105年推廣櫻花認養活動，這幾年在櫻花奶爸奶媽的悉心照顧下，打造頭前溪河濱生態公園成為臺三線上最浪漫的賞花秘境景點之一；沿著台68線橋下兩公里長的的竹東河濱公園櫻花步道，種滿兩千多株粉嫩櫻花，近來正值盛開季節，吸引民眾朝聖拍美照，新竹縣長楊文科和竹東鎮長張順朋歡迎全國各地民眾抓緊時間來竹東賞櫻拍照打卡、吃美食，悠遊竹縣客庄小鎮。
-          p 由竹縣府補助、竹東鎮公所主辦的「111年度竹東親子健行賞櫻趣—春櫻飛舞遊竹東」今日粉紅登場，吸引逾1500人朝聖這個絕美秘境。活動現場除了春櫻市集集結許多在地美食攤販、手作玩藝體驗製作出屬於自己的獨特面具和美麗櫻花筆記本，而櫻花躲貓貓實境解謎透過闖關讓親子感情更升溫，加上精彩的親子舞台表演，像是兩場震撼聽覺的盛宴表演-白頭翁與金絲雀、Party Boy創意打擊樂團。
-          p 活動現場還有Emma姊姊的折氣球帶動跳讓大家High到最高點、魔術大洋魔術表演也讓人目不轉睛驚嘆連連，而大頭泡泡哥哥巨大泡泡表演更讓現場大人小孩為之瘋狂，最後特別邀請了全台目前唯一以無語言的肢體喜劇作為主要創作風格的魔梯形體劇場與大家一起同樂，這些精采的表演為活動畫下完美的句點。
-          img(src="./images/news-view-1.jpg")
-          p 111年度竹東親子健行賞櫻趣將於2月26日浪漫登場，此次活動宣傳期就受到廣大民眾的關注，也非常感謝各位民眾的熱烈支持及參與，在短短五分鐘三梯次的名額全數額滿。此次活動內容除櫻花大道齊步走外，還有春櫻市集、手作玩藝體驗、按讚打卡玩泡泡，以及小朋友們最喜歡的小火車，歡迎大手牽小手一同來玩樂！
-
-    div.blocker.bgShop
+          div.newsCate
+            div.heading.txtAMainSm 及時看板
+              - var i =0
+            div.bannerBody
+                while i < 4
+                  a.banner(data-loop=i++)
+                    div.newsImg
+                      img(src="./images/index-event-1.png") 
+                    span.date 2022.04.11
+                    p 親子健行賞櫻趣．春櫻飛舞遊竹東
+                      
+              
+    div.blocker.bottom.bgShop
       div.content
         a.btn.main(href="./news.html") 回上頁
 

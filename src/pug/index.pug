@@ -53,7 +53,7 @@ html
         +swiper("event")
 
     
-    div.blocker.block-1-4
+    div.blocker.bottom.block-1-4
       div.content
         div.certification
           div.emblem
@@ -65,32 +65,6 @@ html
           div.emblem
             img(src="./images/index-icon-3.png", alt="", srcset="")
             span ISO 22000 認證
-
-        //-
-          div.footer
-            a.btn.main.fill More
-    //-
-      div.blocker.fitBorder.block-1-4
-        div.content
-          div(class="title")
-            span NEWS & EVENTS
-          div.horiBox
-            div.horiList.event
-              - var n = 0;            
-              while n < 3
-                -var imgName = "index-e-"+ (n%3 +1)+".png"
-                a.box.num3(href="./guide_view.html", data-loop=n++)                        
-                  div.pic(style=`background-image:url(${imgPath+imgName})`) 
-                  if n == 1
-                    div.signUp.full 額滿
-                  else
-                    div.signUp 10/50
-                  div.txt
-                    span.main 木刻作品導覽!{n}
-                    span 2022/01/30
-                    span PM0200 ~ PM0600
-          div.footer
-            a.btn.main.fill(href="./guide.html") More
       
     include ./comp/pswp.pug
     include ./comp/footer.pug

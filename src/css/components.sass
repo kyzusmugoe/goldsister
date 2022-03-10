@@ -19,6 +19,8 @@
         color:#DF603C !important
     a.line 
         color:#0AB801 !important
+    a.instagram 
+        color:#8a3ab9 !important
     a.twitter
         color:#1EA1F2 !important
     a.apple 
@@ -242,9 +244,6 @@
                 transition: color .4s ease
                 a.on, &:hover
                     color:$mainColor
-                    
-                
-
     
     .circleLogo
         @include flexbox(row, center, center)
@@ -258,9 +257,10 @@
         background-size: 60%
         background-repeat: no-repeat
 
-    .txtAMain
+    .txtAMain, .txtAMainSm
         width: fit-content
         position: relative
+        margin-bottom: 24px
         &::after
             position: absolute
             content: " "
@@ -268,9 +268,128 @@
             bottom:-10px
             background-color: $mainColor
             width: 50%
-            height: 3px
+            height: 2px
             
+    .newsCate
+        background-color: #fff
+        @include flexbox(column, center, flex-start)
+        padding: 30px
+        //width: fit-content
+        margin-bottom: 20px 
+        .heading
+            margin-bottom: 30px 
+
+        .cateBody
+            width: 100%
+            ul
+                @include flexbox(column, center,  flex-start)
+                flex-wrap: wrap
+                margin-left: 0
+                padding-left: 0
+                li 
+                    width: 100%
+                    list-style: none
+                    margin-left: 0
+                    padding-left: 0
+                    padding-bottom: 5px
+                    margin-bottom: 10px
+                    border-bottom: 1px solid #efefef 
+                    a
+                        font-size: 16px
+                        color: #8E8E8E
+                        margin-bottom:15px 
+                        &:hover
+                            color: $mainColor
+        .tagBody
+            .tag
+                border: 1px solid #8E8E8E
+                border-radius: 10px
+                float: left
+                margin: 5px
+                transition: background-color .3s ease  
+                a
+                    white-space: nowrap
+                    color:#8E8E8E
+                    padding: 10px
+                &:hover
+                    color:#fff
+                    background-color: $mainColor
+                    border-color: $mainColor
+                    a
+                        color:#fff
+
+        .bannerBody
+            @include flexbox(rwo, flex-start,  flex-start)
+            flex-wrap: wrap
+            width: calc(100% + 10px)
+            margin-right: -10px
+            gap:10px
+            .banner
+                border-bottom: 1px solid #eee
+                p
+                    color:#8E8E8E
+                .newsImg
+                    margin: 10px 0
+                flex:0 0 calc(100% - 10px)
+                @include xl()
+                    flex:0 0 calc(50% - 10px) 
+                @include md()
+                    flex:0 0 calc(100% - 10px) 
+                   
+    span.date
+        color:#8E8E8E
     
+    .foodList
+        width: 100%
+        max-width: 600px
+        padding:15px
+        border: 1px solid #eee
+        ul
+            padding:0
+            li 
+                color: $articalColor
+                @include flexbox(row, space-between, center)
+                width: 100%
+                list-style: none
+                padding-bottom: 5px
+                margin-bottom: 5px
+                border-bottom:1px solid #eee
+    
+    .foodStep
+        ol
+            padding-left: 20px
+            li
+                color: $articalColor
+                padding-bottom: 5px
+                margin-bottom: 5px
+    .socialBtns
+        .social
+            @include flexbox(row, flex-start, center)
+            gap:15px
+            a
+                width: 40px
+                height: 40px
+                @include flexbox(row, center, center)
+                border: 1px solid $mainColor
+                border-radius: 50%
+                font-size: 1.5em
+                &.facebook
+                    border-color:#385AAF 
+                &.instagram
+                    border-color:#8a3ab9 
+                &.line
+                    border-color:#0AB801 
+
+    .starBox
+        svg
+            color:#fc0
+
+    .time, .people
+        color:$mainColor      
+        span
+            margin-left:5px      
+            
+
 @mixin icon()
     div.icon
         width: 26px

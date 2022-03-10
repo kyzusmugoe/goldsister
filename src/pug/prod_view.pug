@@ -6,7 +6,7 @@ html
   body
     +nav("news")
     
-    div.blocker.top.block-2-2
+    div.blocker.top.underLine
       div.content.LR.alginTop
         div.left
           +gallery('prod', 'prod')
@@ -17,32 +17,39 @@ html
             hr              
             p 嚴選通過SGS 373項農藥殘留均未檢出，台灣在地生產的洛神花，去花萼、篩選、洗淨、過熱水後，加入鹽、糖進行醃漬而成，全程用手工製成，未添加防腐劑、化學添加物，且使用低糖配方，減輕身體負擔。洛神花含有花青素、維他命B、C，此果乾可直接食用，或用熱開水充泡成飲品。
             
-            p
-          div.w-100
+          div
+            div.heading 建議售價
             span.money NT$ 1,180 
+          div.w-100
             a(href="./cart_list").btn.main.fill.buy 我要購買
 
-    div.blocker
+    div.blocker.underLine.bgShop
       div.content
         div
           section 
-            div.title.left
-              h4 商品詳情
+            div.title.left              
+              div.heading.txtAMainSm 商品詳情
               p 「用時間淬鍊美味，以手作傳遞真心」不同氣候、環境濕度下，影響了水果的含水量，阿金姐憑著40年手作的經驗，調整每次的製程，堅持著「讓人客吃到水果原始風味」的職人精神！精選新竹在地由弱勢團體友善種植的洛神花經過長時間低溫乾燥保留水果的「風味」、「清香」與「甘甜」堅持自然健康，不添加防腐劑、人工色素及香料！以守護家人健康的初心，堅守每位「人客」吃的健康。
 
-              h4 食用方式
+              div.heading.txtAMainSm 食用方式
               p 可直接食用，也可用水沖泡成花茶飲品，既美觀又美味，替自己增添點生活儀式感~
 
-              h4 商品規格
+              div.heading.txtAMainSm 商品規格
               p 成份：洛神、鹽、冰糖
               p 重量：每包70g
               p 保存期限：8個月，標示於包裝上
 
-              h4 保存方式
+              div.heading.txtAMainSm 保存方式
               p 避免陽光直射、潮濕環境
 
-              h4 注意事項
+              div.heading.txtAMainSm 注意事項
               p 超商取貨請注意重量超過5kg請選擇宅配！
+
+    div.blocker.underLine.bgShop
+      div.content
+        div.title.titleUnderline
+          span 其他商品
+        +swiper("shop")
 
     div.blocker.bgShop
       div.content

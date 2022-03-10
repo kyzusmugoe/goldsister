@@ -19,6 +19,7 @@ $iconColor: #666
 $menuFontColor:#666
 $moneyColor:#000
 $txtA2MainColor:#A56D57
+$articalColor:#8E8E8E
 /*global config end*/
 
 //@import './config.sass'
@@ -39,6 +40,8 @@ $txtA2MainColor:#A56D57
 @import './gallery.sass'
 @import './purchase.sass'
 @import './text.sass'
+
+@import './block-1-1-grid.sass'
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Open+Sans:wght@100;300;400;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Quicksand:wght@500&display=swap&display=swap')
 
@@ -103,18 +106,26 @@ body::-webkit-scrollbar-thumb:hover
 
 html, body
     height: 100%
+    color: #333
     //overflow-y: visible !important
+
+
+
 body
+  
     a
         text-decoration: none
     font-family: Arial, sans-serif, Quicksand
     
     background-color: white
+    
     @include components
 
     margin: 0
     //font: 100% $font-stack
     
+    
+
     blockquote 
         margin-left: 0
         padding-left: 50px
@@ -124,6 +135,7 @@ body
         width: 100%
         position: fixed
         z-index: 1000
+        box-shadow: 0 5px 5px rgb(0 0 0 / 5%)
 
     @include nav($maxWidth)
     @include mobileMenu()
@@ -140,6 +152,7 @@ body
     @include purchase()
     @include text()
     @include footer()
+    
     /*
         div.pageTitle
             h1,h4
@@ -167,53 +180,11 @@ body
             margin-bottom: 40px
     div.blocker                
         &.block-1-1
-            .content
-                //margin-bottom: 60px            
-                .gridBox
-                    display: grid
-                    width: 100%
-                    height: 520px
-                    //grid-template-columns: 33% 33% 33%
-                    gap: 20px
-                    /*
-                        width: calc(100% + 20px)
-                        margin-right: -20px
-                        height: 100%
-                        @include flexbox(row, flex-start, flex-start)
-                        flex-wrap: wrap
-                        gap: 20px
-                        overflow: hidden
-                    .b1, .b2, .b3, .b4
-                        position: relative
-                        background-position: center
-                        background-size: cover
-                        //width: 100%
-                    .b1
-                        //padding-bottom: 100%
-                        grid-column-start: 1
-                        grid-column-end: 4
-                        grid-row-start: 1
-                        grid-row-end: 10
-
-                    .b2                        
-                        //padding-bottom: auto
-                        grid-column-start: 4
-                        grid-column-end: 10
-                        grid-row-start: 1
-                        grid-row-end: 7
-
-                    .b3
-                        padding-bottom: auto
-                        grid-column-start: 4
-                        grid-column-end: 7
-                        grid-row-start: 7
-                        grid-row-end: 10
-                    .b4
-                        padding-bottom: auto
-                        grid-column-start: 7
-                        grid-column-end: 10
-                        grid-row-start: 7
-                        grid-row-end: 10
+            @include block-1-1()
+            
+            
+            
+           
         &.block-1-2 
             .content
                 //margin-bottom: 60px           
