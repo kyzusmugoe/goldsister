@@ -160,6 +160,20 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
     })
 })
 
+
+//img loader
+/*
+document.querySelectorAll(".imgLoader").forEach(img=>{
+    let imgDom:HTMLElement = img as HTMLElement
+
+    
+    const styleReg= /\(\"(.+)\"\)/i
+    if(imgDom != null || imgDom !=undefined){
+       // const matchAry= imgDom.style.backgroundImage.match? imgDom.style.backgroundImage.match(styleReg)[1]|""
+        //console.log(matchAry)
+    }
+})
+*/
 //Pager System
 const menus: menuObj[] = [
     { btn: ".m_menu", menu: ".mobile", group: [] },

@@ -153,6 +153,7 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
     })
 })
 
+
 //Pager System
 const menus: menuObj[] = [
     { btn: ".m_menu", menu: ".mobile", group: [] },
