@@ -16,25 +16,7 @@ html
           div.b2(style="background-image:url(./images/index-2.png)")
           div.b3(style="background-image:url(./images/index-3.png)")
           div.b4(style="background-image:url(./images/index-4.png)")
-    //-
-      div.blocker.fitBorder.block-1-2
-        div.content
-          div(class="title")
-            span Featured Products
-          div.horiBox
-            div.horiList.prod
-              - var n = 0;            
-              while n < 4
-                -var imgName = "index-p-"+ (n % 4 + 1)+".png"
-                a.box.num4(href="./prod_view.html", data-loop=n++) 
-                  div.icon
-                    i.fa.fa-shopping-cart(aria-hidden="true")     
-                  div.pic(style=`background-image:url(${imgPath+imgName})`) 
-                  div.txt
-                    span.main 【天然果乾】洛神花乾-好好曬日子
-                    span.money NT$ 480
-          div.footer
-            a.btn.main.fill More
+
       
     div.blocker.fitBorder.block-1-2
       div.content

@@ -15,6 +15,7 @@
                 justify-content: center
                 align-items: center
                 position: relative
+                
                 figure
                     @include icon() // from component.sass
                     @include flexbox(column, flex-start , center)
@@ -27,6 +28,11 @@
                         width: 100%
                         padding-bottom: 100%
                         overflow: hidden
+                        @include flexbox(column, flex-start , center)
+                        .spinner-border
+                            color: #ddd
+                            position: absolute
+                            top: 40%
                         img
                             position: absolute
                             @include imgCover()

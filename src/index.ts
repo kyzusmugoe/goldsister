@@ -162,7 +162,10 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
 
 
 //img loader bg image
-document.querySelectorAll(".cards .f-box").forEach(img=>{
+document.querySelectorAll(`
+    .gridBox div,
+    .cards .f-box
+`).forEach(img=>{
     let imgDom:HTMLElement = img as HTMLElement
     const styleReg= /\(\"(.+)\"\)/i
     if(imgDom != null || imgDom !=undefined){
@@ -184,7 +187,15 @@ document.querySelectorAll(".cards .f-box").forEach(img=>{
 })
 
 //img loader img tag
-document.querySelectorAll(".gallery.prod .swiper-slide").forEach(box=>{
+document.querySelectorAll(`
+    .mainBanner .swiper-slide,
+    .gallery.prod .swiper-slide,
+    .shop.swiper .f-box,
+    .event.swiper .f-box,
+    .sideBanner .content,
+    .block-2-3 .content,
+    .imgBox
+`).forEach(box=>{
     let container:HTMLElement = box as HTMLElement
     
 
@@ -196,32 +207,14 @@ document.querySelectorAll(".gallery.prod .swiper-slide").forEach(box=>{
         loading.classList.add('spinner-border')
 
         container.appendChild(loading)
-        imgDom.style.display = "none"
-        
+        imgDom.style.display = "none"        
         let _img  = new Image()
         _img.src = imgDom.src
         _img.addEventListener("load",()=>{
             imgDom.style.display = "block"
             imgDom.classList.add("complete")
             container.removeChild(loading)
-            console.log("done")
         })
-        /*
-        const imgPath:string = imgDom.style.backgroundImage.match(styleReg)?.[1] as string
-        const src = imgDom.style.backgroundImage
-        imgDom.style.backgroundImage = "";
-        const loading = document.createElement('div')
-        loading.classList.add('spinner-border')
-        imgDom.appendChild(loading)
-        
-        let _img  = new Image()
-        _img.src = imgPath
-        _img.addEventListener("load",()=>{
-            imgDom.style.backgroundImage = src;
-            imgDom.classList.add("complete")
-            imgDom.removeChild(loading)
-        })
-        */
     }
 })
 

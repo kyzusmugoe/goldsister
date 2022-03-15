@@ -6,6 +6,7 @@
         display: flex
         justify-content: center
         align-self: center
+        
         position: relative
 
         max-height: 900px
@@ -24,6 +25,15 @@
             transform: scale(1.2)
         .swiper-wrapper
             //transition: .3s
+        .swiper-slide
+            @include flexbox(column, center, center)
+            .spinner-border
+                color: #ddd
+            img.complete
+                animation-fill-mode: forwards
+                animation-name: imgFadeIn
+                animation-duration: .8s
+            
 
         .swiper-pagination
             .swiper-pagination-bullet

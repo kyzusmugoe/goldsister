@@ -20,6 +20,12 @@
             height: 100%
             min-height: 580px
             z-index: -1
-        
+            @include flexbox(column, center, center)
+            .spinner-border
+                color: #ddd
+            &.complete
+                animation-fill-mode: forwards
+                animation-name: imgFadeIn
+                animation-duration: .8s
         img
             @include imgCover()
