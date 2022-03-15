@@ -161,17 +161,67 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
 })
 
 
-//img loader
+//img loader bg image
 document.querySelectorAll(".cards .f-box").forEach(img=>{
     let imgDom:HTMLElement = img as HTMLElement
     const styleReg= /\(\"(.+)\"\)/i
     if(imgDom != null || imgDom !=undefined){
         const imgPath:string = imgDom.style.backgroundImage.match(styleReg)?.[1] as string
+        const src = imgDom.style.backgroundImage
+        imgDom.style.backgroundImage = "";
+        const loading = document.createElement('div')
+        loading.classList.add('spinner-border')
+        imgDom.appendChild(loading)
+        
         let _img  = new Image()
         _img.src = imgPath
         _img.addEventListener("load",()=>{
+            imgDom.style.backgroundImage = src;
             imgDom.classList.add("complete")
+            imgDom.removeChild(loading)
         })
+    }
+})
+
+//img loader img tag
+document.querySelectorAll(".gallery.prod .swiper-slide").forEach(box=>{
+    let container:HTMLElement = box as HTMLElement
+    
+
+    //const styleReg= /\(\"(.+)\"\)/i
+    if(container != null || container !=undefined){
+        const imgDom:HTMLImageElement = container.querySelector('img') as HTMLImageElement
+        
+        const loading = document.createElement('div')
+        loading.classList.add('spinner-border')
+
+        container.appendChild(loading)
+        imgDom.style.display = "none"
+        
+        let _img  = new Image()
+        _img.src = imgDom.src
+        _img.addEventListener("load",()=>{
+            imgDom.style.display = "block"
+            imgDom.classList.add("complete")
+            container.removeChild(loading)
+            console.log("done")
+        })
+        /*
+        const imgPath:string = imgDom.style.backgroundImage.match(styleReg)?.[1] as string
+        const src = imgDom.style.backgroundImage
+        imgDom.style.backgroundImage = "";
+        const loading = document.createElement('div')
+        loading.classList.add('spinner-border')
+        imgDom.appendChild(loading)
+        
+        let _img  = new Image()
+        _img.src = imgPath
+        _img.addEventListener("load",()=>{
+            imgDom.style.backgroundImage = src;
+            imgDom.classList.add("complete")
+            imgDom.removeChild(loading)
+        })
+        */
     }
 })
 

@@ -31,24 +31,15 @@
             @include flexbox(column, flex-start , center)            
             overflow: hidden
             position: relative
-            &::after
-                content: "loading..."
-                position: absolute
-                @include flexbox(row, center, center)
-                color:#ddd
-                width: 100%
-                //height: 100%
-                padding-top: 30%
-                padding-bottom: 30%
-                z-index: 0
             
             .f-box
                 
-                
-                @include flexbox(row, flex-start, center)
+                background-color: #fff
+                @include flexbox(row, center, center)
                 position: relative
                 width: 100%
-                padding-bottom: 60%
+                padding-top: 30%
+                padding-bottom: 30%
                 overflow: hidden
                 background-size: cover
                 background-position: center
@@ -63,14 +54,15 @@
                 transition-timing-function: linear
                 transition-property: transform, opacity
 
-                opacity: 0
                 z-index: 1                    
                 &.complete
-                    opacity: 1
+                    animation-fill-mode: forwards
+                    animation-name: imgFadeIn
+                    animation-duration: .8s
 
-                
-                
-                        
+                .spinner-border
+                    position: absolute
+                    color:#ddd
                     
                     //background-size: 150%
                 img 
@@ -247,4 +239,4 @@
                 color:#fff
                 background-color: $mainColor
 
-    
+    /* The animation code */
