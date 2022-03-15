@@ -31,7 +31,20 @@
             @include flexbox(column, flex-start , center)            
             overflow: hidden
             position: relative
+            &::after
+                content: "loading..."
+                position: absolute
+                @include flexbox(row, center, center)
+                color:#ddd
+                width: 100%
+                //height: 100%
+                padding-top: 30%
+                padding-bottom: 30%
+                z-index: 0
+            
             .f-box
+                
+                
                 @include flexbox(row, flex-start, center)
                 position: relative
                 width: 100%
@@ -41,16 +54,22 @@
                 background-position: center
                 background-repeat: no-repeat
                 transform: scale(1)
-                transition: transform 0.8s linear
+               
                 -o-transition: transform 0.8s linear
                 -ms-transition: transform 0.8s linear
                 -moz-transition: transform 0.8s linear
                 -webkit-transition: transform 0.8s linear
-                /*
-                    &::after
-                        content: " "
-                        display: block
-                        padding-bottom: 100%
+                transition-duration: .8s
+                transition-timing-function: linear
+                transition-property: transform, opacity
+
+                opacity: 0
+                z-index: 1                    
+                &.complete
+                    opacity: 1
+
+                
+                
                         
                     
                     //background-size: 150%

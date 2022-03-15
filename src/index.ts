@@ -162,18 +162,19 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
 
 
 //img loader
-/*
-document.querySelectorAll(".imgLoader").forEach(img=>{
+document.querySelectorAll(".cards .f-box").forEach(img=>{
     let imgDom:HTMLElement = img as HTMLElement
-
-    
     const styleReg= /\(\"(.+)\"\)/i
     if(imgDom != null || imgDom !=undefined){
-       // const matchAry= imgDom.style.backgroundImage.match? imgDom.style.backgroundImage.match(styleReg)[1]|""
-        //console.log(matchAry)
+        const imgPath:string = imgDom.style.backgroundImage.match(styleReg)?.[1] as string
+        let _img  = new Image()
+        _img.src = imgPath
+        _img.addEventListener("load",()=>{
+            imgDom.classList.add("complete")
+        })
     }
 })
-*/
+
 //Pager System
 const menus: menuObj[] = [
     { btn: ".m_menu", menu: ".mobile", group: [] },
