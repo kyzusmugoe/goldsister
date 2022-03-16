@@ -133,7 +133,6 @@ module.exports = (env, options) => {
         },
         devtool: 'source-map',
         plugins: [
-
             new CleanWebpackPlugin({}),
             new webpack.HotModuleReplacementPlugin(),
             new HtmlWebpackPlugin({ filename: 'index.html', title: "wade", template: 'src/pug/index.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
@@ -144,15 +143,7 @@ module.exports = (env, options) => {
             new HtmlWebpackPlugin({ filename: 'kitchen_view.html', title: "wade", template: 'src/pug/kitchen_view.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'prod.html', title: "wade", template: 'src/pug/prod.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'prod_view.html', title: "wade", template: 'src/pug/prod_view.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            new HtmlWebpackPlugin({ filename: 'contact.html', title: "wade", template: 'src/pug/contact.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            
-            //new HtmlWebpackPlugin({ filename: 'guide.html', title: "wade", template: 'src/pug/guide.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            //new HtmlWebpackPlugin({ filename: 'guide_view.html', title: "wade", template: 'src/pug/guide_view.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            //new HtmlWebpackPlugin({ filename: 'couple.html', title: "wade", template: 'src/pug/couple.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            //new HtmlWebpackPlugin({ filename: 'panorava.html', title: "wade", template: 'src/pug/panorava.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            //new HtmlWebpackPlugin({ filename: 'artwork.html', title: "wade", template: 'src/pug/artwork.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            //new HtmlWebpackPlugin({ filename: 'artwork_view.html', title: "wade", template: 'src/pug/artwork_view.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
-            
+            new HtmlWebpackPlugin({ filename: 'contact.html', title: "wade", template: 'src/pug/contact.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),            
             new HtmlWebpackPlugin({ filename: 'personal.html', title: "wade", template: 'src/pug/personal.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'reserve.html', title: "wade", template: 'src/pug/reserve.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'order_tracking.html', title: "wade", template: 'src/pug/order_tracking.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
@@ -169,12 +160,11 @@ module.exports = (env, options) => {
             new CopyPlugin({
                 patterns: [
                     { from: "./src/images", to: "images" },
-                    //{ from: "./src/css", to: "css" },
-                    //{ from: "./src/mov", to: "mov" },
-                    //{ from: "./src/js", to: "js" },
-                    // { from: "./src/fonts", to: "fonts" },
+                    { from: "./src/js", to: "js" }
                 ],
             }),
+            
+            
             /* 轉 Webp 用的
             new ImageminWebpWebpackPlugin({
                 config: [{
@@ -193,7 +183,7 @@ module.exports = (env, options) => {
         optimization: {
             minimizer: [
                 new HtmlMinimizerPlugin(),
-                new CssMinimizerPlugin(),
+                new CssMinimizerPlugin(),                
                 new TerserPlugin({
                     extractComments: 'all',
                     terserOptions: {

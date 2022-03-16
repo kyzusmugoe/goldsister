@@ -6,8 +6,7 @@ import photoSwiper from './app/photoSwiper';
 import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/light.css");
 
-
-import Swiper, { Pagination, Navigation, Controller, Thumbs, Lazy, Autoplay, Zoom } from 'swiper';
+import Swiper, { Pagination, Navigation, Controller, Thumbs, Lazy, Autoplay, EffectFade } from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/free-mode';
 import 'swiper/scss/navigation';
@@ -15,16 +14,13 @@ import 'swiper/scss/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css/thumbs';
 import 'swiper/css/zoom';
+import "swiper/css/effect-fade";
 import "./css/main.sass"
 import { init as initParallaxScrolling } from "./app/ParallaxScrolling"
 import Pager from "./app/Pager"
 
-
 fontawsome();
 photoSwiper()
-
-
-
 initParallaxScrolling(document.querySelectorAll("div.PS") as NodeList)
 
 //datetimePicker
@@ -37,16 +33,33 @@ flatpickr(".datetimePicker", {
 
 // init Swiper:
 const swiperBanner = new Swiper('.mainBanner .swiper', {
-    modules: [Pagination],
+    modules: [Pagination, Lazy, Autoplay, EffectFade],
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
     },
     pagination: {
         el: '.swiper-pagination',
+        clickable: true  
     },
     lazy: true,
+    loop: true,
+    speed: 1000,
+    effect: "fade",
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false
+    }
 });
+
+
+//針對pagination微調位置
+document.addEventListener("scroll",()=>{
+    if( document.querySelector(".swiper-pagination") ){
+        let _p:HTMLDivElement =  document.querySelector(".swiper-pagination") as HTMLDivElement
+       _p.style.transform = `translateY(-${window.pageYOffset*0.1}px)`;
+    }
+})
 
 
 //對應contentSwiper.sass
@@ -108,26 +121,13 @@ const initGallery = (go: gallaryObj) => {
                 swiper: swiperProdThumb
             }
         });
-        /*
-        go.zoom == "prod" &&
-            swiperProd.on('doubleTap', function () {
-                gallery.classList.add('on')
-            });
-
-        go.zoom == "thumb" &&
-            swiperProdThumb.on('doubleTap', function () {
-                gallery.classList.add('on')
-            });
-
-        close.addEventListener("click", (event: Event) => {
-            gallery.classList.remove('on')
-        })*/
     }
 }
 
 initGallery({ name: '.gallery.main', autoplay: false, centered: true, loop: true, gap: 20, zoom: "thumb", free: true })
 initGallery({ name: '.gallery.sub', autoplay: false, centered: true, loop: true, gap: 0, zoom: "thumb", free: true })
 initGallery({ name: '.gallery.prod', autoplay: false, centered: false, loop: false, gap: 0, zoom: "prod", free: false })
+
 //preload imagee
 if (document.querySelector(".preloadBar")) {
     const preloadBar = document.querySelector(".preloadBar") as HTMLDivElement
@@ -159,7 +159,6 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
         _t.classList.toggle('on')
     })
 })
-
 
 //img loader bg image
 document.querySelectorAll(`
@@ -196,9 +195,7 @@ document.querySelectorAll(`
     .block-2-3 .content,
     .imgBox
 `).forEach(box=>{
-    let container:HTMLElement = box as HTMLElement
-    
-
+    let container:HTMLElement = box as HTMLElement   
     //const styleReg= /\(\"(.+)\"\)/i
     if(container != null || container !=undefined){
         const imgDom:HTMLImageElement = container.querySelector('img') as HTMLImageElement

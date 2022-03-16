@@ -1,8 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Modal } from 'bootstrap';
 import fontawsome from './fontawsome';
 import photoSwiper from './photoSwiper';
-
 import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/light.css");
 
@@ -23,10 +21,7 @@ import { init as initParallaxScrolling } from "./ParallaxScrolling"
 import Pager from "./Pager"
 
 fontawsome();
-
 photoSwiper()
-
-
 
 initParallaxScrolling(document.querySelectorAll("div.PS") as NodeList)
 
@@ -40,7 +35,7 @@ flatpickr(".datetimePicker", {
 
 // init Swiper:
 const swiperBanner = new Swiper('.mainBanner .swiper', {
-    modules: [Pagination],
+    modules: [Pagination, Autoplay],
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -49,6 +44,9 @@ const swiperBanner = new Swiper('.mainBanner .swiper', {
         el: '.swiper-pagination',
     },
     lazy: true,
+    autoplay: {
+        delay: 6000
+    }
 });
 
 
@@ -155,6 +153,7 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
 
 
 //Pager System
+/*
 const menus: menuObj[] = [
     { btn: ".m_menu", menu: ".mobile", group: [] },
     { btn: ".login_btn", menu: ".loginMenu", group: [".login_btn", ".user_btn"] },
@@ -166,3 +165,4 @@ const menus: menuObj[] = [
     { btn: ".user_btn", menu: ".userMenu", group: [".login_btn", ".user_btn"] },
 ]
 Pager(menus)
+*/
