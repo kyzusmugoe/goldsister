@@ -40,6 +40,10 @@
                             transition: .8s
                             &:hover
                                 transform: scale(1.1)
+                            &.complete
+                                animation-fill-mode: forwards
+                                animation-name: imgFadeIn
+                                animation-duration: .8s
                     figcaption
                         width: calc(100% - 20px)
                         padding: 18px 10px
@@ -83,6 +87,11 @@
                 figure
                     .f-box
                         padding-bottom: 60%
+                        
+                        img.complete
+                            animation-fill-mode: forwards
+                            animation-name: imgFadeIn
+                            animation-duration: .8s
                     figcaption
                         @include flexbox(column, center, flex-start)
                         .date, .main

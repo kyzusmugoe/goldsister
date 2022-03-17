@@ -171,7 +171,11 @@ body
         max-height: 180px
         //margin-bottom: 15px
         img
-            @include imgCover()        
+            @include imgCover()
+            &.complete
+                animation-fill-mode: forwards
+                animation-name: imgFadeIn
+                animation-duration: .8s      
 
     
     .mainBanner
@@ -217,6 +221,10 @@ body
             img.about2
                 width: 100%
                 margin-bottom:30px
+                &.complete
+                    animation-fill-mode: forwards
+                    animation-name: imgFadeIn
+                    animation-duration: .8s 
                        
         &.block-5
             .content

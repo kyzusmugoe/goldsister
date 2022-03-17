@@ -3,8 +3,6 @@ import fontawsome from './fontawsome';
 import photoSwiper from './photoSwiper';
 import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/light.css");
-
-
 import Swiper, { Pagination, Navigation, Controller, Thumbs, Lazy, Autoplay, Zoom } from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/free-mode';

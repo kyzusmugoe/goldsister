@@ -163,6 +163,10 @@
         width: 100%
         img
             @include imgCover()
+            &.complete
+                animation-fill-mode: forwards
+                animation-name: imgFadeIn
+                animation-duration: .8s
 
     .forms     
         width: 100%   

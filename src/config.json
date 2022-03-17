@@ -1,0 +1,16 @@
+{
+    "mainBanner":{
+        "effect":{
+            "commit":"轉場效果類型 fade|slide",
+            "value":"fade"
+        },
+        "speed":{
+            "commit":"主BANNER轉場效果的時間",
+            "value":1000
+        },
+        "delay":{
+            "commit":"主BANNER的delay時間",
+            "value":6000
+        }
+    }
+}

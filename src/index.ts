@@ -31,33 +31,46 @@ flatpickr(".datetimePicker", {
 });
 
 
-// init Swiper:
-const swiperBanner = new Swiper('.mainBanner .swiper', {
-    modules: [Pagination, Lazy, Autoplay, EffectFade],
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true  
-    },
-    lazy: true,
-    loop: true,
-    speed: 1000,
-    effect: "fade",
-    autoplay: {
-        delay: 6000,
-        disableOnInteraction: false
-    }
-});
+//設定檔
+let configData: any = undefined
+fetch("./config.json")
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+    })
+    .then(result => {
+        console.log(result)
+        configData = result;
+        //主BANNER Swiper
+        const swiperBanner = new Swiper('.mainBanner .swiper', {
+            modules: [Pagination, Lazy, Autoplay, EffectFade],
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            lazy: true,
+            loop: true,
+            speed:  configData ? parseInt(configData.mainBanner.speed.value) : 1000,
+            effect:( configData ? configData.mainBanner.effect.value : "fade"),
+            autoplay: {
+                delay: configData ? parseInt(configData.mainBanner.delay.value) : 6000,
+                disableOnInteraction: false
+            }
+        });
+        //
+    });
 
 
 //針對pagination微調位置
-document.addEventListener("scroll",()=>{
-    if( document.querySelector(".swiper-pagination") ){
-        let _p:HTMLDivElement =  document.querySelector(".swiper-pagination") as HTMLDivElement
-       _p.style.transform = `translateY(-${window.pageYOffset*0.1}px)`;
+document.addEventListener("scroll", () => {
+    if (document.querySelector(".swiper-pagination")) {
+        let _p: HTMLDivElement = document.querySelector(".swiper-pagination") as HTMLDivElement
+        _p.style.transform = `translateY(-${window.pageYOffset * 0.1}px)`;
     }
 })
 
@@ -66,7 +79,7 @@ document.addEventListener("scroll",()=>{
 const swiperShop = new Swiper('.swiper.shop, .swiper.event', {
     modules: [Lazy, Pagination],
     slidesPerView: 'auto',
-   
+
     pagination: {
         el: '.swiper-pagination',
     },
@@ -77,10 +90,10 @@ const swiperShop = new Swiper('.swiper.shop, .swiper.event', {
     breakpoints: {
         // when window width is >= 320px
         414: {
-          spaceBetween: 20
+            spaceBetween: 20
         }
     },
-    
+
 });
 
 
@@ -100,7 +113,7 @@ const initGallery = (go: gallaryObj) => {
         const root: string = go.name
         const gallery: HTMLElement = document.querySelector(root) as HTMLElement
         const close: HTMLElement = gallery.querySelector(".close") as HTMLElement
-
+        
         const swiperProdThumb: Swiper = new Swiper(root + ' .swiperProdThumb', {  // Optional parameters
             modules: [Lazy, Autoplay],
             //autoplay: go.autoplay,
@@ -164,20 +177,20 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
 document.querySelectorAll(`
     .gridBox div,
     .cards .f-box
-`).forEach(img=>{
-    let imgDom:HTMLElement = img as HTMLElement
-    const styleReg= /\(\"(.+)\"\)/i
-    if(imgDom != null || imgDom !=undefined){
-        const imgPath:string = imgDom.style.backgroundImage.match(styleReg)?.[1] as string
+`).forEach(img => {
+    let imgDom: HTMLElement = img as HTMLElement
+    const styleReg = /\(\"(.+)\"\)/i
+    if (imgDom != null || imgDom != undefined) {
+        const imgPath: string = imgDom.style.backgroundImage.match(styleReg)?.[1] as string
         const src = imgDom.style.backgroundImage
         imgDom.style.backgroundImage = "";
         const loading = document.createElement('div')
         loading.classList.add('spinner-border')
         imgDom.appendChild(loading)
-        
-        let _img  = new Image()
+
+        let _img = new Image()
         _img.src = imgPath
-        _img.addEventListener("load",()=>{
+        _img.addEventListener("load", () => {
             imgDom.style.backgroundImage = src;
             imgDom.classList.add("complete")
             imgDom.removeChild(loading)
@@ -187,27 +200,28 @@ document.querySelectorAll(`
 
 //img loader img tag
 document.querySelectorAll(`
+    .imgBox, .foodImg,    
     .mainBanner .swiper-slide,
     .gallery.prod .swiper-slide,
     .shop.swiper .f-box,
     .event.swiper .f-box,
     .sideBanner .content,
     .block-2-3 .content,
-    .imgBox
-`).forEach(box=>{
-    let container:HTMLElement = box as HTMLElement   
+    .newsImg
+`).forEach(box => {
+    let container: HTMLElement = box as HTMLElement
     //const styleReg= /\(\"(.+)\"\)/i
-    if(container != null || container !=undefined){
-        const imgDom:HTMLImageElement = container.querySelector('img') as HTMLImageElement
-        
+    if (container != null || container != undefined) {
+        const imgDom: HTMLImageElement = container.querySelector('img') as HTMLImageElement
+
         const loading = document.createElement('div')
         loading.classList.add('spinner-border')
 
         container.appendChild(loading)
-        imgDom.style.display = "none"        
-        let _img  = new Image()
+        imgDom.style.display = "none"
+        let _img = new Image()
         _img.src = imgDom.src
-        _img.addEventListener("load",()=>{
+        _img.addEventListener("load", () => {
             imgDom.style.display = "block"
             imgDom.classList.add("complete")
             container.removeChild(loading)

@@ -160,7 +160,7 @@ module.exports = (env, options) => {
             new CopyPlugin({
                 patterns: [
                     { from: "./src/images", to: "images" },
-                    { from: "./src/js", to: "js" }
+                    { from: "./src/config.json", to: "" }
                 ],
             }),
             
