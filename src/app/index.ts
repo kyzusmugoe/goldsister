@@ -1,7 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal } from 'bootstrap';
-import fontawsome from './app/fontawsome';
-import photoSwiper from './app/photoSwiper';
+import fontawsome from './fontawsome';
+import photoSwiper from './photoSwiper';
 
 import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/light.css");
@@ -15,9 +15,9 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/thumbs';
 import 'swiper/css/zoom';
 import "swiper/css/effect-fade";
-import "./css/main.sass"
-import { init as initParallaxScrolling } from "./app/ParallaxScrolling"
-import Pager from "./app/Pager"
+import "../css/main.sass"
+import { init as initParallaxScrolling } from "./ParallaxScrolling"
+import Pager from "./Pager"
 
 fontawsome();
 photoSwiper()
@@ -31,48 +31,37 @@ flatpickr(".datetimePicker", {
 });
 
 
-//設定檔
-let configData: any = undefined
-fetch("./config.json")
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-    })
-    .then(result => {
-        console.log(result)
-        configData = result;
-        //主BANNER Swiper
-        const swiperBanner = new Swiper('.mainBanner .swiper', {
-            modules: [Pagination, Lazy, Autoplay, EffectFade],
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            },
-            lazy: true,
-            loop: true,
-            speed:  configData ? parseInt(configData.mainBanner.speed.value) : 1000,
-            effect:( configData ? configData.mainBanner.effect.value : "fade"),
-            autoplay: {
-                delay: configData ? parseInt(configData.mainBanner.delay.value) : 6000,
-                disableOnInteraction: false
-            }
-        });
-        //
-    });
+
+//主BANNER Swiper
+const swiperBanner = new Swiper('.mainBanner .swiper', {
+    modules: [Pagination, Lazy, Autoplay, EffectFade],
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    lazy: true,
+    loop: true,
+    speed:  1000,
+    effect: "fade",
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false
+    }
+});
 
 
 //針對pagination微調位置
+/*
 document.addEventListener("scroll", () => {
     if (document.querySelector(".swiper-pagination")) {
         let _p: HTMLDivElement = document.querySelector(".swiper-pagination") as HTMLDivElement
         _p.style.transform = `translateY(-${window.pageYOffset * 0.1}px)`;
     }
-})
+})*/
 
 
 //對應contentSwiper.sass
@@ -96,7 +85,8 @@ const swiperShop = new Swiper('.swiper.shop, .swiper.event', {
 
 });
 
-
+//gallary
+/*
 type gallaryObj = {
     name: string
     autoplay: boolean
@@ -107,7 +97,8 @@ type gallaryObj = {
     free: boolean
 }
 
-//gallary
+
+
 const initGallery = (go: gallaryObj) => {
     if (document.querySelector(go.name)) {
         const root: string = go.name
@@ -140,7 +131,7 @@ const initGallery = (go: gallaryObj) => {
 initGallery({ name: '.gallery.main', autoplay: false, centered: true, loop: true, gap: 20, zoom: "thumb", free: true })
 initGallery({ name: '.gallery.sub', autoplay: false, centered: true, loop: true, gap: 0, zoom: "thumb", free: true })
 initGallery({ name: '.gallery.prod', autoplay: false, centered: false, loop: false, gap: 0, zoom: "prod", free: false })
-
+*/
 //preload imagee
 if (document.querySelector(".preloadBar")) {
     const preloadBar = document.querySelector(".preloadBar") as HTMLDivElement
@@ -163,6 +154,7 @@ if (document.querySelector(".preloadBar")) {
 }
 
 //main_menu
+/*
 document.querySelectorAll(".mainMenu .left li a").forEach(item => {
     item.addEventListener("click", (event: Event) => {
         document.querySelectorAll(".mainMenu .left li a").forEach(item => {
@@ -172,7 +164,6 @@ document.querySelectorAll(".mainMenu .left li a").forEach(item => {
         _t.classList.toggle('on')
     })
 })
-
 //img loader bg image
 document.querySelectorAll(`
     .gridBox div,
@@ -199,6 +190,7 @@ document.querySelectorAll(`
 })
 
 //img loader img tag
+
 document.querySelectorAll(`
     .imgBox, .foodImg,    
     .mainBanner .swiper-slide,
@@ -227,7 +219,7 @@ document.querySelectorAll(`
             container.removeChild(loading)
         })
     }
-})
+})*/
 
 //Pager System
 /*
@@ -242,12 +234,12 @@ const menus: menuObj[] = [
     { btn: ".user_btn", menu: ".userMenu", group: [".login_btn", ".user_btn"] },
 ]
 Pager(menus)
-*/
-//mobile_sub_menu
 
+//mobile_sub_menu
 document.querySelectorAll(".mobile .sub").forEach(item => {
     item.addEventListener("click", (event: Event) => {
         let _t: HTMLElement = event.currentTarget as HTMLElement;
         _t.classList.toggle('on')
     })
 })
+*/

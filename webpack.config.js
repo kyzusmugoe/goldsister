@@ -17,8 +17,8 @@ module.exports = (env, options) => {
     return {
         // entry: './src/index.js',
         entry: {
-            index: path.resolve(__dirname, './src/index.ts'),
-            //side: path.resolve(__dirname, './src/app/side.ts')
+            index: path.resolve(__dirname, './src/app/index.ts'),
+            main: path.resolve(__dirname, './src/app/main.js')
         },
         output: {
             path: path.resolve(__dirname, 'dist'),
@@ -135,7 +135,7 @@ module.exports = (env, options) => {
         plugins: [
             new CleanWebpackPlugin({}),
             new webpack.HotModuleReplacementPlugin(),
-            new HtmlWebpackPlugin({ filename: 'index.html', title: "wade", template: 'src/pug/index.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
+            new HtmlWebpackPlugin({ filename: 'index.html', title: "wade", template: 'src/pug/index.pug', inject: "head", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'about.html', title: "wade", template: 'src/pug/about.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'news.html', title: "wade", template: 'src/pug/news.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
             new HtmlWebpackPlugin({ filename: 'news_view.html', title: "wade", template: 'src/pug/news_view.pug', inject: "body", chunks: ['index']/*, meta: metas, ...propertys }*/ }),
@@ -160,7 +160,7 @@ module.exports = (env, options) => {
             new CopyPlugin({
                 patterns: [
                     { from: "./src/images", to: "images" },
-                    { from: "./src/config.json", to: "" }
+                    { from: "./src/app/main.js", to: "js" }
                 ],
             }),
             
@@ -182,8 +182,9 @@ module.exports = (env, options) => {
         ],
         optimization: {
             minimizer: [
-                new HtmlMinimizerPlugin(),
-                new CssMinimizerPlugin(),                
+                //new HtmlMinimizerPlugin(),
+                //new CssMinimizerPlugin(),  
+                /*          
                 new TerserPlugin({
                     extractComments: 'all',
                     terserOptions: {
@@ -193,9 +194,10 @@ module.exports = (env, options) => {
                             drop_debugger: false
                         }
                     }
-                })
+                })*/
             ],
             //minimize: true,
+            /*
             splitChunks: {
                 cacheGroups: {
                     commons: {
@@ -204,7 +206,7 @@ module.exports = (env, options) => {
                         chunks: 'all',
                     }
                 },
-            },
+            },*/
         },
     }
 }
