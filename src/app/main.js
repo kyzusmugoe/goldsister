@@ -11,11 +11,7 @@ const menus = [
     { btn: ".user_btn", menu: ".userMenu", group: [".login_btn", ".user_btn"] },
 ]
 
-
-
 const init = () => {
-
-
     //視差
     initParallaxScrolling(document.querySelectorAll("div.PS"))
 
@@ -44,6 +40,7 @@ const init = () => {
     })
 
     //img loader bg image
+    /*
     document.querySelectorAll(`
         .gridBox div,
         .cards .f-box
@@ -96,6 +93,63 @@ const init = () => {
             })
         }
     })
+    */
+
+    //整合版
+    document.querySelectorAll(`
+        .gridBox div,
+        .cards .f-box,
+        .imgBox, .foodImg,    
+        .mainBanner .swiper-slide,
+        .gallery.prod .swiper-slide,
+        .shop.swiper .f-box,
+        .event.swiper .f-box,
+        .sideBanner .content,
+        .block-2-3 .content,
+        .newsImg
+    `).forEach(box => {
+        let container = box
+        const styleReg= /\(\"(.+)\"\)/i       
+        if (container != null || container != undefined) {
+            if(container.querySelector('img')){
+                console.log("t1")
+                //模式一，容器內有img tag
+                const imgDom = container.querySelector('img')
+                const loading = document.createElement('div')
+                loading.classList.add('spinner-border')
+                container.appendChild(loading)
+                imgDom.style.display = "none"
+                let _img = new Image()
+                _img.src = imgDom.src
+                _img.addEventListener("load", () => {
+                    imgDom.style.display = "block"
+                    imgDom.classList.add("complete")
+                    container.removeChild(loading)
+                })
+            }
+            
+            if(box.style.backgroundImage.match(styleReg)){
+                console.log("t2")
+                //模式二，容器內有使用background-image
+                let imgDom = box;
+                const imgPath = imgDom.style.backgroundImage.match(styleReg)?.[1]
+                const src = imgDom.style.backgroundImage
+                imgDom.style.backgroundImage = "";
+                const loading = document.createElement('div')
+                loading.classList.add('spinner-border')
+                imgDom.appendChild(loading)
+
+                let _img = new Image()
+                _img.src = imgPath
+                _img.addEventListener("load", () => {
+                    imgDom.style.backgroundImage = src;
+                    imgDom.classList.add("complete")
+                    imgDom.removeChild(loading)
+                })
+            }
+        }
+    })
+
     //mobile選單內的子選單
     document.querySelectorAll(".mobile .sub").forEach(item => {
         item.addEventListener("click", (event) => {
@@ -103,8 +157,6 @@ const init = () => {
             _t.classList.toggle('on')
         })
     })
-
-
 
     //彈跳視窗的render
     menus.map((item, index) => {
