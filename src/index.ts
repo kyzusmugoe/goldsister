@@ -30,41 +30,25 @@ flatpickr(".datetimePicker", {
 
 });
 
-
-//設定檔
-let configData: any = undefined
-fetch("./config.json")
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-    })
-    .then(result => {
-        console.log(result)
-        configData = result;
-        //主BANNER Swiper
-        const swiperBanner = new Swiper('.mainBanner .swiper', {
-            modules: [Pagination, Lazy, Autoplay, EffectFade],
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true
-            },
-            lazy: true,
-            loop: true,
-            speed:  configData ? parseInt(configData.mainBanner.speed.value) : 1000,
-            effect:( configData ? configData.mainBanner.effect.value : "fade"),
-            autoplay: {
-                delay: configData ? parseInt(configData.mainBanner.delay.value) : 6000,
-                disableOnInteraction: false
-            }
-        });
-        //
-    });
-
+const swiperBanner = new Swiper('.mainBanner .swiper', {
+    modules: [Pagination, Lazy, Autoplay, EffectFade],
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+    },
+    lazy: true,
+    loop: true,
+    speed:  1000,
+    effect: "fade",
+    autoplay: {
+        delay: 6000,
+        disableOnInteraction: false
+    }
+});
 
 //針對pagination微調位置
 document.addEventListener("scroll", () => {
@@ -230,7 +214,7 @@ document.querySelectorAll(`
 })
 
 //Pager System
-/*
+
 const menus: menuObj[] = [
     { btn: ".m_menu", menu: ".mobile", group: [] },
     { btn: ".login_btn", menu: ".loginMenu", group: [".login_btn", ".user_btn"] },
@@ -242,7 +226,7 @@ const menus: menuObj[] = [
     { btn: ".user_btn", menu: ".userMenu", group: [".login_btn", ".user_btn"] },
 ]
 Pager(menus)
-*/
+
 //mobile_sub_menu
 
 document.querySelectorAll(".mobile .sub").forEach(item => {

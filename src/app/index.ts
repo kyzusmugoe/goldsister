@@ -135,6 +135,8 @@ initGallery({ name: '.gallery.sub', autoplay: false, centered: true, loop: true,
 initGallery({ name: '.gallery.prod', autoplay: false, centered: false, loop: false, gap: 0, zoom: "prod", free: false })
 */
 //preload imagee
+
+/*
 if (document.querySelector(".preloadBar")) {
     const preloadBar = document.querySelector(".preloadBar") as HTMLDivElement
     const imgNList = document.querySelectorAll("img.preload");
