@@ -5,16 +5,17 @@ if name == 'event'
             - var n = 0;            
             while n < 6
                 div.swiper-slide
-                    figure(data-loop=n++)  
-                        div.f-box      
-                            -var imgName = "index-event-"+ (n%3 +1)+".png"
-                            img.preload(src=imgPath+imgName loading="lazy" rel="preload") 
-                        figcaption 
-                            span.date 2022.01.23
-                            span.main 111年度竹東親子健行賞櫻趣
-                            div.info
-                                span 🕗 活動時間：2/26(六)07:00~14:00
-                                span 📍 活動地點：竹東頭前溪河濱生態公園
+                    a(href="./news_view.html")
+                        figure(data-loop=n++)  
+                            div.f-box      
+                                -var imgName = "index-event-"+ (n%3 +1)+".png"
+                                img.preload(src=imgPath+imgName loading="lazy" rel="preload") 
+                            figcaption 
+                                span.date 2022.01.23
+                                span.main 111年度竹東親子健行賞櫻趣
+                                div.info
+                                    span 🕗 活動時間：2/26(六)07:00~14:00
+                                    span 📍 活動地點：竹東頭前溪河濱生態公園
                              
 else
     div.swiper.shop

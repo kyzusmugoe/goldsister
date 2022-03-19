@@ -17,46 +17,21 @@ let items: ImgProp[] = [];
 
 const openPhotoSwipe = ( imgProp:ImgProp) => {
     var pswpElement: HTMLElement = document.querySelectorAll('.pswp')[0] as HTMLElement;
-
-    // build items array
-    
+    // build items array    
     var items = [
         {
             src: imgProp.src,
             w: imgProp.w,
             h: imgProp.h
         }
-    ];
-    
+    ];    
     var options = {
         index: 1 // start at first slide
     };
-
     // Initializes and opens PhotoSwipe
     var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
     gallery.init();
 }
-
-
-const imgLoader = (src: string) => {
-    var img = new Image()
-    img.src = src
-    img.addEventListener("load", (event) => {
-        const _t: HTMLImageElement = event.target as HTMLImageElement
-        items.push({
-            src: src,
-            w: _t.width,
-            h: _t.height
-        })
-
-        total++
-        if (cur == total) {
-
-           
-        }
-    })
-}
-
 
 
 export default () => {

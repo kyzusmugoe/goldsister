@@ -21,18 +21,18 @@ import Pager from "./Pager"
 
 fontawsome();
 photoSwiper()
-initParallaxScrolling(document.querySelectorAll("div.PS") as NodeList)
+//initParallaxScrolling(document.querySelectorAll("div.PS") as NodeList)
 
 //datetimePicker
 flatpickr(".datetimePicker", {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
-
 });
 
 
 
 //主BANNER Swiper
+/*
 const swiperBanner = new Swiper('.mainBanner .swiper', {
     modules: [Pagination, Lazy, Autoplay, EffectFade],
     navigation: {
@@ -52,6 +52,7 @@ const swiperBanner = new Swiper('.mainBanner .swiper', {
         disableOnInteraction: false
     }
 });
+*/
 
 
 //針對pagination微調位置
@@ -65,6 +66,7 @@ document.addEventListener("scroll", () => {
 
 
 //對應contentSwiper.sass
+/*
 const swiperShop = new Swiper('.swiper.shop, .swiper.event', {
     modules: [Lazy, Pagination],
     slidesPerView: 'auto',
@@ -84,7 +86,7 @@ const swiperShop = new Swiper('.swiper.shop, .swiper.event', {
     },
 
 });
-
+*/
 //gallary
 /*
 type gallaryObj = {

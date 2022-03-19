@@ -23,10 +23,73 @@ const init = () => {
         }
     })
 
+
+    //首頁頁主要BANNER Swiper
+    const swiperBanner = new Swiper('.mainBanner .swiper', {
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+        lazy: true,
+        loop: true,
+        speed:  1000,
+        effect: "fade",
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false
+        }
+    });
+
     //Gallery
     initGallery({ name: '.gallery.main', autoplay: false, centered: true, loop: true, gap: 20, zoom: "thumb", free: true })
     initGallery({ name: '.gallery.sub', autoplay: false, centered: true, loop: true, gap: 0, zoom: "thumb", free: true })
     initGallery({ name: '.gallery.prod', autoplay: false, centered: false, loop: false, gap: 0, zoom: "prod", free: false })
+
+    //用到的地方：首頁的商品列表與活動列表
+    const swiperShop = new Swiper('.swiper.shop', {
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar"
+        },
+        spaceBetween: 0,
+        lazy: true,
+        loop: true,
+        speed:  1000,
+        autoplay: {
+            delay: 6000,
+            disableOnInteraction: false
+        },
+        breakpoints: {
+            // when window width is >= 320px
+            414: {
+                spaceBetween: 20
+            }
+        },
+    });
+
+    const swiperNews = new Swiper('.swiper.event', {
+        slidesPerView: 'auto',
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar"
+        },
+        spaceBetween: 0,
+        breakpoints: {
+            // when window width is >= 320px
+            414: {
+                spaceBetween: 20
+            }
+        },
+    });
 
     //main_menu 主選單控制
     document.querySelectorAll(".mainMenu .left li a").forEach(item => {
@@ -39,61 +102,8 @@ const init = () => {
         })
     })
 
-    //img loader bg image
-    /*
-    document.querySelectorAll(`
-        .gridBox div,
-        .cards .f-box
-    `).forEach(img => {
-        let imgDom = img
-        const styleReg = /\(\"(.+)\"\)/i
-        if (imgDom != null || imgDom != undefined) {
-            const imgPath = imgDom.style.backgroundImage.match(styleReg)?.[1]
-            const src = imgDom.style.backgroundImage
-            imgDom.style.backgroundImage = "";
-            const loading = document.createElement('div')
-            loading.classList.add('spinner-border')
-            imgDom.appendChild(loading)
-
-            let _img = new Image()
-            _img.src = imgPath
-            _img.addEventListener("load", () => {
-                imgDom.style.backgroundImage = src;
-                imgDom.classList.add("complete")
-                imgDom.removeChild(loading)
-            })
-        }
-    })
-
+    //img loader bg image  
     //img loader img tag
-    document.querySelectorAll(`
-        .imgBox, .foodImg,    
-        .mainBanner .swiper-slide,
-        .gallery.prod .swiper-slide,
-        .shop.swiper .f-box,
-        .event.swiper .f-box,
-        .sideBanner .content,
-        .block-2-3 .content,
-        .newsImg
-        `).forEach(box => {
-        let container = box
-        //const styleReg= /\(\"(.+)\"\)/i
-        if (container != null || container != undefined) {
-            const imgDom = container.querySelector('img')
-            const loading = document.createElement('div')
-            loading.classList.add('spinner-border')
-            container.appendChild(loading)
-            imgDom.style.display = "none"
-            let _img = new Image()
-            _img.src = imgDom.src
-            _img.addEventListener("load", () => {
-                imgDom.style.display = "block"
-                imgDom.classList.add("complete")
-                container.removeChild(loading)
-            })
-        }
-    })
-    */
 
     //整合版
     document.querySelectorAll(`
@@ -109,9 +119,9 @@ const init = () => {
         .newsImg
     `).forEach(box => {
         let container = box
-        const styleReg= /\(\"(.+)\"\)/i       
+        const styleReg = /\(\"(.+)\"\)/i
         if (container != null || container != undefined) {
-            if(container.querySelector('img')){
+            if (container.querySelector('img')) {
                 console.log("t1")
                 //模式一，容器內有img tag
                 const imgDom = container.querySelector('img')
@@ -127,8 +137,8 @@ const init = () => {
                     container.removeChild(loading)
                 })
             }
-            
-            if(box.style.backgroundImage.match(styleReg)){
+
+            if (box.style.backgroundImage.match(styleReg)) {
                 console.log("t2")
                 //模式二，容器內有使用background-image
                 let imgDom = box;
@@ -269,8 +279,8 @@ function initGallery(go) {
         const close = gallery.querySelector(".close")
 
         const swiperProdThumb = new Swiper(root + ' .swiperProdThumb', {  // Optional parameters
-            modules: [Lazy, Autoplay],
-            //autoplay: go.autoplay,
+            // modules: [Lazy, Autoplay],
+            autoplay: go.autoplay,
             slidesPerView: 'auto',
             spaceBetween: go.gap,
             lazy: true,
@@ -280,7 +290,7 @@ function initGallery(go) {
         });
 
         const swiperProd = new Swiper(root + ' .swiperProd', {  // Optional parameters
-            modules: [Pagination, Thumbs, Lazy],
+            //modules: [Pagination, Thumbs, Lazy],
             slidesPerView: "auto",
             watchSlidesProgress: true,
             lazy: true,
