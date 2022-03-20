@@ -1,5 +1,3 @@
-//Pager System
-
 //彈跳視窗的控制
 const menus = [
     { btn: ".m_menu", menu: ".mobile", group: [] },//手機板選單
@@ -122,7 +120,7 @@ const init = () => {
         const styleReg = /\(\"(.+)\"\)/i
         if (container != null || container != undefined) {
             if (container.querySelector('img')) {
-                console.log("t1")
+                //console.log("t1")
                 //模式一，容器內有img tag
                 const imgDom = container.querySelector('img')
                 const loading = document.createElement('div')
@@ -139,7 +137,7 @@ const init = () => {
             }
 
             if (box.style.backgroundImage.match(styleReg)) {
-                console.log("t2")
+                //console.log("t2")
                 //模式二，容器內有使用background-image
                 let imgDom = box;
                 const imgPath = imgDom.style.backgroundImage.match(styleReg)?.[1]
@@ -327,4 +325,4 @@ function initParallaxScrolling(targets) {
     }
 }
 
-document.addEventListener("domcontentloaded", init())
+document.addEventListener("DOMContentLoaded", init())

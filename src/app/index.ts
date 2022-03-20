@@ -6,7 +6,7 @@ import photoSwiper from './photoSwiper';
 import flatpickr from "flatpickr";
 require("flatpickr/dist/themes/light.css");
 
-import Swiper, { Pagination, Navigation, Controller, Thumbs, Lazy, Autoplay, EffectFade } from 'swiper';
+//import Swiper, { Pagination, Navigation, Controller, Thumbs, Lazy, Autoplay, EffectFade } from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/free-mode';
 import 'swiper/scss/navigation';

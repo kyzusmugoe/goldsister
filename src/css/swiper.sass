@@ -54,6 +54,14 @@
                         color: #000
                         .main
                             margin-bottom: 20px
+                            text-align: left
+                            display: -webkit-box
+                            -webkit-box-orient: vertical
+                            -webkit-line-clamp: 1
+                            overflow: hidden
+                            margin: 5px 0
+                            
+
                             
             .swiper-pagination
                 position: initial
@@ -96,10 +104,18 @@
                             animation-duration: .8s
                     figcaption
                         @include flexbox(column, center, flex-start)
+                        .main
+                            
                         .date, .main
                             margin-bottom: 15px
-                        span
-                            display: block
+                        .info
+                            display: -webkit-box
+                            -webkit-box-orient: vertical
+                            -webkit-line-clamp: 4
+                            overflow: hidden
+                        /*
+                            span
+                                display: block
                     /*
                         .signUp
                             @include flexbox(row, center, center)

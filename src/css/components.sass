@@ -394,6 +394,14 @@
         color:$mainColor      
         span
             margin-left:5px
+
+    .imgLoader
+        @include flexbox(row, center, center)
+        height: 100%
+        &.complete
+            animation-fill-mode: forwards
+            animation-name: imgFadeIn
+            animation-duration: .8s
     
     
     @keyframes imgFadeIn 

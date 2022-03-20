@@ -25,18 +25,22 @@
                 > a
                     color: #8E8E8E
                     text-decoration: none
-                    transition: color .3s ease,                    
+                                      
                     position: relative  
                     white-space: nowrap
                     height: 44px
                     padding: 0 15px
                     @include flexbox(row, center, center)
 
-                    &:hover, &.on                 
+                    &:hover, &.on     
+                        transition: color .3s ease              
                         color: #fff
                         background-color: $mainColor
                         position: relative
-                        z-index: 2                
+                        z-index: 2
+
+                    &.on                 
+                        transition-duration: 0s
                     /*
                         &::before
                             transform-origin: left
@@ -55,21 +59,22 @@
                             transform: scaleX(1) 
                 
         .subList 
+            position: relative 
             a
                 color: #8E8E8E
-            position: relative 
             
-            .list
-                
-                transform: scaleY(0)
+            .list                
+                //transform: scaleY(0)
                 transform-origin: top
                 position: absolute
                 top: 43px 
                 z-index: 10
-                display: none
+                //display: none
                 width: 200px
                 background-color: #fff
                 border: 1px solid #eee
+
+                transform: translateY(-200%)
         
         .subList:hover
             > a
@@ -89,9 +94,15 @@
                         transform: scaleX(1) 
                         background-color: #fc0
             .list
-                display: block
-                transition: transform .2s ease
-                transform: scaleY(1)
+                //display: block
+                //transition: transform .2s ease
+                border:1px solid #fff
+                animation-name: subListAnim
+                animation-duration: .4s
+                animation-fill-mode: forwards
+                animation-play-state: running
+                animation-direction: normal
+                //transform: scaleY(1)
                         
             
           
@@ -99,3 +110,11 @@
                         
         @include lg 
             display: none
+
+        @keyframes subListAnim
+            from
+                transform: translateY(-100%)        
+            to
+                transform: translateY(0)       
+            
+    

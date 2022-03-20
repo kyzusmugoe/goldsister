@@ -17,8 +17,8 @@ module.exports = (env, options) => {
     return {
         // entry: './src/index.js',
         entry: {
-            index: path.resolve(__dirname, './src/index.ts'),
-            //index: path.resolve(__dirname, './src/app/index.ts'),
+            //index: path.resolve(__dirname, './src/index.ts'),
+            index: path.resolve(__dirname, './src/app/index.ts'),
             //main: path.resolve(__dirname, './src/app/main.js')
         },
         output: {
