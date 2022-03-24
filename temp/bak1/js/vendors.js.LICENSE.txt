@@ -1,0 +1,1412 @@
+/*
+			elastic: {
+				out: function ( k ) {
+
+					var s, a = 0.1, p = 0.4;
+					if ( k === 0 ) return 0;
+					if ( k === 1 ) return 1;
+					if ( !a || a < 1 ) { a = 1; s = p / 4; }
+					else s = p * Math.asin( 1 / a ) / ( 2 * Math.PI );
+					return ( a * Math.pow( 2, - 10 * k) * Math.sin( ( k - s ) * ( 2 * Math.PI ) / p ) + 1 );
+
+				},
+			},
+			back: {
+				out: function ( k ) {
+					var s = 1.70158;
+					return --k * k * ( ( s + 1 ) * k + s ) + 1;
+				}
+			}
+		*/
+
+/*
+			if(destZoomLevel === 'fit') {
+				destZoomLevel = self.currItem.fitRatio;
+			} else if(destZoomLevel === 'fill') {
+				destZoomLevel = self.currItem.fillRatio;
+			}
+		*/
+
+/*
+  eslint-disable
+  no-console,
+  func-names
+*/
+
+/* BEGIN.ATTRIBUTION */
+
+/* DOM_DELTA_LINE */
+
+/* END.ATTRIBUTION */
+
+/* binding */
+
+/* eslint no-param-reassign: "off" */
+
+/* eslint no-underscore-dangle: "off" */
+
+/* eslint no-unused-vars: "off" */
+
+/* eslint no-use-before-define: "off" */
+
+/* eslint-disable */
+
+/* eslint-disable no-param-reassign */
+
+/* eslint-disable no-proto */
+
+/* eslint-disable no-underscore-dangle */
+
+/* eslint-env browser */
+
+/* harmony default export */
+
+/* harmony export */
+
+/* reexport */
+
+/* unused harmony exports fab, prefix, fa500px, faAccessibleIcon, faAccusoft, faAcquisitionsIncorporated, faAdn, faAdversal, faAffiliatetheme, faAirbnb, faAlgolia, faAlipay, faAmazon, faAmazonPay, faAmilia, faAndroid, faAngellist, faAngrycreative, faAngular, faAppStore, faAppStoreIos, faApper, faApplePay, faArtstation, faAsymmetrik, faAtlassian, faAudible, faAutoprefixer, faAvianex, faAviato, faAws, faBandcamp, faBattleNet, faBehance, faBehanceSquare, faBimobject, faBitbucket, faBitcoin, faBity, faBlackTie, faBlackberry, faBlogger, faBloggerB, faBluetooth, faBluetoothB, faBootstrap, faBtc, faBuffer, faBuromobelexperte, faBuyNLarge, faBuysellads, faCanadianMapleLeaf, faCcAmazonPay, faCcAmex, faCcApplePay, faCcDinersClub, faCcDiscover, faCcJcb, faCcMastercard, faCcPaypal, faCcStripe, faCcVisa, faCentercode, faCentos, faChrome, faChromecast, faCloudflare, faCloudscale, faCloudsmith, faCloudversify, faCodepen, faCodiepie, faConfluence, faConnectdevelop, faContao, faCottonBureau, faCpanel, faCreativeCommons, faCreativeCommonsBy, faCreativeCommonsNc, faCreativeCommonsNcEu, faCreativeCommonsNcJp, faCreativeCommonsNd, faCreativeCommonsPd, faCreativeCommonsPdAlt, faCreativeCommonsRemix, faCreativeCommonsSa, faCreativeCommonsSampling, faCreativeCommonsSamplingPlus, faCreativeCommonsShare, faCreativeCommonsZero, faCriticalRole, faCss3, faCss3Alt, faCuttlefish, faDAndD, faDAndDBeyond, faDailymotion, faDashcube, faDeezer, faDelicious, faDeploydog, faDeskpro, faDev, faDeviantart, faDhl, faDiaspora, faDigg, faDigitalOcean, faDiscord, faDiscourse, faDochub, faDocker, faDraft2digital, faDribbble, faDribbbleSquare, faDropbox, faDrupal, faDyalog, faEarlybirds, faEbay, faEdge, faEdgeLegacy, faElementor, faEllo, faEmber, faEmpire, faEnvira, faErlang, faEthereum, faEtsy, faEvernote, faExpeditedssl, faFacebookMessenger, faFantasyFlightGames, faFedex, faFedora, faFigma, faFirefox, faFirefoxBrowser, faFirstOrder, faFirstOrderAlt, faFirstdraft, faFlickr, faFlipboard, faFly, faFontAwesome, faFontAwesomeAlt, faFontAwesomeFlag, faFontAwesomeLogoFull, faFonticons, faFonticonsFi, faFortAwesome, faFortAwesomeAlt, faForumbee, faFoursquare, faFreeCodeCamp, faFreebsd, faFulcrum, faGalacticRepublic, faGalacticSenate, faGetPocket, faGg, faGgCircle, faGit, faGitAlt, faGitSquare, faGithub, faGithubAlt, faGithubSquare, faGitkraken, faGitlab, faGitter, faGlide, faGlideG, faGofore, faGoodreads, faGoodreadsG, faGoogleDrive, faGooglePay, faGooglePlay, faGooglePlus, faGooglePlusG, faGooglePlusSquare, faGoogleWallet, faGratipay, faGrav, faGripfire, faGrunt, faGuilded, faGulp, faHackerNews, faHackerNewsSquare, faHackerrank, faHips, faHireAHelper, faHive, faHooli, faHornbill, faHotjar, faHouzz, faHtml5, faHubspot, faIdeal, faImdb, faInnosoft, faInstagramSquare, faInstalod, faIntercom, faInternetExplorer, faInvision, faIoxhost, faItchIo, faItunes, faItunesNote, faJava, faJediOrder, faJenkins, faJira, faJoget, faJoomla, faJs, faJsSquare, faJsfiddle, faKaggle, faKeybase, faKeycdn, faKickstarter, faKickstarterK, faKorvue, faLaravel, faLastfm, faLastfmSquare, faLeanpub, faLess, faLinkedin, faLinkedinIn, faLinode, faLinux, faLyft, faMagento, faMailchimp, faMandalorian, faMarkdown, faMastodon, faMaxcdn, faMdb, faMedapps, faMedium, faMediumM, faMedrt, faMeetup, faMegaport, faMendeley, faMicroblog, faMicrosoft, faMix, faMixcloud, faMixer, faMizuni, faModx, faMonero, faNapster, faNeos, faNimblr, faNode, faNodeJs, faNpm, faNs8, faNutritionix, faOctopusDeploy, faOdnoklassniki, faOdnoklassnikiSquare, faOldRepublic, faOpencart, faOpenid, faOpera, faOptinMonster, faOrcid, faOsi, faPage4, faPagelines, faPalfed, faPatreon, faPaypal, faPennyArcade, faPerbyte, faPeriscope, faPhabricator, faPhoenixFramework, faPhoenixSquadron, faPhp, faPiedPiper, faPiedPiperAlt, faPiedPiperHat, faPiedPiperPp, faPiedPiperSquare, faPinterest, faPinterestP, faPinterestSquare, faPlaystation, faProductHunt, faPushed, faPython, faQq, faQuinscape, faQuora, faRProject, faRaspberryPi, faRavelry, faReact, faReacteurope, faReadme, faRebel, faRedRiver, faReddit, faRedditAlien, faRedditSquare, faRedhat, faRenren, faReplyd, faResearchgate, faResolving, faRev, faRocketchat, faRockrms, faRust, faSafari, faSalesforce, faSass, faSchlix, faScribd, faSearchengin, faSellcast, faSellsy, faServicestack, faShirtsinbulk, faShopify, faShopware, faSimplybuilt, faSistrix, faSith, faSketch, faSkyatlas, faSkype, faSlack, faSlackHash, faSlideshare, faSnapchat, faSnapchatGhost, faSnapchatSquare, faSoundcloud, faSourcetree, faSpeakap, faSpeakerDeck, faSpotify, faSquarespace, faStackExchange, faStackOverflow, faStackpath, faStaylinked, faSteam, faSteamSquare, faSteamSymbol, faStickerMule, faStrava, faStripe, faStripeS, faStudiovinari, faStumbleupon, faStumbleuponCircle, faSuperpowers, faSupple, faSuse, faSwift, faSymfony, faTeamspeak, faTelegram, faTelegramPlane, faTencentWeibo, faTheRedYeti, faThemeco, faThemeisle, faThinkPeaks, faTiktok, faTradeFederation, faTrello, faTumblr, faTumblrSquare, faTwitch, faTwitterSquare, faTypo3, faUber, faUbuntu, faUikit, faUmbraco, faUncharted, faUniregistry, faUnity, faUnsplash, faUntappd, faUps, faUsb, faUsps, faUssunnah, faVaadin, faViacoin, faViadeo, faViadeoSquare, faViber, faVimeo, faVimeoSquare, faVimeoV, faVine, faVk, faVnv, faVuejs, faWatchmanMonitoring, faWaze, faWeebly, faWeibo, faWeixin, faWhatsapp, faWhatsappSquare, faWhmcs, faWikipediaW, faWindows, faWix, faWizardsOfTheCoast, faWodu, faWolfPackBattalion, faWordpress, faWordpressSimple, faWpbeginner, faWpexplorer, faWpforms, faWpressr, faXbox, faXing, faXingSquare, faYCombinator, faYahoo, faYammer, faYandex, faYandexInternational, faYarn, faYelp, faYoast, faYoutubeSquare, faZhihu */
+
+/* unused harmony exports fas, prefix, faAd, faAddressBook, faAddressCard, faAdjust, faAirFreshener, faAlignCenter, faAlignJustify, faAlignLeft, faAlignRight, faAllergies, faAmbulance, faAmericanSignLanguageInterpreting, faAnchor, faAngleDoubleDown, faAngleDoubleLeft, faAngleDoubleRight, faAngleDoubleUp, faAngleDown, faAngleLeft, faAngleRight, faAngleUp, faAngry, faAnkh, faAppleAlt, faArchive, faArchway, faArrowAltCircleDown, faArrowAltCircleLeft, faArrowAltCircleRight, faArrowAltCircleUp, faArrowCircleDown, faArrowCircleLeft, faArrowCircleRight, faArrowCircleUp, faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faArrowsAlt, faArrowsAltH, faArrowsAltV, faAssistiveListeningSystems, faAsterisk, faAt, faAtlas, faAtom, faAudioDescription, faAward, faBaby, faBabyCarriage, faBackspace, faBackward, faBacon, faBacteria, faBacterium, faBahai, faBalanceScale, faBalanceScaleLeft, faBalanceScaleRight, faBan, faBandAid, faBarcode, faBars, faBaseballBall, faBasketballBall, faBath, faBatteryEmpty, faBatteryFull, faBatteryHalf, faBatteryQuarter, faBatteryThreeQuarters, faBed, faBeer, faBell, faBellSlash, faBezierCurve, faBible, faBicycle, faBiking, faBinoculars, faBiohazard, faBirthdayCake, faBlender, faBlenderPhone, faBlind, faBlog, faBold, faBolt, faBomb, faBone, faBong, faBook, faBookDead, faBookMedical, faBookOpen, faBookReader, faBookmark, faBorderAll, faBorderNone, faBorderStyle, faBowlingBall, faBox, faBoxOpen, faBoxTissue, faBoxes, faBraille, faBrain, faBreadSlice, faBriefcase, faBriefcaseMedical, faBroadcastTower, faBroom, faBrush, faBug, faBuilding, faBullhorn, faBullseye, faBurn, faBus, faBusAlt, faBusinessTime, faCalculator, faCalendar, faCalendarAlt, faCalendarCheck, faCalendarDay, faCalendarMinus, faCalendarPlus, faCalendarTimes, faCalendarWeek, faCamera, faCameraRetro, faCampground, faCandyCane, faCannabis, faCapsules, faCar, faCarAlt, faCarBattery, faCarCrash, faCarSide, faCaravan, faCaretDown, faCaretLeft, faCaretRight, faCaretSquareDown, faCaretSquareLeft, faCaretSquareRight, faCaretSquareUp, faCaretUp, faCarrot, faCartArrowDown, faCartPlus, faCashRegister, faCat, faCertificate, faChair, faChalkboard, faChalkboardTeacher, faChargingStation, faChartArea, faChartBar, faChartLine, faChartPie, faCheck, faCheckCircle, faCheckDouble, faCheckSquare, faCheese, faChess, faChessBishop, faChessBoard, faChessKing, faChessKnight, faChessPawn, faChessQueen, faChessRook, faChevronCircleDown, faChevronCircleLeft, faChevronCircleRight, faChevronCircleUp, faChevronDown, faChevronUp, faChild, faChurch, faCircle, faCircleNotch, faCity, faClinicMedical, faClipboard, faClipboardCheck, faClipboardList, faClone, faClosedCaptioning, faCloud, faCloudDownloadAlt, faCloudMeatball, faCloudMoon, faCloudMoonRain, faCloudRain, faCloudShowersHeavy, faCloudSun, faCloudSunRain, faCloudUploadAlt, faCocktail, faCode, faCodeBranch, faCoffee, faCog, faCogs, faCoins, faColumns, faComment, faCommentAlt, faCommentDollar, faCommentDots, faCommentMedical, faCommentSlash, faComments, faCommentsDollar, faCompactDisc, faCompass, faCompress, faCompressAlt, faCompressArrowsAlt, faConciergeBell, faCookie, faCookieBite, faCopy, faCopyright, faCouch, faCrop, faCropAlt, faCross, faCrosshairs, faCrow, faCrown, faCrutch, faCube, faCubes, faCut, faDatabase, faDeaf, faDemocrat, faDesktop, faDharmachakra, faDiagnoses, faDice, faDiceD20, faDiceD6, faDiceFive, faDiceFour, faDiceOne, faDiceSix, faDiceThree, faDiceTwo, faDigitalTachograph, faDirections, faDisease, faDivide, faDizzy, faDna, faDog, faDollarSign, faDolly, faDollyFlatbed, faDonate, faDoorClosed, faDoorOpen, faDotCircle, faDove, faDownload, faDraftingCompass, faDragon, faDrawPolygon, faDrum, faDrumSteelpan, faDrumstickBite, faDumbbell, faDumpster, faDumpsterFire, faDungeon, faEdit, faEgg, faEject, faEllipsisH, faEllipsisV, faEnvelope, faEnvelopeOpen, faEnvelopeOpenText, faEnvelopeSquare, faEquals, faEraser, faEthernet, faEuroSign, faExchangeAlt, faExclamation, faExclamationCircle, faExclamationTriangle, faExpandAlt, faExpandArrowsAlt, faExternalLinkAlt, faExternalLinkSquareAlt, faEye, faEyeDropper, faEyeSlash, faFan, faFastBackward, faFastForward, faFaucet, faFax, faFeather, faFeatherAlt, faFemale, faFighterJet, faFile, faFileAlt, faFileArchive, faFileAudio, faFileCode, faFileContract, faFileCsv, faFileDownload, faFileExcel, faFileExport, faFileImage, faFileImport, faFileInvoice, faFileInvoiceDollar, faFileMedical, faFileMedicalAlt, faFilePdf, faFilePowerpoint, faFilePrescription, faFileSignature, faFileUpload, faFileVideo, faFileWord, faFill, faFillDrip, faFilm, faFilter, faFingerprint, faFire, faFireAlt, faFireExtinguisher, faFirstAid, faFish, faFistRaised, faFlag, faFlagCheckered, faFlagUsa, faFlask, faFlushed, faFolder, faFolderMinus, faFolderOpen, faFolderPlus, faFont, faFontAwesomeLogoFull, faFootballBall, faForward, faFrog, faFrown, faFrownOpen, faFunnelDollar, faFutbol, faGamepad, faGasPump, faGavel, faGem, faGenderless, faGhost, faGift, faGifts, faGlassCheers, faGlassMartini, faGlassMartiniAlt, faGlassWhiskey, faGlasses, faGlobe, faGlobeAfrica, faGlobeAmericas, faGlobeAsia, faGlobeEurope, faGolfBall, faGopuram, faGraduationCap, faGreaterThan, faGreaterThanEqual, faGrimace, faGrin, faGrinAlt, faGrinBeam, faGrinBeamSweat, faGrinHearts, faGrinSquint, faGrinSquintTears, faGrinStars, faGrinTears, faGrinTongue, faGrinTongueSquint, faGrinTongueWink, faGrinWink, faGripHorizontal, faGripLines, faGripLinesVertical, faGripVertical, faGuitar, faHSquare, faHamburger, faHammer, faHamsa, faHandHolding, faHandHoldingHeart, faHandHoldingMedical, faHandHoldingUsd, faHandHoldingWater, faHandLizard, faHandMiddleFinger, faHandPaper, faHandPeace, faHandPointDown, faHandPointLeft, faHandPointRight, faHandPointUp, faHandPointer, faHandRock, faHandScissors, faHandSparkles, faHandSpock, faHands, faHandsHelping, faHandsWash, faHandshake, faHandshakeAltSlash, faHandshakeSlash, faHanukiah, faHardHat, faHashtag, faHatCowboy, faHatCowboySide, faHatWizard, faHdd, faHeadSideCough, faHeadSideCoughSlash, faHeadSideMask, faHeadSideVirus, faHeading, faHeadphones, faHeadphonesAlt, faHeadset, faHeartBroken, faHeartbeat, faHelicopter, faHighlighter, faHiking, faHippo, faHistory, faHockeyPuck, faHollyBerry, faHome, faHorse, faHorseHead, faHospital, faHospitalAlt, faHospitalSymbol, faHospitalUser, faHotTub, faHotdog, faHotel, faHourglass, faHourglassEnd, faHourglassHalf, faHourglassStart, faHouseDamage, faHouseUser, faHryvnia, faICursor, faIceCream, faIcicles, faIcons, faIdBadge, faIdCard, faIdCardAlt, faIgloo, faImage, faImages, faInbox, faIndent, faIndustry, faInfinity, faInfo, faInfoCircle, faItalic, faJedi, faJoint, faJournalWhills, faKaaba, faKey, faKeyboard, faKhanda, faKiss, faKissBeam, faKissWinkHeart, faKiwiBird, faLandmark, faLanguage, faLaptop, faLaptopCode, faLaptopHouse, faLaptopMedical, faLaugh, faLaughBeam, faLaughSquint, faLaughWink, faLayerGroup, faLeaf, faLemon, faLessThan, faLessThanEqual, faLevelDownAlt, faLevelUpAlt, faLifeRing, faLightbulb, faLink, faLiraSign, faList, faListAlt, faListOl, faListUl, faLocationArrow, faLock, faLockOpen, faLongArrowAltDown, faLongArrowAltLeft, faLongArrowAltRight, faLongArrowAltUp, faLowVision, faLuggageCart, faLungs, faLungsVirus, faMagic, faMagnet, faMailBulk, faMale, faMap, faMapMarked, faMapMarkedAlt, faMapMarker, faMapMarkerAlt, faMapPin, faMapSigns, faMarker, faMars, faMarsDouble, faMarsStroke, faMarsStrokeH, faMarsStrokeV, faMask, faMedal, faMedkit, faMeh, faMehBlank, faMehRollingEyes, faMemory, faMenorah, faMercury, faMeteor, faMicrochip, faMicrophone, faMicrophoneAlt, faMicrophoneAltSlash, faMicrophoneSlash, faMicroscope, faMinusCircle, faMinusSquare, faMitten, faMobile, faMobileAlt, faMoneyBill, faMoneyBillAlt, faMoneyBillWave, faMoneyBillWaveAlt, faMoneyCheck, faMoneyCheckAlt, faMonument, faMoon, faMortarPestle, faMosque, faMotorcycle, faMountain, faMouse, faMousePointer, faMugHot, faMusic, faNetworkWired, faNeuter, faNewspaper, faNotEqual, faNotesMedical, faObjectGroup, faObjectUngroup, faOilCan, faOm, faOtter, faOutdent, faPager, faPaintBrush, faPaintRoller, faPalette, faPallet, faPaperPlane, faPaperclip, faParachuteBox, faParagraph, faParking, faPassport, faPastafarianism, faPaste, faPause, faPauseCircle, faPaw, faPeace, faPen, faPenAlt, faPenFancy, faPenNib, faPenSquare, faPencilAlt, faPencilRuler, faPeopleArrows, faPeopleCarry, faPepperHot, faPercent, faPercentage, faPersonBooth, faPhone, faPhoneSlash, faPhoneSquare, faPhoneSquareAlt, faPhoneVolume, faPhotoVideo, faPiggyBank, faPills, faPizzaSlice, faPlaceOfWorship, faPlane, faPlaneArrival, faPlaneDeparture, faPlaneSlash, faPlay, faPlug, faPlusCircle, faPlusSquare, faPodcast, faPoll, faPollH, faPoo, faPooStorm, faPoop, faPortrait, faPoundSign, faPowerOff, faPray, faPrayingHands, faPrescription, faPrescriptionBottle, faPrescriptionBottleAlt, faPrint, faProcedures, faProjectDiagram, faPumpMedical, faPumpSoap, faPuzzlePiece, faQrcode, faQuestion, faQuestionCircle, faQuidditch, faQuoteLeft, faQuoteRight, faQuran, faRadiation, faRadiationAlt, faRainbow, faRandom, faReceipt, faRecordVinyl, faRecycle, faRedo, faRedoAlt, faRegistered, faRemoveFormat, faReply, faReplyAll, faRepublican, faRestroom, faRetweet, faRibbon, faRing, faRoad, faRobot, faRocket, faRoute, faRss, faRssSquare, faRubleSign, faRuler, faRulerCombined, faRulerHorizontal, faRulerVertical, faRunning, faRupeeSign, faSadCry, faSadTear, faSatellite, faSatelliteDish, faSave, faSchool, faScrewdriver, faScroll, faSdCard, faSearch, faSearchDollar, faSearchLocation, faSearchMinus, faSearchPlus, faSeedling, faServer, faShapes, faShare, faShareAlt, faShareAltSquare, faShareSquare, faShekelSign, faShieldAlt, faShieldVirus, faShip, faShippingFast, faShoePrints, faShoppingBag, faShoppingBasket, faShower, faShuttleVan, faSign, faSignInAlt, faSignLanguage, faSignOutAlt, faSignal, faSignature, faSimCard, faSink, faSitemap, faSkating, faSkiing, faSkiingNordic, faSkull, faSkullCrossbones, faSlash, faSleigh, faSlidersH, faSmile, faSmileBeam, faSmileWink, faSmog, faSmoking, faSmokingBan, faSms, faSnowboarding, faSnowflake, faSnowman, faSnowplow, faSoap, faSocks, faSolarPanel, faSort, faSortAlphaDown, faSortAlphaDownAlt, faSortAlphaUp, faSortAlphaUpAlt, faSortAmountDown, faSortAmountDownAlt, faSortAmountUp, faSortAmountUpAlt, faSortDown, faSortNumericDown, faSortNumericDownAlt, faSortNumericUp, faSortNumericUpAlt, faSortUp, faSpa, faSpaceShuttle, faSpellCheck, faSpider, faSpinner, faSplotch, faSprayCan, faSquare, faSquareFull, faSquareRootAlt, faStamp, faStarAndCrescent, faStarHalf, faStarHalfAlt, faStarOfDavid, faStarOfLife, faStepBackward, faStepForward, faStethoscope, faStickyNote, faStop, faStopCircle, faStopwatch, faStopwatch20, faStore, faStoreAlt, faStoreAltSlash, faStoreSlash, faStream, faStreetView, faStrikethrough, faStroopwafel, faSubscript, faSubway, faSuitcase, faSuitcaseRolling, faSun, faSuperscript, faSurprise, faSwatchbook, faSwimmer, faSwimmingPool, faSynagogue, faSync, faSyncAlt, faSyringe, faTable, faTableTennis, faTablet, faTabletAlt, faTablets, faTachometerAlt, faTag, faTags, faTape, faTasks, faTaxi, faTeeth, faTeethOpen, faTemperatureHigh, faTemperatureLow, faTenge, faTerminal, faTextHeight, faTextWidth, faTh, faThLarge, faThList, faTheaterMasks, faThermometer, faThermometerEmpty, faThermometerFull, faThermometerHalf, faThermometerQuarter, faThermometerThreeQuarters, faThumbsDown, faThumbsUp, faThumbtack, faTicketAlt, faTimesCircle, faTint, faTintSlash, faTired, faToggleOff, faToggleOn, faToilet, faToiletPaper, faToiletPaperSlash, faToolbox, faTools, faTooth, faTorah, faToriiGate, faTractor, faTrademark, faTrafficLight, faTrailer, faTrain, faTram, faTransgender, faTransgenderAlt, faTrashAlt, faTrashRestore, faTrashRestoreAlt, faTree, faTrophy, faTruck, faTruckLoading, faTruckMonster, faTruckMoving, faTruckPickup, faTshirt, faTty, faTv, faUmbrella, faUmbrellaBeach, faUnderline, faUndo, faUndoAlt, faUniversalAccess, faUniversity, faUnlink, faUnlock, faUnlockAlt, faUpload, faUserAlt, faUserAltSlash, faUserAstronaut, faUserCheck, faUserCircle, faUserClock, faUserCog, faUserEdit, faUserFriends, faUserGraduate, faUserInjured, faUserLock, faUserMd, faUserMinus, faUserNinja, faUserNurse, faUserPlus, faUserSecret, faUserShield, faUserSlash, faUserTag, faUserTie, faUserTimes, faUsersCog, faUsersSlash, faUtensilSpoon, faUtensils, faVectorSquare, faVenus, faVenusDouble, faVenusMars, faVest, faVestPatches, faVial, faVials, faVideo, faVideoSlash, faVihara, faVirus, faVirusSlash, faViruses, faVoicemail, faVolleyballBall, faVolumeDown, faVolumeMute, faVolumeOff, faVolumeUp, faVoteYea, faVrCardboard, faWalking, faWallet, faWarehouse, faWater, faWaveSquare, faWeight, faWeightHanging, faWheelchair, faWifi, faWind, faWindowClose, faWindowMaximize, faWindowMinimize, faWindowRestore, faWineBottle, faWineGlass, faWineGlassAlt, faWonSign, faWrench, faXRay, faYenSign, faYinYang */
+
+/* unused harmony exports noAuto, config, parse, findIconDefinition, toHtml, icon, layer, text, counter, api */
+
+/*!
+ * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ */
+
+/*!
+ * Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2022 Fonticons, Inc.
+ */
+
+/*! PhotoSwipe - v4.1.3 - 2019-01-08
+* http://photoswipe.com
+* Copyright (c) 2019 Dmitry Semenov; */
+
+/*! PhotoSwipe Default UI - 4.1.3 - 2019-01-08
+* http://photoswipe.com
+* Copyright (c) 2019 Dmitry Semenov; */
+
+/*#__PURE__*/
+
+/**
+	 * 
+	 * @return {object}
+	 * 
+	 * {
+	 *  raf : request animation frame function
+	 *  caf : cancel animation frame function
+	 *  transfrom : transform property key (with vendor), or null if not supported
+	 *  oldIE : IE8 or below
+	 * }
+	 * 
+	 */
+
+/**
+	 * Pan image to position
+	 * @param {Number} x     
+	 * @param {Number} y     
+	 * @param {Boolean} force Will ignore bounds if set to true.
+	 */
+
+/**
+     * Determines whether the `index` argument is a valid `number`
+     * after being converted from the `string` type.
+     * @type {boolean}
+     */
+
+/**
+     * The `index` argument converted from `string` to `number`.
+     * @type {number}
+     */
+
+/**
+   * @param {string} fileMap
+   * @returns {null | string[]}
+   */
+
+/**
+   * @param {string} url
+   */
+
+/**
+   * Font Awesome 4 used the prefix of `fa` for all icons. With the introduction
+   * of new styles we needed to differentiate between them. Prefix `fa` is now an alias
+   * for `fas` so we'll ease the upgrade process for our users by automatically defining
+   * this as well.
+   */
+
+/**
+ *
+ * Set of generic functions used by gallery.
+ * 
+ * You're free to modify anything here as long as functionality is kept.
+ * 
+ */
+
+/**
+ *
+ * history.js:
+ *
+ * - Back button to close gallery.
+ * 
+ * - Unique URL for each slide: example.com/&pid=1&gid=3
+ *   (where PID is picture index, and GID and gallery index)
+ *   
+ * - Switch URL when slides change.
+ * 
+ */
+
+/**
+ * # Reduce
+ *
+ * A fast object `.reduce()` implementation.
+ *
+ * @param  {Object}   subject      The object to reduce over.
+ * @param  {Function} fn           The reducer function.
+ * @param  {mixed}    initialValue The initial value for the reducer, defaults to subject[0].
+ * @param  {Object}   thisContext  The context for the reducer.
+ * @return {mixed}                 The final result.
+ */
+
+/**
+ * @param {TODO} el
+ * @param {string} [url]
+ */
+
+/**
+ * @param {TODO} moduleId
+ * @param {TODO} options
+ * @returns {TODO}
+ */
+
+/**
+ * @param {TODO} moduleId
+ * @returns {TODO}
+ */
+
+/**
+ * @param {string[]} pathComponents
+ * @returns {string}
+ */
+
+/**
+ * @param {string} [src]
+ * @returns {boolean}
+ */
+
+/**
+ * @param {string} href
+ * @param {TODO} src
+ * @returns {TODO}
+ */
+
+/**
+ * @param {string} url
+ * @returns {boolean}
+ */
+
+/**
+ * @param {string} urlString
+ * @returns {string}
+ */
+
+/**
+ * Dom7 4.0.4
+ * Minimalistic JavaScript library for DOM manipulation, with a jQuery-compatible API
+ * https://framework7.io/docs/dom7.html
+ *
+ * Copyright 2022, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: January 11, 2022
+ */
+
+/**
+ * Internal helper to bind a function known to have 4 arguments
+ * to a given context.
+ */
+
+/**
+ * Private helper variables & functions
+ */
+
+/**
+ * SSR Window 4.0.2
+ * Better handling for window object in SSR environment
+ * https://github.com/nolimits4web/ssr-window
+ *
+ * Copyright 2021, Vladimir Kharlampidi
+ *
+ * Licensed under MIT
+ *
+ * Released on: December 13, 2021
+ */
+
+/**
+ * Static vars, don't change unless you know what you're doing.
+ */
+
+/**
+ * Swiper 7.4.1
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * https://swiperjs.com
+ *
+ * Copyright 2014-2021 Vladimir Kharlampidi
+ *
+ * Released under the MIT License
+ *
+ * Released on: December 24, 2021
+ */
+
+/**
+ * show-hide-transition.js:
+ *
+ * Manages initial opening or closing transition.
+ *
+ * If you're not planning to use transition for gallery at all,
+ * you may set options hideAnimationDuration and showAnimationDuration to 0,
+ * and just delete startAnimation function.
+ * 
+ */
+
+/**
+ * tap.js:
+ *
+ * Displatches tap and double-tap events.
+ * 
+ */
+
+/**
+ * ucs2decode() and codePointAt() are both works of Mathias Bynens and licensed under MIT
+ *
+ * Copyright Mathias Bynens <https://mathiasbynens.be/>
+
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+/**
+*
+* Controller manages gallery items, their dimensions, and their content.
+* 
+*/
+
+/**
+*
+* UI on top of main sliding area (caption, arrows, close button, etc.).
+* Built just using public methods/properties of PhotoSwipe.
+* 
+*/
+
+/** @type {HTMLScriptElement} */
+
+/** @type {string[]} */
+
+/** @type {string} */
+
+/** @typedef {any} TODO */
+
+/***/
+
+/*, isFake */
+
+/*>>core*/
+
+/*>>desktop-zoom*/
+
+/*>>framework-bridge*/
+
+/*>>gestures*/
+
+/*>>history*/
+
+/*>>items-controller*/
+
+/*>>show-hide-transition*/
+
+/*>>tap*/
+
+//
+
+// 
+
+//    
+
+//    That's why in PhotoSwipe parent element gets zoom transform, not image itself.
+
+//    That's why it's disabled on touch devices (mainly because of swipe transition)
+
+//    when hw-acceleration (e.g. translateZ) is applied to IMG element.
+
+// "in" animation always uses CSS transitions (instead of rAF).
+
+// "out" animation uses rAF only when PhotoSwipe is closed by browser scroll, to recalculate position
+
+// "return to current" duration, e.g. when dragging from slide 0 to -1
+
+// '.swipe-handler',
+
+// 'bullets' or 'progressbar' or 'fraction' or 'custom'
+
+// 'slide' or 'fade' or 'cube' or 'coverflow' or 'flip'
+
+// (IE11 ua string contains "Android 4.0")
+
+// (by default it hides left/right arrows and 1ofX counter)
+
+// (so they use left/top/width/height, instead of CSS transform)
+
+// + '?a=' + Math.random();
+
+// .css('width')
+
+// .css('width', '100px')
+
+// .css({ width: '100px' })
+
+// 1. Progressive image loading isn't working on webkit/blink 
+
+// 1.5 - extra zoom level above the max. E.g. if max is x6, real max 6 + 1.5 = 7.5
+
+// 10 Nov 2014: iOS 7 usage ~40%. iOS 8 usage 56%.
+
+// 1200 - to eliminate touch devices with large screen (like Chromebook Pixel)
+
+// 1647370785154
+
+// 1647370785158
+
+// 1647370785161
+
+// 1647370785164
+
+// 1647370785167
+
+// 1647370785170
+
+// 1647370785173
+
+// 1647370785183
+
+// 1647370785186
+
+// 1647370785359
+
+// 1647370785362
+
+// 18 - average line height
+
+// 2. Progressive image loading sometimes blinks in webkit/blink when applying animation to parent element.
+
+// 2s
+
+// 3. Progressive image loading sometimes doesn't work in IE (up to 11).
+
+// @ts-ignore
+
+// Activate thumbs
+
+// Active classes
+
+// Add Classes
+
+// Allow a fallback from the regular style to solid if regular is not available
+
+// Allow dragging only via left mouse button.
+
+// Allow text selection in caption
+
+// An URL is not an request if
+
+// Android
+
+// Animation loop that controls the acceleration after pan gesture ends
+
+// Apply the friction if zoom level is out of the bounds
+
+// As this handler is not added in IE8 - we ignore e.which
+
+// Attach events
+
+// Autoheight
+
+// Avoid acceleration animation if speed is too low
+
+// Bind mouse events on device with detected hardware touch support, in case it supports multiple types of input.
+
+// Breakpoints
+
+// CONCATENATED MODULE: ./node_modules/dom7/dom7.esm.js
+
+// CONCATENATED MODULE: ./node_modules/flatpickr/dist/esm/types/options.js
+
+// CONCATENATED MODULE: ./node_modules/flatpickr/dist/esm/utils/dom.js
+
+// CONCATENATED MODULE: ./node_modules/flatpickr/dist/esm/utils/formatting.js
+
+// CONCATENATED MODULE: ./node_modules/flatpickr/dist/esm/utils/index.js
+
+// CONCATENATED MODULE: ./node_modules/ssr-window/ssr-window.esm.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/breakpoints/getBreakpoint.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/breakpoints/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/check-overflow/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/classes/addClasses.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/classes/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/classes/removeClasses.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/core.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events-emitter.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events/onClick.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events/onResize.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events/onScroll.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events/onTouchEnd.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events/onTouchMove.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/events/onTouchStart.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/grab-cursor/setGrabCursor.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/grab-cursor/unsetGrabCursor.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/images/loadImage.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/images/preloadImages.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/loop/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/loop/loopCreate.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/loop/loopDestroy.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/loop/loopFix.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/moduleExtendParams.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/modules/observer/observer.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/modules/resize/resize.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/slideNext.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/slidePrev.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/slideReset.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/slideTo.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/slideToClickedSlide.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/slideToClosest.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/slide/slideToLoop.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/transition/setTransition.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/transition/transitionEmit.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/transition/transitionEnd.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/transition/transitionStart.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/translate/getTranslate.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/translate/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/translate/maxTranslate.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/translate/minTranslate.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/translate/setTranslate.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/translate/translateTo.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/index.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateActiveIndex.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateAutoHeight.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateClickedSlide.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateProgress.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateSize.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateSlides.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateSlidesClasses.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateSlidesOffset.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/core/update/updateSlidesProgress.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/modules/autoplay/autoplay.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/modules/lazy/lazy.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/modules/pagination/pagination.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/modules/thumbs/thumbs.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/shared/classes-to-selector.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/shared/create-element-if-not-defined.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/shared/get-support.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/shared/utils.js
+
+// CONCATENATED MODULE: ./node_modules/swiper/swiper.esm.js
+
+// CSS transition work faster here, 
+
+// Calc slides
+
+// Callbacks
+
+// Children needs to return slot items
+
+// Classes
+
+// Cleanup styles
+
+// Clicks
+
+// Close the gallery, then destroy it
+
+// Complete pan gesture if main scroll is not shifted, and it's possible to pan current image
+
+// Complete simple zoom gesture (reset zoom level if it's out of the bounds)  
+
+// Create loop
+
+// Current/Total
+
+// Cursor
+
+// Delay the update of URL, to avoid lag during transition, 
+
+// Delete the old one, since we're replacing it with a new one
+
+// Destroy loop
+
+// Detach emitter events
+
+// Detach events
+
+// Detect SVG support
+
+// Detect if device is iPhone or iPod and if it's older than iOS 8
+
+// Detect old Android (before KitKat)
+
+// Difference in time between releasing of two last touch points (zoom gesture)
+
+// Directions locks
+
+// Disable locks on resize
+
+// Disable swiper and hide navigation when container not overflow
+
+// Distance between two points
+
+// Do nothing if there were 3 touch points or more
+
+// Don't allow progressive loading on non-large touch devices
+
+// Don't update UI if it's hidden
+
+// Duplicate to all looped slides
+
+// EXPORTS
+
+// EXTERNAL MODULE: ./node_modules/flatpickr/dist/esm/utils/polyfills.js
+
+// Effects
+
+// Emit
+
+// Exclamation
+
+// Export object
+
+// Extend Swiper
+
+// Extend defaults with modules params
+
+// Extend defaults with passed params
+
+// Find Wrapper
+
+// Find actual thumbs index to slide to
+
+// Find current slide
+
+// Find current slide size
+
+// Find el
+
+// Find new height from highest slide in view
+
+// Find slides currently in view
+
+// Fix For Negative Oversliding
+
+// Fix For Positive Oversliding
+
+// Fixes: iOS 10.3 resize event
+
+// For example <script data-search-pseudo-elements src="..."></script>
+
+// For more info refer to _isFixedPosition variable in core.js
+
+// Form elements to match
+
+// Gesture completed, no pointers left
+
+// Get attr
+
+// Get breakpoint for window width and update parameters
+
+// Get real index
+
+// Getting an empty string will occur if the attribute is set on the HTML tag but without a value
+
+// Grab Cursor
+
+// Handle behaviour for more than 1 point
+
+// Height is optional, as calculated based on large image.
+
+// Hide controls on vertical drag
+
+// Hide controls when mouse is used
+
+// Hide controls when pinching to close
+
+// IE10 pointer events are case-sensitive
+
+// IE8 and below
+
+// If we already have a replaced node we do not want to continue nesting within it.
+
+// If we have a Kit, we can't determine if regular is available since we
+
+// If we've already processed it but the current computed style does not result in a font-family,
+
+// Images
+
+// Indexes
+
+// Init
+
+// Init Flag
+
+// Internals
+
+// It is not http or https
+
+// It's created only once and then reused
+
+// Knowing that the converted `index` is a valid number,
+
+// Last click time
+
+// Latest Chrome and webkits Fix
+
+// Live events
+
+// Locks
+
+// Long touches
+
+// Micro bind/trigger
+
+// Modified from https://stackoverflow.com/questions/54520554/custom-element-getrootnode-closest-function-crossing-multiple-parent-shadowd
+
+// NEW
+
+// NS
+
+// Next Slide
+
+// Next Slides
+
+// No support
+
+// Normalize slideIndex
+
+// Object
+
+// Objects that hold slides (there are only 3 in DOM)
+
+// Observe container
+
+// Observe wrapper
+
+// On all versions of iOS lower than 8.0, we check size of viewport every second.
+
+// On iOS8 they fixed this.
+
+// Only convert the pseudo element in this ::before/::after position into an icon if we haven't
+
+// Only second point released
+
+// Override addEventListener for old versions of IE
+
+// Override zoom/pan/move functions in case old browser is used (most likely IE)
+
+// Overrides
+
+// Passive Listeners
+
+// Pointerdown/touchstart/mousedown handler
+
+// Pointermove/touchmove/mousemove handler
+
+// Pointerup/pointercancel/touchend/touchcancel/mouseup event handler
+
+// Prev Slide
+
+// Prev Slides
+
+// Prevent Links Clicks
+
+// Progress
+
+// Props
+
+// RTL
+
+// Reduces the speed by slowDownRatio (per 10ms)
+
+// Registers PhotoSWipe module (History, Controller ...)
+
+// Remove last grid elements depending on width
+
+// Render Container
+
+// Render || Update Pagination bullets/items
+
+// Resets zoom if it's out of bounds
+
+// Resistance
+
+// Resize handler
+
+// Return Grab Cursor
+
+// Return app instance
+
+// Return locks after resize
+
+// Return true if offset is out of the bounds
+
+// Returns object with data about gesture
+
+// Ring
+
+// Round length
+
+// Run pan drag release animation. E.g. if you drag image and release finger without momentum.
+
+// Save Dom lib
+
+// Save locks
+
+// Set Grab Cursor
+
+// Set attrs
+
+// Set breakpoint
+
+// Set wrapper width
+
+// Setup global events
+
+// Setup loading indicator
+
+// Short swipes
+
+// Short-circuit to the standard replacement
+
+// Slide To Initial Slide
+
+// Slides
+
+// Slides grid
+
+// Some old versions of Webkit choke when 'none' is passed; pass
+
+// Some versions of Android don't prevent ghost click event 
+
+// Start rendering
+
+// String
+
+// Subtract paddings
+
+// Swiper Instance
+
+// Swiping/no swiping
+
+// TODO
+
+// TODO: use rAF instead of mousewheel?
+
+// Tap, doubleTap, Click
+
+// The current translate is before the current snap index, so the choice
+
+// The current translate is on or after the current snap index, so the choice
+
+// The fa prefix is not canonical. So if it has made it through until this point
+
+// The observerUpdate event should only be triggered
+
+// This detection is made because of buggy top/bottom toolbars
+
+// This happens on v4.3, 4.2, 4.1, 
+
+// This is done to detect when Safari top & bottom bars appear, 
+
+// This node is already being processed
+
+// Threshold
+
+// Time diff
+
+// To support iOS's swipe-to-go-back gesture (when being used in-app).
+
+// Touch Events
+
+// Touches
+
+// Two points released at the same time
+
+// Types
+
+// Unique Navigation Elements
+
+// Update Height
+
+// Update Index
+
+// Update active index in free mode
+
+// Update progress
+
+// Update size
+
+// Update slides
+
+// Update translate
+
+// Velocities
+
+// Vertical
+
+// Virtual Translate
+
+// Visible Slides
+
+// Wait until mouse move event is fired at least twice during 100ms
+
+// We do this, because some mobile browsers trigger it on touchstart
+
+// We'll assume that this is an indication that it should be toggled to true
+
+// Zoom current item to
+
+// _centerPoint - The point in the middle of two pointers
+
+// add class when mouse is over an element that should close the gallery
+
+// add class when there is just one item in the gallery
+
+// add classes to root element of PhotoSwipe
+
+// add content first time
+
+// add event listeners
+
+// allow just one event to fire
+
+// allow to override data
+
+// allows overriding vertical margin for individual items
+
+// already done so with the same prefix and iconName
+
+// and last flick gesture was in right direction
+
+// and only then apply desktop-zoom features
+
+// and to not to trigger actions like "refresh page sound" or "blinking favicon" to often
+
+// apply hw-acceleration to image
+
+// arr = qsa(selector, document);
+
+// array of current touch points
+
+// array of points during dragging, used to determine type of gesture
+
+// as developer may also want to animate other things, 
+
+// as this action doesn't trigger any events (like resize). 
+
+// at least one pointer is down
+
+// at least two _pointers are down
+
+// avoid double tap delay on buttons and elements that have class pswp__single-tap
+
+// base container DIV is created only once for each of 3 holders
+
+// basic functionality
+
+// bind events for UI
+
+// but just in case we add delay on all of them)	
+
+// but only if we aren't auto-fetching SVGs
+
+// calculate fdistance over the bounds and friction
+
+// calculate swipe speed for Y axis (paanning)
+
+// carry forward any custom pid assigned to the item
+
+// change target el for shadow root component
+
+// changing browser URL forces layout/paint in some browsers, which causes noticable lag during animation
+
+// check if holder hasn't changed while image was loading
+
+// check if it belongs to another nested Swiper
+
+// check if one of two points changed
+
+// check the direction of movement
+
+// clean up previous points, without recreating array
+
+// clean up things when gallery is destroyed
+
+// close PhotoSwipe
+
+// close gallery if clicked outside of the image
+
+// could be auto-fetching it. We'll have to assume that it is available.
+
+// create local link
+
+// create local link for fast access
+
+// destroys the gallery (unbinds events, cleans up intervals and timeouts to avoid memory leaks)
+
+// detect custom pid in hash and search for it among the items collection
+
+// difference between initial and current position
+
+// difference of indexes since last content update
+
+// dimensions of small thumbnail {x:,y:,w:}.
+
+// disable close-on-scroll in fullscreen
+
+// disable show/hide effects on old browsers that don't support CSS animations or transforms, 
+
+// display loading indicator with delay
+
+// distance between touch points after friction is applied
+
+// do nothing if pointers position hasn't changed
+
+// does not update scrollWrap.clientWidth instantly after resize
+
+// don't allow click event to pass through when triggering after drag or some other gesture
+
+// don't allow pan to next slide from zoomed state on Desktop
+
+// don't bind click event in browsers that don't support transform (mostly IE8)
+
+// don't do anything if special key pressed to prevent from overriding default browser actions
+
+// don't re-calculate size on inital size update
+
+// don't search elements above pswp__scroll-wrap
+
+// drag move, drag end & drag cancel events array
+
+// drag right
+
+// drag start events array
+
+// due to bugs related to position:fixed
+
+// e.g. in Chrome on Mac cmd+arrow-left returns to previous page
+
+// empty string instead in this case
+
+// eslint-disable-line
+
+// eslint-disable-line eqeqeq
+
+// eslint-disable-line no-useless-call
+
+// eslint-disable-next-line
+
+// eslint-disable-next-line array-callback-return
+
+// eslint-disable-next-line no-param-reassign
+
+// eslint-disable-next-line prefer-rest-params
+
+// even may be used for example to switch image sources
+
+// event.MSPOINTER_TYPE_MOUSE
+
+// event.MSPOINTER_TYPE_TOUCH 
+
+// extend options
+
+// extracted by mini-css-extract-plugin
+
+// fade out background if zooming out
+
+// find pswp__ui element
+
+// find the closest parent DOM element
+
+// first point
+
+// fix false-positive detection of old Android in new IE
+
+// focus causes layout, 
+
+// for fast access
+
+// gallery closed before image finished loading
+
+// ghost mousedown/up event isn't preventable via e.preventDefault,
+
+// gid - Gallery index
+
+// go to next item
+
+// go to prev item
+
+// handle behaviour for one point (dragging or panning)
+
+// hasn't destroyed yet
+
+// height of top bar is static, no need to calculate it
+
+// helper function that builds touch/pointer/mouse events
+
+// hide nearby item holders until initial zoom animation finishes (to avoid extra Paints)
+
+// http://stackoverflow.com/a/14223920
+
+// http://stackoverflow.com/questions/7184573/pick-up-the-android-version-in-the-browser-by-javascript
+
+// http://www.quirksmode.org/js/events_properties.html
+
+// https://developer.mozilla.org/en-US/docs/Web/API/event.button
+
+// https://developer.mozilla.org/en-US/docs/Web/Events/wheel
+
+// https://github.com/dimsemenov/PhotoSwipe/issues/1315
+
+// iPadOs 13 fix
+
+// if "center" slide
+
+// if PhotoSwipe is closed by scroll, we go "back" before the closing animation starts
+
+// if bounds aren't provided, just open gallery without animation
+
+// if browser supports transforms & scroll changed enough
+
+// if container is shifted for more than MIN_SWIPE_DISTANCE, 
+
+// if custom pid cannot be found, fallback to the first item
+
+// if detected hardware touch support, we wait until mouse is used,
+
+// if element is not disabled from options
+
+// if it's not image, we return zero bounds (content is not zoomable)
+
+// if main scroll position is shifted – direction is always horizontal
+
+// if no caption, set size of bottom gap to size of top
+
+// if second pointer released
+
+// image already loaded...
+
+// image object is created every time, due to bugs of image loading & delay when switching images
+
+// in px
+
+// init
+
+// init drag
+
+// init modules
+
+// init zoom
+
+// initial update
+
+// is between the current index and the one after it.
+
+// is between the current index and the one before it.
+
+// isDirection
+
+// isMoved = true;
+
+// itemHolder[1] is middle (current) item
+
+// just append image
+
+// like ui on top of sliding area, which can be animated just via CSS
+
+// loop
+
+// main scroll 
+
+// make a few local variables and functions public
+
+// make variable public
+
+// maximum pan position
+
+// minimum pan position
+
+// move first to last
+
+// move last to first
+
+// move main scroll or start panning
+
+// no getter for object
+
+// no need to store image element after it's added
+
+// noop
+
+// not fully implemented yet
+
+// old IOS, Android and Opera mobile. Blackberry seems to work fine, even older models.
+
+// older versions strangely work correctly, 
+
+// on Android (v4.1, 4.2, 4.3 & possibly older) 
+
+// once despite the number of mutations.  Additional
+
+// only prevent scrolling in nonmodal mode when not at edges
+
+// or doesn't have `bounds` (entirely new slide object)
+
+// or image width is not defined yet (because of slow connection)
+
+// paning with two pointers pressed
+
+// pid - Picture index
+
+// pid=1
+
+// pointer hasn't moved, send "tap release" point
+
+// points pool, reused during touch events
+
+// pool of objects that are used during dragging of zooming
+
+// position of element when it's centered
+
+// prettier-ignore
+
+// prevSnap = snap;
+
+// prevent zoom/pan animation when main scroll animation runs
+
+// previous
+
+// re-render gallery item if `needsUpdate`,
+
+// recalculate dimensions
+
+// remove hash from url without refreshing it or scrolling to top
+
+// remove preloader & mini-img
+
+// remove reference to DOM elements, for GC
+
+// removed. So we now should delete the icon.
+
+// reset cssMode offsets
+
+// reset diff after update
+
+// reset idle timer
+
+// reset margins
+
+// reset zoom/pan on previous item
+
+// reuse bounds object
+
+// rewind
+
+// root DOM element of PhotoSwipe
+
+// round pan position
+
+// s = this
+
+// second point (for zoom gesture)
+
+// set content for center slide (first time)
+
+// setup 3d transforms
+
+// show preloader if progressive loading is not enabled, 
+
+// size of slide area, including spacing
+
+// slightly over the of initial zoom level
+
+// so PhotoSwipe updates it just in case
+
+// so we block mousedown/up for 600ms
+
+// some browsers change window scroll position during the fullscreen
+
+// something got wrong
+
+// ssr
+
+// subtract drag distance that was used during the detection direction  
+
+// tap anywhere (except buttons) to toggle visibility of controls
+
+// tap to close gallery
+
+// temp local vars
+
+// that don't trigger window.resize event.
+
+// that probably means that a class name that was previously present to make the icon has been
+
+// that's why we delay it untill the initial zoom transition ends
+
+// that's why we update hash only when no animations running
+
+// the Kraken
+
+// this is done to keep the scroll position
+
+// time diff
+
+// toggle zoom on double-tap
+
+// toogle pswp--fs class on root element
+
+// total gesture duration
+
+// triggers are redundant and are very costly
+
+// true if zoom changed at least once
+
+// true, if animation after swipe gesture is running
+
+// unbind events for UI
+
+// update controls when slides change
+
+// update current zoom/pan objects
+
+// update zoom level on items and refresh source (if needsUpdate)
+
+// uppercase first letter of property name, if vendor is present
+
+// use closestElement for shadow root element to get the actual closest for nested shadow root element
+
+// validate index
+
+// we can update the original argument's value.
+
+// we can use forEach, as pointer events are supported only in modern browsers
+
+// we don't need touch events, if browser supports pointer events
+
+// we unbind scroll event at the end, as closing animation may depend on it
+
+// we will shift it to the correct prefix.
+
+// when preventDefault() was called on touchstart and/or touchend.
+
+// which causes fake mousedown event
+
+// which causes lag during the animation, 
+
+// zoom level changed during zoom gesture
+
+//_closedByScroll = true;
+
+//_equalizePoints(_startMainScrollPos, _mainScrollPos);
+
+//_mainScrollAnimationEnd(true);
+
+//b - beginning (start prop)
+
+//d - anim duration
+
+//function(template, UiClass, items, options)
+
+//item.fillRatio = hRatio > vRatio ? hRatio : vRatio;
+
+//template.style.width = _windowVisibleSize.x + 'px';

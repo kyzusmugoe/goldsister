@@ -10,9 +10,6 @@ const menus = [
 ]
 
 const init = () => {
-    //PhotoSwiper套用
-    initPhotoSwiper()
-
     //視差
     initParallaxScrolling(document.querySelectorAll("div.PS"))
 
@@ -37,7 +34,7 @@ const init = () => {
         },
         lazy: true,
         loop: true,
-        speed: 1000,
+        speed:  1000,
         effect: "fade",
         autoplay: {
             delay: 6000,
@@ -62,7 +59,7 @@ const init = () => {
         spaceBetween: 0,
         lazy: true,
         loop: true,
-        speed: 1000,
+        speed:  1000,
         autoplay: {
             delay: 6000,
             disableOnInteraction: false
@@ -328,48 +325,4 @@ function initParallaxScrolling(targets) {
     }
 }
 
-//photoSwiper
-function initPhotoSwiper() {
-    const openPhotoSwipe = (imgProp) => {
-        var pswpElement = document.querySelectorAll('.pswp')[0];
-        var items = [
-            {
-                src: imgProp.src,
-                w: imgProp.w,
-                h: imgProp.h,
-                rect: imgProp.rect
-            }
-        ];
-        var options = {
-            index: 1,
-            bgOpacity: .8,
-            getThumbBoundsFn: function (index) {
-                const pageYScroll = window.pageYOffset || document.documentElement.scrollTop
-                const rect = items[index].rect
-                return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
-            }
-        };
-
-        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.init();
-    }
-    document.querySelectorAll('.pswp-btn').forEach((item) => {
-        item.addEventListener("click", event => {
-            const _t = event.target
-            const _src = _t.dataset.pswpsrc
-            var img = new Image()
-            img.src = _src
-            img.addEventListener("load", (event) => {
-                const _imgProp = event.target
-                openPhotoSwipe({
-                    src: _src,
-                    w: _imgProp.width,
-                    h: _imgProp.height,
-                    rect: item.getBoundingClientRect()
-                })
-            })
-        });
-    })
-}
-
-document.addEventListener("DOMContentLoaded", init())
+document.addEventListener("domcontentloaded", init())

@@ -20,7 +20,7 @@ import { init as initParallaxScrolling } from "./ParallaxScrolling"
 import Pager from "./Pager"
 
 fontawsome();
-photoSwiper()
+//photoSwiper()
 //initParallaxScrolling(document.querySelectorAll("div.PS") as NodeList)
 
 //datetimePicker

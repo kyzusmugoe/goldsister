@@ -1,0 +1,265 @@
+/* Autoplay */
+
+/* Lazy */
+
+/* Pagination */
+
+/* Thumbs */
+
+/* default */
+
+/* dom.i2svg */
+
+/* faApple */
+
+/* faChevronLeft */
+
+/* faChevronRight */
+
+/* faClock */
+
+/* faCreditCard */
+
+/* faExpand */
+
+/* faFacebook */
+
+/* faFacebookF */
+
+/* faFacebookSquare */
+
+/* faGoogle */
+
+/* faHeart */
+
+/* faInstagram */
+
+/* faLine */
+
+/* faMinus */
+
+/* faPhoneAlt */
+
+/* faPlayCircle */
+
+/* faPlus */
+
+/* faShoppingCart */
+
+/* faStar */
+
+/* faTimes */
+
+/* faTrash */
+
+/* faTwitter */
+
+/* faUser */
+
+/* faUsers */
+
+/* faYoutube */
+
+/* library.add */
+
+/* webpack/runtime/chunk loaded */
+
+/* webpack/runtime/css loading */
+
+/* webpack/runtime/hot module replacement */
+
+/* webpack/runtime/jsonp chunk loading */
+
+/* webpack/runtime/load script */
+
+/* webpack/runtime/publicPath */
+
+/*#__PURE__*/
+
+/** @type {Error|false} */
+
+/** @type {TODO} */
+
+/************************************************************************/
+
+/******/
+
+/***/
+
+// 1647370785191
+
+// CONCATENATED MODULE: ./src/index.ts
+
+// Call dispose handlers
+
+// Check if module is in cache
+
+// Create a new module (and put it into the cache)
+
+// EXTERNAL MODULE: ./node_modules/@fortawesome/fontawesome-svg-core/index.es.js
+
+// EXTERNAL MODULE: ./node_modules/bootstrap/dist/css/bootstrap.min.css
+
+// EXTERNAL MODULE: ./node_modules/flatpickr/dist/esm/index.js + 6 modules
+
+// EXTERNAL MODULE: ./node_modules/photoswipe/src/css/default-skin/default-skin.scss
+
+// EXTERNAL MODULE: ./node_modules/photoswipe/src/css/main.scss
+
+// EXTERNAL MODULE: ./node_modules/swiper/swiper.esm.js + 90 modules
+
+// Execute the module function
+
+// Load entry module and return exports
+
+// Load self accepted modules
+
+// Management API
+
+// Module API
+
+// Now in "apply" phase
+
+// Now in "dispose" phase
+
+// Optional parameters
+
+// Return the exports of the module
+
+// Store self accepted outdated modules to require them later by the module system
+
+// The module cache
+
+// The require function
+
+// This function allow to reference all chunks
+
+// This function allow to reference async chunks
+
+// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
+
+// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+
+// add "moreModules" to the modules object,
+
+// at begin all updates modules are outdated
+
+// avoid mem leaks in IE.
+
+// avoid mem leaks.
+
+// build items array
+
+// call accept handlers
+
+// create error before stack unwound to get useful stacktrace later
+
+// define __esModule on exports
+
+// define getter functions for harmony exports
+
+// disable module (this disables requires from this module)
+
+// eslint-disable-next-line no-unused-vars
+
+// expose the module cache
+
+// expose the module execution interceptor
+
+// expose the modules object (__webpack_modules__)
+
+// getDefaultExport function for compatibility with non-harmony modules
+
+// handle errors in accept handlers and self accepted module load
+
+// init Swiper:
+
+// insert new code
+
+// install a JSONP callback for chunk loading
+
+// loadScript function to load a script via script tag
+
+// module cache are used so entry inlining is disabled
+
+// no baseURI
+
+// no chunk on demand loading
+
+// no module.loaded needed
+
+// no prefetching
+
+// no preloaded
+
+// no update available
+
+// object to store loaded and loading chunks
+
+// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
+
+// private stuff
+
+// remove "parents" references from all children
+
+// remove module from cache
+
+// remove outdated dependency from module children
+
+// removed self-accepted modules should not be required
+
+// run new runtime modules
+
+// start update chunk loading
+
+// startup
+
+// the "outdated" status can propagate to parents if they don't accept the children
+
+// then flag all "chunkIds" as loaded and fire callback
+
+// undefined = chunk not loaded, null = chunk preloaded/prefetched
+
+// webpackBootstrap
+
+// when called invalidate self-accepting is not possible
+
+// when disposing there is no need to call dispose handler
+
+// when window width is >= 320px
+
+//autoplay: go.autoplay,
+
+//console.log(event.target == menu)
+
+//const styleReg= /\(\"(.+)\"\)/i
+
+//datetimePicker
+
+//font awsome
+
+//group
+
+//img loader bg image
+
+//img loader img tag
+
+//inherit from previous dispose call
+
+//item.menu == ".mobile" &&
+
+//main_menu
+
+//menu.classList.contains("off") &&
+
+//menu.classList.contains("on") &&
+
+//mobile_sub_menu
+
+//preload imagee
+
+//{ btn: ".login3_btn", menu: ".loginMenu" },
+
+//對應contentSwiper.sass
+
+//關閉所有menu以及按鈕

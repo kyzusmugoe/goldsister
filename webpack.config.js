@@ -160,8 +160,13 @@ module.exports = (env, options) => {
 
             new CopyPlugin({
                 patterns: [
+                    { from: "./src/images/default-skin.png", to: "css/default-skin" },
                     { from: "./src/images", to: "images" },
-                    { from: "./src/app/main.js", to: "js" }
+                    { from: "./src/app/main.js", to: "js" },
+                    { from: "./src/app/photoswipe.min.js", to: "js" },
+                    { from: "./src/app/photoswipe-ui-default.min.js", to: "js" },
+                    { from: "./src/css/photoswipe.css", to: "css" },
+                    { from: "./src/css/default-skin.css", to: "css/default-skin" },
                 ],
             }),
             
